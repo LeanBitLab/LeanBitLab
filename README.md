@@ -30,7 +30,7 @@
 | Project | Description | Status |
 |---------|-------------|--------|
 | **RedditTube** | YouTube-like UI for Reddit videos | 🔨 In Development |
-| **HeliboardL** | Keyboard with Gemini AI proofreading | 🔨 In Development |
+| **[HeliboardL](https://github.com/LeanBitLab/HeliboardL)** | Keyboard with Gemini AI proofreading | [![Download](https://img.shields.io/github/v/release/LeanBitLab/HeliboardL?label=Download&style=plastic&color=success)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
 | **FlauncherL** | Launcher with WiFi widget & screensaver | 🔨 In Development |
 | **InfoWidget** | Time, calendar, battery info widget | 🔨 In Development |
 | **Minimal Dialer** | Clean, simple phone dialer | 🔨 In Development |
