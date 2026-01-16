@@ -30,8 +30,8 @@
 | Project | Description | Status |
 |---------|-------------|--------|
 | **RedditTube** | YouTube-like UI for Reddit videos | 🔨 In Development |
-| **[HeliboardL](https://github.com/LeanBitLab/HeliboardL)** | Keyboard with Gemini AI proofreading | [![Download](https://img.shields.io/github/v/release/LeanBitLab/HeliboardL?label=Download&style=plastic&color=success)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
-| **[FlauncherL](https://github.com/LeanBitLab/FlauncherL)** | Launcher with WiFi widget & screensaver | [![Download](https://img.shields.io/github/v/release/LeanBitLab/FlauncherL?label=Download&style=plastic&color=success)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
+| **[HeliboardL](https://github.com/LeanBitLab/HeliboardL)** | Keyboard with Gemini AI proofreading | [![Download](https://img.shields.io/badge/Download-APK-7C4DFF?style=for-the-badge&logo=android&logoColor=white)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
+| **[FlauncherL](https://github.com/LeanBitLab/FlauncherL)** | Launcher with WiFi widget & screensaver | [![Download](https://img.shields.io/badge/Download-APK-7C4DFF?style=for-the-badge&logo=android&logoColor=white)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
 | **InfoWidget** | Time, calendar, battery info widget | 🔨 In Development |
 | **Minimal Dialer** | Clean, simple phone dialer | 🔨 In Development |
 
