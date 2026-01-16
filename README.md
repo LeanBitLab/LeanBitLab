@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![LeanBitLab](leanbitlabbanner.png)
+<img src="leanbitlabbanner.png" alt="LeanBitLab" style="border-radius: 16px; width: 100%;" />
 
 ### Build lean. Build right.
 
