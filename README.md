@@ -24,12 +24,12 @@ We create open-source Android applications focused on **efficiency**, **privacy*
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **LeanBook** | Notes, Tasks, Reminders, Bills, Shopping list | [![In Development](https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
-| **RedditTube** | YouTube-like UI for Reddit videos | [![In Development](https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
-| **[LeanType](https://github.com/LeanBitLab/HeliboardL)** | AI-powered Keyboard | [![Stars](https://img.shields.io/github/stars/LeanBitLab/HeliboardL?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/HeliboardL/stargazers) <br> [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/HeliboardL/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
-| **[FlauncherL](https://github.com/LeanBitLab/FlauncherL)** | TV Launcher with WiFi widget | [![Stars](https://img.shields.io/github/stars/LeanBitLab/FlauncherL?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/FlauncherL/stargazers) <br> [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/FlauncherL/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
-| **InfoWidget** | Time, calendar, battery info widget | [![In Development](https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
-| **Minimal Dialer** | Clean, simple phone dialer | [![In Development](https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
+| **LeanBook** | Notes, Tasks, Reminders, Bills, Shopping list | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
+| **RedditTube** | YouTube-like UI for Reddit videos | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
+| **[LeanType](https://github.com/LeanBitLab/HeliboardL)** | AI-powered Keyboard | [![Stars](https://img.shields.io/github/stars/LeanBitLab/HeliboardL?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/HeliboardL/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/HeliboardL/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
+| **[FlauncherL](https://github.com/LeanBitLab/FlauncherL)** | TV Launcher with WiFi widget | [![Stars](https://img.shields.io/github/stars/LeanBitLab/FlauncherL?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/FlauncherL/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/FlauncherL/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
+| **InfoWidget** | Time, calendar, battery info widget | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
+| **Minimal Dialer** | Clean, simple phone dialer | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
 
 ---
 
