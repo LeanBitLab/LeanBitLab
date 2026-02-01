@@ -6,7 +6,7 @@
 
 ### Build lean. Build right.
 
-**Crafting bloat-free Android apps that do one thing — and do it well.**
+**Crafting bloat-free, efficient Android experiences.**
 
 [![GitHub](https://img.shields.io/badge/GitHub-LeanBitLab-181717?style=flat&logo=github)](https://github.com/LeanBitLab)
 
@@ -16,39 +16,40 @@
 
 ## 🚀 What We Build
 
-| Category | Focus |
-|----------|-------|
-| **Utility Apps** | Clean, minimal, efficient |
-| **Keyboard Tools** | AI-powered enhancements |
-| **Launchers** | Lightweight & functional |
-| **Widgets** | Beautiful & informative |
+We create open-source Android applications focused on **efficiency**, **privacy**, and **user experience**. We specialize in building bloat-free, high-performance software that respects device resources and delivers a premium user experience.
 
 ---
 
 ## 🔧 Current Projects
 
-| Project | Description | Status |
-|---------|-------------|--------|
-| **RedditTube** | YouTube-like UI for Reddit videos | 🔨 In Development |
-| **[HeliboardL](https://github.com/LeanBitLab/HeliboardL)** | Keyboard with Gemini AI proofreading | [![Download](https://img.shields.io/badge/Download-APK-7C4DFF?style=for-the-badge&logo=android&logoColor=white)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
-| **[FlauncherL](https://github.com/LeanBitLab/FlauncherL)** | Launcher with WiFi widget & screensaver | [![Download](https://img.shields.io/badge/Download-APK-7C4DFF?style=for-the-badge&logo=android&logoColor=white)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
-| **InfoWidget** | Time, calendar, battery info widget | 🔨 In Development |
-| **Minimal Dialer** | Clean, simple phone dialer | 🔨 In Development |
+| Project | Description | Stats | Status |
+|---------|-------------|-------|--------|
+| **LeanBook** | Notes, Tasks, Reminders, Bills, Shopping list | - | [![In Development](https://img.shields.io/badge/Status-In_Development-orange?style=for-the-badge)](https://github.com/LeanBitLab) |
+| **RedditTube** | YouTube-like UI for Reddit videos | - | [![In Development](https://img.shields.io/badge/Status-In_Development-orange?style=for-the-badge)](https://github.com/LeanBitLab) |
+| **[LeanType](https://github.com/LeanBitLab/HeliboardL)** | AI-powered Keyboard | [![Stars](https://img.shields.io/github/stars/LeanBitLab/HeliboardL?style=flat-square&color=FFD700)](https://github.com/LeanBitLab/HeliboardL/stargazers) <br> [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/HeliboardL/total?style=flat-square&color=4CAF50)](https://github.com/LeanBitLab/HeliboardL/releases) | [![Download](https://img.shields.io/badge/Download-APK-7C4DFF?style=for-the-badge&logo=android&logoColor=white)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
+| **[FlauncherL](https://github.com/LeanBitLab/FlauncherL)** | TV Launcher with WiFi widget | [![Stars](https://img.shields.io/github/stars/LeanBitLab/FlauncherL?style=flat-square&color=FFD700)](https://github.com/LeanBitLab/FlauncherL/stargazers) <br> [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/FlauncherL/total?style=flat-square&color=4CAF50)](https://github.com/LeanBitLab/FlauncherL/releases) | [![Download](https://img.shields.io/badge/Download-APK-7C4DFF?style=for-the-badge&logo=android&logoColor=white)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
+| **InfoWidget** | Time, calendar, battery info widget | - | [![In Development](https://img.shields.io/badge/Status-In_Development-orange?style=for-the-badge)](https://github.com/LeanBitLab) |
+| **Minimal Dialer** | Clean, simple phone dialer | - | [![In Development](https://img.shields.io/badge/Status-In_Development-orange?style=for-the-badge)](https://github.com/LeanBitLab) |
 
 ---
 
 ## 💡 Philosophy
 
-> **"Do one thing and do it well."**
+> **"Everything you need. Nothing you don't."**
 
-Every app we build follows the Unix philosophy — focused, efficient, and without unnecessary bloat.
+We build apps that are functional, efficient, and respect your resources — whether it's a simple utility or a complete productivity suite.
 
 ---
 
-## 📫 Get In Touch
+## � Support Us
 
-- 🌐 **Portfolio:** Coming soon
-- 💼 **Freelance:** Available for Android development
+We are currently setting up GitHub Sponsors! Once verified, you'll be able to support our work directly.
+
+---
+
+## �📫 Get In Touch
+
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) 
 
 ---
 
