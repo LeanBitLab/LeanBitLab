@@ -49,7 +49,7 @@ We are currently setting up GitHub Sponsors! Once verified, you'll be able to su
 
 ## 📫 Get In Touch
 
-[![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) [![X (Twitter)](https://img.shields.io/badge/X-Follow_Us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/LeanBitLab) [![Reddit](https://img.shields.io/badge/Reddit-Join_Community-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/LeanBitLab)
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) [![X (Twitter)](https://img.shields.io/badge/-Follow_Us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/LeanBitLab) [![Reddit](https://img.shields.io/badge/Reddit-Join_Community-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/LeanBitLab)
 
 ---
 
