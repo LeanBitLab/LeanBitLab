@@ -12,7 +12,7 @@
 
 <br/>
 
-[![Total Stars](https://img.shields.io/github/stars/LeanBitLab?style=flat&logo=github&color=7C4DFF&label=Total%20Stars)](https://github.com/LeanBitLab) [![Total Commits](https://img.shields.io/badge/Total_Commits-72-7C4DFF?style=flat&logo=git)](https://github.com/LeanBitLab)
+[![Total Stars](https://img.shields.io/github/stars/LeanBitLab?style=flat&logo=github&color=7C4DFF&label=Total%20Stars)](https://github.com/LeanBitLab) [![Total Commits](https://img.shields.io/badge/Total_Commits-72-7C4DFF?style=flat&logo=git&logoColor=white)](https://github.com/LeanBitLab)
 
 </div>
 
