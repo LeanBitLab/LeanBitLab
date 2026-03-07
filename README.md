@@ -12,11 +12,7 @@
 
 <br/>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=dark&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF&hide=issues,prs,contribs&hide_rank=true&count_private=true&disable_animations=true&text_bold=false&layout=compact&hide_title=true">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF&hide=issues,prs,contribs&hide_rank=true&count_private=true&disable_animations=true&text_bold=false&layout=compact&hide_title=true">
-  <img alt="GitHub Stats" src="https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF&hide=issues,prs,contribs&hide_rank=true&count_private=true&disable_animations=true&text_bold=false&layout=compact&hide_title=true">
-</picture>
+[![Total Stars](https://img.shields.io/github/stars/LeanBitLab?style=flat&logo=github&color=7C4DFF&label=Total%20Stars)](https://github.com/LeanBitLab) [![Total Commits](https://img.shields.io/badge/Total_Commits-72-7C4DFF?style=flat&logo=git)](https://github.com/LeanBitLab)
 
 </div>
 
