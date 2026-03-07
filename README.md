@@ -12,7 +12,11 @@
 
 <br/>
 
-![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=transparent&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=dark&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF&hide=issues,prs,contribs&hide_rank=true&count_private=true&disable_animations=true&text_bold=false&layout=compact&hide_title=true">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF&hide=issues,prs,contribs&hide_rank=true&count_private=true&disable_animations=true&text_bold=false&layout=compact&hide_title=true">
+  <img alt="GitHub Stats" src="https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF&hide=issues,prs,contribs&hide_rank=true&count_private=true&disable_animations=true&text_bold=false&layout=compact&hide_title=true">
+</picture>
 
 </div>
 
