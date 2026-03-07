@@ -12,7 +12,7 @@
 
 <br/>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=LeanBitLab&show_icons=true&theme=transparent&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF)
+![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=LeanBitLab&show_icons=true&theme=transparent&hide_border=true&title_color=7C4DFF&icon_color=7C4DFF)
 
 </div>
 
