@@ -8,7 +8,7 @@
 
 **Crafting bloat-free, efficient Android experiences.**
 
-[![GitHub](https://img.shields.io/badge/GitHub-LeanBitLab-181717?style=flat&logo=github)](https://github.com/LeanBitLab)
+[![GitHub](https://img.shields.io/badge/GitHub-LeanBitLab-181717?style=flat&logo=github)](https://github.com/LeanBitLab) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-EA4AAA?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab)
 
 <br/>
 
@@ -47,7 +47,9 @@ We build apps that are functional, efficient, and respect your resources — whe
 
 ## Support Us
 
-We are currently setting up GitHub Sponsors! Once verified, you'll be able to support our work directly.
+Your support helps us maintain our current projects and develop new bloat-free Android experiences.
+
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
 
 ---
 
