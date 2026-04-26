@@ -2,17 +2,17 @@
 
 <div align="center">
 
-![LeanBitLab](leanbitlabbanner.png)
+<img src="leanbitlabbanner.png" alt="LeanBitLab Banner" width="100%">
 
 ### Build lean. Build right.
 
-**Crafting bloat-free, efficient Android experiences.**
+**Crafting bloat-free, efficient Android and Linux experiences.**
 
-[![GitHub](https://img.shields.io/badge/GitHub-LeanBitLab-181717?style=flat&logo=github)](https://github.com/LeanBitLab) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-EA4AAA?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab)
-
+[![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab)
 <br/>
 
-[![Total Stars](https://img.shields.io/github/stars/LeanBitLab?style=flat&logo=github&color=7C4DFF&label=Total%20Stars)](https://github.com/LeanBitLab) [![Total Commits](https://img.shields.io/badge/Total_Commits-72-7C4DFF?style=flat&logo=git&logoColor=white)](https://github.com/LeanBitLab)
+<!-- GitHub Stats with Total Commits including all repos -->
+[![LeanBitLab's GitHub stats](https://github-readme-stats.vercel.app/api?username=LeanBitLab&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&hide=commits,issues,contribs)](https://github.com/LeanBitLab)
 
 </div>
 
@@ -20,11 +20,11 @@
 
 ## 🚀 What We Build
 
-We create open-source Android applications focused on **efficiency**, **privacy**, and **user experience**. We specialize in building bloat-free, high-performance software that respects device resources and delivers a premium user experience.
+We create open-source applications focused on **efficiency**, **privacy**, and **user experience**. We specialize in building bloat-free, high-performance software that respects device resources and delivers a premium user experience across Android and Linux environments.
 
 ---
 
-## 🛠️ Current Projects
+## 📱 Android Projects
 
 | Project | Description | Status |
 |---------|-------------|--------|
@@ -37,6 +37,14 @@ We create open-source Android applications focused on **efficiency**, **privacy*
 
 ---
 
+## 💻 Other Projects
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| **[Adaptive Brightness Linux](https://github.com/LeanBitLab/adaptive-brightness-linux)** | Adaptive brightness control for Linux displays | [![Stars](https://img.shields.io/github/stars/LeanBitLab/adaptive-brightness-linux?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers) |
+
+---
+
 ## 💡 Philosophy
 
 > **"Everything you need. Nothing you don't."**
@@ -45,22 +53,26 @@ We build apps that are functional, efficient, and respect your resources — whe
 
 ---
 
-## Support Us
+## ❤️ Support Us
 
-Your support helps us maintain our current projects and develop new bloat-free Android experiences.
+Your support helps us maintain our current projects and develop new bloat-free experiences.
 
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
 
 ---
 
 ## 📫 Get In Touch
 
-[![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) [![Reddit](https://img.shields.io/badge/Reddit-r/LeanBitLab__-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/LeanBitLab_/) [![X (Twitter)](https://img.shields.io/badge/-Follow_Us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/LeanBitLab)
+<div align="center">
+
+[![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) 
+[![Reddit](https://img.shields.io/badge/Reddit-r/LeanBitLab__-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/LeanBitLab_/) 
+[![X (Twitter)](https://img.shields.io/badge/-Follow_Us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/LeanBitLab)
+
+</div>
 
 ---
 
 <div align="center">
-
-**Open Source • Privacy Focused • Bloat Free**
-
+  <b>Open Source • Privacy Focused • Bloat Free</b>
 </div>
