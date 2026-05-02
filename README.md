@@ -12,7 +12,10 @@
 <br/>
 
 <!-- GitHub Stats with Total Commits including all repos -->
-[![LeanBitLab's GitHub stats](https://github-readme-stats.vercel.app/api?username=LeanBitLab&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&hide=commits,issues,contribs)](https://github.com/LeanBitLab)
+<a href="https://github.com/LeanBitLab">
+  <img src="https://github-stats-extended.vercel.app/api?username=LeanBitLab&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true#gh-dark-mode-only" alt="LeanBitLab's GitHub stats" />
+  <img src="https://github-stats-extended.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true#gh-light-mode-only" alt="LeanBitLab's GitHub stats" />
+</a>
 
 </div>
 
