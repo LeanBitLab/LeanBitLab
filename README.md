@@ -12,10 +12,8 @@
 <br/>
 
 <!-- GitHub Stats with Total Commits including all repos -->
-<a href="https://github.com/LeanBitLab">
-  <img src="https://github-stats-extended.vercel.app/api?username=LeanBitLab&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true#gh-dark-mode-only" alt="LeanBitLab's GitHub stats" />
-  <img src="https://github-stats-extended.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true#gh-light-mode-only" alt="LeanBitLab's GitHub stats" />
-</a>
+[![LeanBitLab's GitHub stats](https://github-stats-extended.vercel.app/api?username=LeanBitLab&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true#gh-dark-mode-only)](https://github.com/LeanBitLab)
+[![LeanBitLab's GitHub stats](https://github-stats-extended.vercel.app/api?username=LeanBitLab&show_icons=true&theme=default&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true#gh-light-mode-only)](https://github.com/LeanBitLab)
 
 </div>
 
