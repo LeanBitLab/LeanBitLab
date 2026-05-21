@@ -47,7 +47,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **[Adaptive Brightness Linux](https://github.com/LeanBitLab/adaptive-brightness-linux)** | Adaptive brightness control for Linux displays | [![Stars](https://img.shields.io/github/stars/LeanBitLab/adaptive-brightness-linux?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers) |
+| **[Adaptive Brightness Linux](https://github.com/LeanBitLab/adaptive-brightness-linux)** | Adaptive brightness control for Linux displays | [![Stars](https://img.shields.io/github/stars/LeanBitLab/adaptive-brightness-linux?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/adaptive-brightness-linux/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest) |
 
 ---
 
