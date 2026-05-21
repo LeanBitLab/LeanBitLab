@@ -14,9 +14,9 @@
 <!-- GitHub Stats with Total Commits including all repos -->
 <a href="https://github.com/LeanBitLab">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=leanbitlab&show_icons=true&theme=radical&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true&v=5">
-    <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api?username=leanbitlab&show_icons=true&theme=default&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true&v=5">
-    <img alt="LeanBitLab's GitHub stats" src="https://github-stats-extended.vercel.app/api?username=leanbitlab&show_icons=true&theme=default&bg_color=00000000&hide_border=true&hide=issues,contribs&include_all_commits=true&v=5">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=leanbitlab&amp;show_icons=true&amp;theme=radical&amp;bg_color=00000000&amp;hide_border=true&amp;hide=issues%2Ccontribs&amp;include_all_commits=true&amp;v=6">
+    <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api?username=leanbitlab&amp;show_icons=true&amp;theme=default&amp;bg_color=00000000&amp;hide_border=true&amp;hide=issues%2Ccontribs&amp;include_all_commits=true&amp;v=6">
+    <img alt="LeanBitLab's GitHub stats" src="https://github-stats-extended.vercel.app/api?username=leanbitlab&amp;show_icons=true&amp;theme=default&amp;bg_color=00000000&amp;hide_border=true&amp;hide=issues%2Ccontribs&amp;include_all_commits=true&amp;v=6">
   </picture>
 </a>
 
