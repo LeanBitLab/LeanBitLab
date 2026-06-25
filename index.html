@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LeanBitLab - Crafting bloat-free, efficient, privacy-focused open source experiences for Android and Linux.">
+  <title>LeanBitLab | Build Lean. Build Right.</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind/FontAwesome/etc is avoided; standard CSS only -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Gradients -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-accent">Lean</span>BitLab
+      </a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#contact" class="btn btn-secondary">Contact</a>
+      </nav>
+      <a href="https://github.com/sponsors/LeanBitLab" target="_blank" class="btn btn-primary nav-cta">
+        Sponsor Us
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="badge-pill">
+        <span>🚀 Open Source • Privacy Focused • Bloat Free</span>
+      </div>
+      <h1>Build lean. <br><span class="text-gradient">Build right.</span></h1>
+      <p class="hero-sub">
+        Everything you need. Nothing you don't. We craft high-performance, resource-respecting software that respects your device and your privacy across Android and Linux.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Explore Projects</a>
+        <a href="https://github.com/sponsors/LeanBitLab" target="_blank" class="btn btn-secondary">
+          <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          Sponsor Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Projects</h2>
+        <p>Resource-respecting applications built for power and simplicity.</p>
+        <div class="filter-tabs">
+          <button class="tab-btn active" onclick="filterProjects('all')">All</button>
+          <button class="tab-btn" onclick="filterProjects('android')">Android</button>
+          <button class="tab-btn" onclick="filterProjects('linux')">Linux</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- LeanType -->
+        <div class="project-card" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <span class="project-type">Android</span>
+            <h3>LeanType</h3>
+            <p>AI-enhanced keyboard featuring custom providers, dedicated clipboard keys, and smart completion.</p>
+            <div class="project-stats" id="stats-leantype">
+              <div class="stat-item">
+                <span class="stat-label">Stars</span>
+                <span class="stat-val" id="stars-leantype">500</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Downloads</span>
+                <span class="stat-val" id="downloads-leantype">32.8k</span>
+              </div>
+            </div>
+            <a href="https://github.com/LeanBitLab/LeanType" target="_blank" class="card-link">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- LTvLauncher -->
+        <div class="project-card" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <span class="project-type">Android</span>
+            <h3>LTvLauncher</h3>
+            <p>Minimal Android TV launcher equipped with WiFi widget and OLED screensaver protection.</p>
+            <div class="project-stats" id="stats-ltvlauncher">
+              <div class="stat-item">
+                <span class="stat-label">Stars</span>
+                <span class="stat-val" id="stars-ltvlauncher">222</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Downloads</span>
+                <span class="stat-val" id="downloads-ltvlauncher">13.5k</span>
+              </div>
+            </div>
+            <a href="https://github.com/LeanBitLab/LtvLauncher" target="_blank" class="card-link">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Lwidget -->
+        <div class="project-card" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <span class="project-type">Android</span>
+            <h3>Lwidget</h3>
+            <p>Unified widget for tracking time, calendar events, tasks, battery, and mobile data usage.</p>
+            <div class="project-stats" id="stats-lwidget">
+              <div class="stat-item">
+                <span class="stat-label">Stars</span>
+                <span class="stat-val" id="stars-lwidget">34</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Downloads</span>
+                <span class="stat-val" id="downloads-lwidget">548</span>
+              </div>
+            </div>
+            <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" class="card-link">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Handwriting Plugin -->
+        <div class="project-card" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <span class="project-type">Android</span>
+            <h3>Handwriting Plugin</h3>
+            <p>Layout extension enabling handwriting recognition inputs inside the LeanType keyboard.</p>
+            <div class="project-stats" id="stats-leantype-handwriting-plugin">
+              <div class="stat-item">
+                <span class="stat-label">Stars</span>
+                <span class="stat-val" id="stars-leantype-handwriting-plugin">4</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Downloads</span>
+                <span class="stat-val" id="downloads-leantype-handwriting-plugin">191</span>
+              </div>
+            </div>
+            <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" class="card-link">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Adaptive Brightness Linux -->
+        <div class="project-card" data-category="linux">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <span class="project-type">Linux</span>
+            <h3>Adaptive Brightness</h3>
+            <p>Backlight manager providing smooth, ambient-light adaptive brightness control for Linux displays.</p>
+            <div class="project-stats" id="stats-adaptive-brightness-linux">
+              <div class="stat-item">
+                <span class="stat-label">Stars</span>
+                <span class="stat-val" id="stars-adaptive-brightness-linux">8</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Downloads</span>
+                <span class="stat-val" id="downloads-adaptive-brightness-linux">1</span>
+              </div>
+            </div>
+            <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" class="card-link">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- LeanBook -->
+        <div class="project-card in-development" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-badge">In Development</div>
+            <span class="project-type">Android</span>
+            <h3>LeanBook</h3>
+            <p>Unified lightweight bookkeeper for managing personal notes, tasks, bill reminders, and lists.</p>
+            <a href="https://github.com/LeanBitLab" target="_blank" class="card-link">Follow Progress &rarr;</a>
+          </div>
+        </div>
+
+        <!-- RedditTube -->
+        <div class="project-card in-development" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-badge">In Development</div>
+            <span class="project-type">Android</span>
+            <h3>RedditTube</h3>
+            <p>Ad-free, optimized client offering a fluid YouTube-like UI tailored for browsing Reddit videos.</p>
+            <a href="https://github.com/LeanBitLab" target="_blank" class="card-link">Follow Progress &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Minimal Dialer -->
+        <div class="project-card in-development" data-category="android">
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-badge">In Development</div>
+            <span class="project-type">Android</span>
+            <h3>Minimal Dialer</h3>
+            <p>Stripped-down, high-speed dialer utility focused entirely on calls and search with no bloat.</p>
+            <a href="https://github.com/LeanBitLab" target="_blank" class="card-link">Follow Progress &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="philosophy-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Philosophy</h2>
+        <p>Software should serve the user, not exhaust the hardware.</p>
+      </div>
+      <div class="philosophy-grid">
+        <div class="phil-card">
+          <div class="phil-icon">🔓</div>
+          <h3>Open Source</h3>
+          <p>Fully auditable, transparent code. No hidden telemetry, no proprietary black boxes. Community driven and free forever.</p>
+        </div>
+        <div class="phil-card">
+          <div class="phil-icon">🛡️</div>
+          <h3>Privacy First</h3>
+          <p>We do not track, collect, or monetize your activity. Your personal configurations and logs stay safely on your local device.</p>
+        </div>
+        <div class="phil-card">
+          <div class="phil-icon">⚡</div>
+          <h3>Zero Bloat</h3>
+          <p>Strictly optimized layouts, low memory usage, and zero unnecessary dependencies. Built to make old devices feel brand new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section id="sponsors" class="sponsors-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Supported By</h2>
+        <p>Special thanks to the amazing people keeping the lab running.</p>
+      </div>
+      
+      <div class="sponsors-marquee-container">
+        <marquee scrollamount="4" behavior="scroll" direction="left">
+          <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank">BeppeBoppo</a></span>
+          <span class="sponsor-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank">as3droid</a></span>
+          <span class="sponsor-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank">wshrguy</a></span>
+          <span class="sponsor-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank">SRGWML</a></span>
+          <span class="sponsor-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank">adven2rer</a></span>
+          <span class="sponsor-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="sponsor-name anonymous">Re******* (Private Sponsor)</span>
+        </marquee>
+      </div>
+
+      <div class="sponsors-cta">
+        <p>Want to support open-source, bloat-free software?</p>
+        <a href="https://github.com/sponsors/LeanBitLab" target="_blank" class="btn btn-primary">Become a Sponsor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3><span class="logo-accent">Lean</span>BitLab</h3>
+        <p>Crafting bloat-free, efficient experiences for Android and Linux.</p>
+        <span class="copyright">&copy; 2026 LeanBitLab. Open Source.</span>
+      </div>
+      <div class="footer-links">
+        <h4>Community</h4>
+        <a href="https://t.me/LeanBitLab" target="_blank">Telegram Channel</a>
+        <a href="https://www.reddit.com/r/LeanBitLab_/" target="_blank">Reddit Community</a>
+        <a href="https://x.com/LeanBitLab" target="_blank">Twitter / X</a>
+        <a href="https://github.com/LeanBitLab" target="_blank">GitHub Org</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
