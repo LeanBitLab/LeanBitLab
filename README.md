@@ -8,7 +8,7 @@
 
 **Crafting bloat-free, efficient Android and Linux experiences.**
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab) [![Total Downloads](https://img.shields.io/badge/Total%20Downloads-47.0k-7C4DFF?style=flat&logo=github)](https://github.com/LeanBitLab)
+[![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab) [![Total Downloads](https://img.shields.io/badge/Total%20Downloads-47.1k-7C4DFF?style=flat&logo=github)](https://github.com/LeanBitLab)
 <br/>
 
 <!-- GitHub Stats with Total Commits including all repos -->
@@ -34,11 +34,12 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
 
 | Project | Description | Status |
 |---------|-------------|--------|
+| **[LeanType](https://github.com/LeanBitLab/LeanType)** | AI-enhanced keyboard with custom providers & dedicated keys | [![Stars](https://img.shields.io/badge/Stars-500-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LeanType/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-32.8k-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LeanType/releases/latest) |
+| **[LTvLauncher](https://github.com/LeanBitLab/LtvLauncher)** | Minimal TV launcher with WiFi widget & OLED screensaver | [![Stars](https://img.shields.io/badge/Stars-222-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LtvLauncher/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-13.5k-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LtvLauncher/releases/latest) |
+| **[Lwidget](https://github.com/LeanBitLab/Lwidget)** | Time, events, tasks, battery & data usage widget | [![Stars](https://img.shields.io/badge/Stars-34-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Lwidget/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-548-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Lwidget/releases/latest) |
+| **[LeanType Handwriting Plugin](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin)** | Handwriting recognition layout plugin for LeanType | [![Stars](https://img.shields.io/badge/Stars-4-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-191-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest) |
 | **LeanBook** | Notes, Tasks, Reminders, Bills, Shopping list | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
 | **RedditTube** | YouTube-like UI for Reddit videos | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
-| **[LeanType](https://github.com/LeanBitLab/HeliboardL)** | AI-enhanced keyboard with custom providers & dedicated keys | [![Stars](https://img.shields.io/github/stars/LeanBitLab/HeliboardL?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/HeliboardL/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/HeliboardL/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/HeliboardL/releases/latest) |
-| **[LTvLauncher](https://github.com/LeanBitLab/FlauncherL)** | Minimal TV launcher with WiFi widget & OLED screensaver | [![Stars](https://img.shields.io/github/stars/LeanBitLab/FlauncherL?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/FlauncherL/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/FlauncherL/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/FlauncherL/releases/latest) |
-| **[Lwidget](https://github.com/LeanBitLab/Lwidget)** | Time, events, tasks, battery & data usage widget | [![Stars](https://img.shields.io/github/stars/LeanBitLab/Lwidget?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/Lwidget/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/Lwidget/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/Lwidget/releases/latest) |
 | **Minimal Dialer** | Clean, simple phone dialer | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
 
 ---
@@ -47,7 +48,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **[Adaptive Brightness Linux](https://github.com/LeanBitLab/adaptive-brightness-linux)** | Adaptive brightness control for Linux displays | [![Stars](https://img.shields.io/github/stars/LeanBitLab/adaptive-brightness-linux?style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers) [![Downloads](https://img.shields.io/github/downloads/LeanBitLab/adaptive-brightness-linux/total?label=Downloads&style=flat-square&color=7C4DFF)](https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest) |
+| **[Adaptive Brightness Linux](https://github.com/LeanBitLab/adaptive-brightness-linux)** | Adaptive brightness control for Linux displays | [![Stars](https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-1-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest) |
 
 ---
 
@@ -64,6 +65,19 @@ We build apps that are functional, efficient, and respect your resources — whe
 Your support helps us maintain our current projects and develop new bloat-free experiences.
 
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
+
+### 💖 Active Sponsors
+
+Thank you to our amazing sponsors!
+
+<marquee scrollamount="4" behavior="scroll" direction="left">
+  <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong><a href="https://github.com/as3droid">as3droid</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>Re******* (Private Sponsor)</strong>
+</marquee>
 
 ---
 

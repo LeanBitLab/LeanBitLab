@@ -1,4 +1,4 @@
-name: Update Total Downloads Badge
+name: Update README Badges
 
 on:
   schedule:
@@ -30,4 +30,4 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: update total downloads badge count" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: update README badges" && git push)
