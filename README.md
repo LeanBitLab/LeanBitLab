@@ -70,29 +70,15 @@ Your support helps us maintain our current projects and develop new bloat-free e
 
 Thank you to our amazing sponsors!
 
-<marquee scrollamount="4" behavior="scroll" direction="left">
-  <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/as3droid">as3droid</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong>Re******* (Private Sponsor)</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/as3droid">as3droid</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong>Re******* (Private Sponsor)</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/as3droid">as3droid</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p align="center">
+  <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/as3droid">as3droid</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&bull;&nbsp;
   <strong>Re******* (Private Sponsor)</strong>
-</marquee>
+</p>
 
 ---
 
