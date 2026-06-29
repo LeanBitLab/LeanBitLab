@@ -170,6 +170,23 @@ nav a:hover {
   width: 16px;
   height: 16px;
 }
+.btn-kofi {
+  background-color: #ff5f5f;
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px rgba(255, 95, 95, 0.35);
+}
+.btn-kofi:hover {
+  background-color: #ff7d7d;
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 95, 95, 0.5);
+}
+.kofi-icon {
+  width: 16px;
+  height: 16px;
+}
 
 /* --- Hero Section --- */
 .hero-section {
@@ -443,6 +460,12 @@ nav a:hover {
   font-size: 16px;
   color: var(--text-secondary);
   margin-bottom: 20px;
+}
+.sponsors-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* --- Footer --- */
