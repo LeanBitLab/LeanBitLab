@@ -8,7 +8,7 @@
 
 **Crafting bloat-free, efficient Android and Linux experiences.**
 
-[![Website](https://img.shields.io/badge/Website-leanbitlab.github.io-7C4DFF?style=flat&logo=google-chrome&logoColor=white)](https://leanbitlab.github.io/LeanBitLab/) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab) [![Ko-fi](https://img.shields.io/badge/Ko--fi-LeanBitLab-F16061?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/leanbitlab) [![Total Downloads](https://img.shields.io/badge/Total%20Downloads-50.2k-7C4DFF?style=flat&logo=github)](https://github.com/LeanBitLab)
+[![Website](https://img.shields.io/badge/Website-leanbitlab.github.io-7C4DFF?style=flat&logo=google-chrome&logoColor=white)](https://leanbitlab.github.io/LeanBitLab/) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab) [![Total Downloads](https://img.shields.io/badge/Total%20Downloads-50.2k-7C4DFF?style=flat&logo=github)](https://github.com/LeanBitLab)
 <br/>
 
 <!-- GitHub Stats with Total Commits including all repos -->
@@ -64,7 +64,7 @@ We build apps that are functional, efficient, and respect your resources — whe
 
 Your support helps us maintain our current projects and develop new bloat-free experiences.
 
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab) [![Ko-fi](https://img.shields.io/badge/Ko--fi-LeanBitLab-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/leanbitlab)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
 
 ### 💖 Active Sponsors
 
@@ -78,7 +78,8 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/Redoregon">Redoregon</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/VinVel">VinVel</a></strong>
+  <strong><a href="https://github.com/VinVel">VinVel</a></strong> &nbsp;&bull;&nbsp;
+  <strong>Johan Marten</strong>
 </p>
 
 ---
