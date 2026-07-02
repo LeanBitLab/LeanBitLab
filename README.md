@@ -77,7 +77,8 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/Redoregon">Redoregon</a></strong>
+  <strong><a href="https://github.com/Redoregon">Redoregon</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/VinVel">VinVel</a></strong>
 </p>
 
 ---
