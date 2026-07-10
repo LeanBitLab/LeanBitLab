@@ -71,9 +71,9 @@ Your support helps us maintain our current projects and develop new bloat-free e
 Thank you to our amazing sponsors!
 
 <p align="center">
+  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/as3droid">as3droid</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/SRGWML">SRGWML</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/adven2rer">adven2rer</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&bull;&nbsp;
