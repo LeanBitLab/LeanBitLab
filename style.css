@@ -151,6 +151,8 @@ header.scrolled {
   font-weight: 700;
   letter-spacing: -0.2px;
   margin: 0 1px;
+  display: inline-block;
+  transform: translateY(1.2px); /* Shifted down to align baseline with standard letters */
 }
 .footer-logo {
   font-size: 24px;
