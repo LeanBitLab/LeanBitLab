@@ -27,6 +27,97 @@ const repoScreenshots = {
   }
 };
 
+// Config mapping of repositories to their raw README files and features section headers
+const readmeConfig = {
+  'leantype': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType/main/README.md',
+    header: "## What's New in LeanType"
+  },
+  'ltvlauncher': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LtvLauncher/master/README.md',
+    header: "## Key Features & Enhancements"
+  },
+  'lwidget': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/Lwidget/main/README.md',
+    header: "## Features"
+  },
+  'leantype-handwriting-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/Leantype-Handwriting-Plugin/main/README.md',
+    header: "## How it works"
+  },
+  'adaptive-brightness-linux': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/README.md',
+    header: "## 🚀 Key Features"
+  }
+};
+
+// Static features backup database to serve as fallbacks in case of rate limits or offline state
+const fallbackFeatures = {
+  'leantype': [
+    '<strong>🤖 Multi-Provider AI</strong> - Proofread using Gemini, Groq, or OpenAI-compatible providers.',
+    '<strong>🛡️ Offline AI (GGUF)</strong> - Private, on-device translation using local GGUF models powered by llama.cpp.',
+    '<strong>🌐 AI Translation</strong> - Translate selected text directly using your chosen AI provider.',
+    '<strong>🧠 Custom AI Keys</strong> - Assign custom prompts, personas, and themed capsules to 10 customizable keys.',
+    '<strong>🧭 Text Editing Mode</strong> - Gboard-style panel with precise DPAD navigation and editing utilities.',
+    '<strong>✍️ Handwriting Input</strong> - Support handwriting recognition canvas using dynamic plugin imports.',
+    '<strong>👆 Gesture Typing</strong> - Built-in gesture engine removing dependency on proprietary Google binaries.',
+    '<strong>🖱️ Touchpad Mode</strong> - Swipe spacebar up to toggle touchpad with custom sensitivity controls.',
+    '<strong>📝 Text Expander</strong> - Built-in expansion tool supporting custom shortcuts and template variables.',
+    '<strong>🪟 Floating Keyboard</strong> - Detach the keyboard into a draggable window for seamless multitasking.',
+    '<strong>⌨️ Dual Toolbar / Split Suggestions</strong> - Option to split suggestions and toolbar for easier access.',
+    '<strong>📥 Dynamic Downloader</strong> - Standard version dynamically downloads layout/emoji dictionaries on demand.',
+    '<strong>🔍 Clipboard Search & Undo</strong> - Search through clipboard history and undo accidental item deletions.',
+    '<strong>📸 Screenshot Suggestion & Clipboard</strong> - Suggests recently taken screenshots for quick suggestion strip sharing.',
+    '<strong>🔎 Emoji Search</strong> - Search for emojis by name.',
+    '<strong>🚫 Blocked Words Blacklist</strong> - Prevent unwanted words from being suggested with regex pattern support.',
+    '<strong>✉️ Auto-Read OTP</strong> - Automatically reads OTP codes from SMS notifications for quick entry.',
+    '<strong>💾 Selective Backup & Restore</strong> - Backup and restore settings and AI configurations selectively.',
+    '<strong>⌨️ Direct Switch IME</strong> - Map custom keycode to any toolbar key to switch directly to another input method.',
+    '<strong>🎨 Custom Layouts</strong> - Save up to five custom layout profiles with persistent slot tracking.',
+    '<strong>🔒 Privacy Choices</strong> - Choose Standard, Offline (no network), or Offline Lite (minimalist) versions.',
+    '<strong>🎨 Modern UI</strong> - "Squircle" key backgrounds, refined icons, and polished aesthetics.',
+    '<strong>🕵️ Clear Incognito Mode</strong> - Distinct "Hat & Glasses" icon for clear visibility.',
+    '<strong>🔄 Google Dictionary Import</strong> - Easily import your personal dictionary words.',
+    '<strong>⚙️ Enhanced Customization</strong> - Force auto-capitalization toggle, reorganized settings, and more.'
+  ],
+  'ltvlauncher': [
+    '<strong>📊 Data Usage Widget</strong> - Track WiFi, Ethernet, and Mobile consumption directly from status bar.',
+    '<strong>🛡️ Inbuilt OLED Screensaver</strong> - Minimal screensaver with 30s clock position shifting to prevent burn-in.',
+    '<strong>🔌 Easy WiFi Access</strong> - Network indicator doubles as a shortcut to system WiFi settings.',
+    '<strong>⏱️ Quick Presets</strong> - Select Time/Date formats and Category names from a list without a keyboard.',
+    '<strong>☀️ Time-Based Wallpaper</strong> - Automatically switches between custom day and night backgrounds.',
+    '<strong>🌑 Pitch Black Wallpaper</strong> - Added a true black gradient background option.',
+    '<strong>🔳 Focus Indicator</strong> - New double-border design ensures perfect visibility on any background.',
+    '<strong>🧭 Smart Navigation</strong> - Fixed "bounce back" issues and optimized focus traversal.',
+    '<strong>⚙️ Refined Settings</strong> - Reorganized menus with a new "Miscellaneous" section.',
+    '<strong>🎨 Accent Color Support</strong> - Personalize the UI with multiple color presets.',
+    '<strong>👕 Themes</strong> - Switch between distinct styles (Default, Premium, Classic, Capsule).',
+    '<strong>🎭 Focus Customization</strong> - Toggle focus outline and transition animations.',
+    '<strong>💥 Edge Bump Animation</strong> - Visual feedback when reaching the edge of a row.'
+  ],
+  'lwidget': [
+    '<strong>📱 Unified Android Widget</strong> - Track time, calendar events, tasks, battery, and mobile data usage.',
+    '<strong>🎨 Material 3 Principles</strong> - Modern components built with dynamic system coloring support.',
+    '<strong>🌿 100% Free & FOSS</strong> - Bloat-free, resource-respecting, and completely open source with absolute privacy.'
+  ],
+  'leantype-handwriting-plugin': [
+    '<strong>Dynamic Plugin loader</strong> - APK isolates Google ML Kit Digital Ink Recognition to comply with FOSS guidelines.',
+    '<strong>DexClassLoader Engine</strong> - Core keyboard loads the handwriting APK dynamically only when imported by the user.'
+  ],
+  'adaptive-brightness-linux': [
+    '<strong>📈 Interactive Spline Curve</strong> - Draggable spline nodes to adjust 24-hour target levels in real time.',
+    '<strong>☀️ Circular Brightness Dial</strong> - Clean visual dial indicating current brightness and manual offsets.',
+    '<strong>⚙️ System Control Center</strong> - Enable/disable daemon, adjust now, restart timer, and clear overrides.',
+    '<strong>⏸️ Advanced Pause Controls</strong> - Temporarily pause auto adjustments for 1h, 3h, 8h, or indefinitely.',
+    '<strong>🎨 Visual Profile Editor</strong> - Add, edit, or delete dynamic time blocks and target levels.',
+    '<strong>💾 Force Learn Profiles</strong> - Instantly save manual override offsets into active time block memory.',
+    '<strong>🔄 Restore Defaults</strong> - Instantly resets curves to factory-calibrated defaults.'
+  ]
+};
+
+// Memory cache to prevent duplicate fetch requests
+const featuresCache = {};
+
 // Global variables to track the active gallery context for the fullscreen lightbox
 let activeCardPrevBtn = null;
 let activeCardNextBtn = null;
@@ -108,7 +199,7 @@ async function fetchGithubStats() {
   }
 }
 
-// Filter projects by category tab with smooth transitions
+// Filter projects by category tab
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');
   const buttons = document.querySelectorAll('.tab-btn');
@@ -128,12 +219,11 @@ function filterProjects(category) {
     if (matches) {
       card.classList.remove('filtered-out');
       card.style.display = 'block';
-      // Trigger reflow to ensure display change has taken effect
       card.offsetHeight; 
       card.classList.add('filtered-in');
     } else {
       card.classList.remove('filtered-in');
-      card.style.display = 'none'; // Instant layout collapse on filtered-out
+      card.style.display = 'none';
     }
   });
 }
@@ -159,7 +249,7 @@ function initSpotlightEffect() {
   });
 }
 
-// Fixed header scrolled styles toggler (passive scroll listener)
+// Fixed header scrolled styles toggler
 function initHeaderScroll() {
   const header = document.querySelector('header');
   if (header) {
@@ -322,6 +412,158 @@ function initOverlayNav(overlay, repoName) {
   updateImage(0);
 }
 
+// Helper to extract feature bullets under a specific heading inside README markdown text
+function extractFeatures(markdownText, repoName) {
+  const config = readmeConfig[repoName];
+  if (!config) return null;
+
+  const targetHeader = config.header;
+  const headerIdx = markdownText.indexOf(targetHeader);
+  if (headerIdx === -1) return null;
+
+  const contentStart = headerIdx + targetHeader.length;
+  let contentEnd = markdownText.length;
+  const nextHeaderRegex = /\n##[#]?\s+/g;
+  nextHeaderRegex.lastIndex = contentStart;
+  
+  const nextHeaderMatch = nextHeaderRegex.exec(markdownText);
+  if (nextHeaderMatch) {
+    contentEnd = nextHeaderMatch.index;
+  }
+
+  const sectionContent = markdownText.substring(contentStart, contentEnd).trim();
+  const lines = sectionContent.split('\n');
+  const items = [];
+
+  lines.forEach(line => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('-') || trimmed.startsWith('*')) {
+      let bullet = trimmed.substring(1).trim();
+      // Replace bold markdown formatting
+      bullet = bullet.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      // Replace italics markdown formatting
+      bullet = bullet.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      // Replace markdown links with secure HTML links
+      bullet = bullet.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      items.push(bullet);
+    } else if (repoName === 'leantype-handwriting-plugin' && trimmed.length > 0) {
+      let para = trimmed;
+      para = para.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      para = para.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+      para = para.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      items.push(para);
+    }
+  });
+
+  return items.length > 0 ? items : null;
+}
+
+// Lazy create the inline scrollable features list overlay container inside a card
+function createFeaturesOverlay(card, repoName) {
+  const overlay = document.createElement('div');
+  overlay.className = 'features-preview-overlay';
+  overlay.innerHTML = `
+    <button class="screenshot-close-btn" aria-label="Close Features">&times;</button>
+    <button class="screenshot-expand-btn" aria-label="Expand Features View">&#x2922;</button>
+    
+    <button class="features-scroll-btn features-scroll-up" aria-label="Scroll Up">&#x25B2;</button>
+    <div class="features-title">Features</div>
+    <div class="features-viewport">
+      <div class="screenshot-spinner" style="position: static; margin: 30px auto;"></div>
+      <ul class="features-list"></ul>
+    </div>
+    <button class="features-scroll-btn features-scroll-down" aria-label="Scroll Down">&#x25BC;</button>
+  `;
+  card.appendChild(overlay);
+
+  initFeaturesNav(overlay, repoName);
+  return overlay;
+}
+
+// Fetch features list and bind the scroll up/down buttons
+async function initFeaturesNav(overlay, repoName) {
+  const closeBtn = overlay.querySelector('.screenshot-close-btn');
+  const expandBtn = overlay.querySelector('.screenshot-expand-btn');
+  const viewport = overlay.querySelector('.features-viewport');
+  const listEl = overlay.querySelector('.features-list');
+  const spinnerEl = overlay.querySelector('.screenshot-spinner');
+  
+  const scrollUpBtn = overlay.querySelector('.features-scroll-up');
+  const scrollDownBtn = overlay.querySelector('.features-scroll-down');
+
+  // Close overlay handler
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    overlay.classList.remove('active');
+  });
+
+  // Expand features fullscreen handler
+  expandBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const lightbox = document.getElementById('features-lightbox');
+    const lightboxList = lightbox.querySelector('.features-lightbox-list');
+    if (lightbox && lightboxList) {
+      lightboxList.innerHTML = listEl.innerHTML;
+      lightbox.classList.add('active');
+    }
+  });
+
+  // Scroll controls (up & down) click triggers
+  scrollUpBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    viewport.scrollBy({ top: -80, behavior: 'smooth' });
+  });
+
+  scrollDownBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    viewport.scrollBy({ top: 80, behavior: 'smooth' });
+  });
+
+  // Block clicks propagating to card content
+  overlay.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  const renderFeatures = (features) => {
+    if (spinnerEl) spinnerEl.remove();
+    listEl.innerHTML = '';
+    features.forEach(feat => {
+      const li = document.createElement('li');
+      li.innerHTML = feat;
+      listEl.appendChild(li);
+    });
+  };
+
+  // Serve cache if already fetched
+  if (featuresCache[repoName]) {
+    renderFeatures(featuresCache[repoName]);
+    return;
+  }
+
+  const config = readmeConfig[repoName];
+  if (!config) {
+    renderFeatures(fallbackFeatures[repoName] || ['No features list available.']);
+    return;
+  }
+
+  try {
+    const response = await fetch(config.url);
+    if (!response.ok) throw new Error('Network error');
+    const text = await response.text();
+    const extracted = extractFeatures(text, repoName);
+    if (extracted) {
+      featuresCache[repoName] = extracted;
+      renderFeatures(extracted);
+    } else {
+      throw new Error('Parsing failed');
+    }
+  } catch (err) {
+    console.warn(`Failed to fetch features for ${repoName}, loading fallback data:`, err);
+    featuresCache[repoName] = fallbackFeatures[repoName];
+    renderFeatures(fallbackFeatures[repoName]);
+  }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
@@ -354,7 +596,27 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay = createScreenshotOverlay(card, repoName);
       }
       
-      // Trigger browser reflow and show overlay
+      overlay.offsetHeight;
+      overlay.classList.add('active');
+    });
+  });
+
+  // Set up features buttons click listeners
+  const featuresButtons = document.querySelectorAll('.btn-features');
+  featuresButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const repoName = btn.getAttribute('data-repo');
+      const card = btn.closest('.project-card');
+      if (!card) return;
+
+      let overlay = card.querySelector('.features-preview-overlay');
+      if (!overlay) {
+        overlay = createFeaturesOverlay(card, repoName);
+      }
+
       overlay.offsetHeight;
       overlay.classList.add('active');
     });
@@ -373,7 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.querySelector('.screenshot-lightbox-close').addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', closeLightbox);
     lightbox.querySelector('.screenshot-lightbox-img').addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent closing when clicking the image content
+      e.stopPropagation();
     });
 
     // Lightbox navigation bindings (synchronizes with card indices)
@@ -398,6 +660,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Fullscreen Features Lightbox close and scroll listeners
+  const featuresLightbox = document.getElementById('features-lightbox');
+  if (featuresLightbox) {
+    const closeFeatures = () => {
+      featuresLightbox.classList.remove('active');
+    };
+    featuresLightbox.querySelector('.features-lightbox-close').addEventListener('click', closeFeatures);
+    featuresLightbox.addEventListener('click', closeFeatures);
+    
+    const lightboxContent = featuresLightbox.querySelector('.features-lightbox-content');
+    lightboxContent.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Lightbox Scroll Up / Down clicks
+    const upBtn = featuresLightbox.querySelector('.features-lightbox-scroll-up');
+    if (upBtn) {
+      upBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxContent.scrollBy({ top: -150, behavior: 'smooth' });
+      });
+    }
+
+    const downBtn = featuresLightbox.querySelector('.features-lightbox-scroll-down');
+    if (downBtn) {
+      downBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lightboxContent.scrollBy({ top: 150, behavior: 'smooth' });
+      });
+    }
+  }
+
   // Mobile navigation drawer toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
@@ -408,7 +702,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('active');
     });
     
-    // Close menu when a link is clicked
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {

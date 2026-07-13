@@ -1271,3 +1271,266 @@ footer {
 .screenshot-lightbox-nav-next {
   right: 24px;
 }
+
+/* --- Card Action Buttons Layout --- */
+.card-buttons {
+  display: flex;
+  gap: 8px;
+}
+.btn-features {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+.btn-features:hover {
+  background: rgba(124, 77, 255, 0.1);
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+/* Inline Features Preview Overlay */
+.features-preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 12, 16, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 20px 24px; /* padding-top fits header close buttons */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 16px;
+}
+.features-preview-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.features-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-left: 4px;
+}
+.features-viewport {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  scroll-behavior: smooth;
+  position: relative;
+  padding: 12px 4px;
+}
+.features-viewport::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari/Opera */
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.features-list li {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 8px;
+}
+.features-list li strong {
+  color: var(--text-primary);
+}
+.features-list li a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.features-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll Buttons for Card Overlay */
+.features-scroll-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 12;
+  font-size: 10px;
+  transition: var(--transition-smooth);
+}
+.features-scroll-btn:hover {
+  background: var(--accent);
+  border-color: transparent;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+.features-scroll-up {
+  top: 8px; /* Safe padding spacing */
+}
+.features-scroll-down {
+  bottom: 8px;
+}
+
+/* Fullscreen Features Lightbox */
+.features-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 8, 12, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.features-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.features-lightbox-content {
+  width: 90%;
+  max-width: 650px;
+  height: 65%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.8);
+  transform: scale(0.95);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.features-lightbox.active .features-lightbox-content {
+  transform: scale(1);
+}
+.features-lightbox-content::-webkit-scrollbar {
+  display: none;
+}
+.features-lightbox-title {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+}
+.features-lightbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.features-lightbox-list li {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 12px;
+}
+.features-lightbox-list li strong {
+  color: var(--text-primary);
+}
+.features-lightbox-list li a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.features-lightbox-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Lightbox Scroll Buttons (Floating at top-center and bottom-center) */
+.features-lightbox-scroll {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2011;
+  font-size: 16px;
+  transition: var(--transition-smooth);
+}
+.features-lightbox-scroll:hover {
+  background: var(--accent);
+  border-color: transparent;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+.features-lightbox-scroll-up {
+  top: 8%; /* Safe viewport heights */
+}
+.features-lightbox-scroll-down {
+  bottom: 8%;
+}
+.features-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  z-index: 2012;
+  transition: var(--transition-smooth);
+}
+.features-lightbox-close:hover {
+  background: rgba(255, 95, 95, 0.3);
+  border-color: #ff5f5f;
+}

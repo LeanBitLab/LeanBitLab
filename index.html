@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LeanBitLab - Crafting bloat-free, efficient, privacy-focused open source experiences for Android and Linux.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.youtube.com https://*.ytimg.com https://*.makeuseofimages.com https://github-stats-extended.vercel.app https://raw.githubusercontent.com; connect-src 'self' https://api.github.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.youtube.com https://*.ytimg.com https://*.makeuseofimages.com https://github-stats-extended.vercel.app https://raw.githubusercontent.com; connect-src 'self' https://api.github.com https://raw.githubusercontent.com;">
   <title>LeanBitLab | Build Lean. Build Right.</title>
   
   <!-- Google Fonts -->
@@ -103,7 +103,10 @@
             </div>
             <div class="card-actions">
               <a href="https://github.com/LeanBitLab/LeanType" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
-              <button class="btn-screenshot" data-repo="leantype">Screenshots</button>
+              <div class="card-buttons">
+                <button class="btn-screenshot" data-repo="leantype">Screenshots</button>
+                <button class="btn-features" data-repo="leantype">Features</button>
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +130,10 @@
             </div>
             <div class="card-actions">
               <a href="https://github.com/LeanBitLab/LtvLauncher" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
-              <button class="btn-screenshot" data-repo="ltvlauncher">Screenshots</button>
+              <div class="card-buttons">
+                <button class="btn-screenshot" data-repo="ltvlauncher">Screenshots</button>
+                <button class="btn-features" data-repo="ltvlauncher">Features</button>
+              </div>
             </div>
           </div>
         </div>
@@ -151,7 +157,10 @@
             </div>
             <div class="card-actions">
               <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
-              <button class="btn-screenshot" data-repo="lwidget">Screenshots</button>
+              <div class="card-buttons">
+                <button class="btn-screenshot" data-repo="lwidget">Screenshots</button>
+                <button class="btn-features" data-repo="lwidget">Features</button>
+              </div>
             </div>
           </div>
         </div>
@@ -173,7 +182,12 @@
                 <span class="stat-val" id="downloads-leantype-handwriting-plugin">191</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+            <div class="card-actions">
+              <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+              <div class="card-buttons">
+                <button class="btn-features" data-repo="leantype-handwriting-plugin">Features</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -196,7 +210,10 @@
             </div>
             <div class="card-actions">
               <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
-              <button class="btn-screenshot" data-repo="adaptive-brightness-linux">Screenshots</button>
+              <div class="card-buttons">
+                <button class="btn-screenshot" data-repo="adaptive-brightness-linux">Screenshots</button>
+                <button class="btn-features" data-repo="adaptive-brightness-linux">Features</button>
+              </div>
             </div>
           </div>
         </div>
@@ -529,6 +546,17 @@
     <button class="screenshot-lightbox-nav screenshot-lightbox-nav-prev" aria-label="Previous Image">&lsaquo;</button>
     <img class="screenshot-lightbox-img" src="" alt="Fullscreen screenshot preview">
     <button class="screenshot-lightbox-nav screenshot-lightbox-nav-next" aria-label="Next Image">&rsaquo;</button>
+  </div>
+
+  <!-- Fullscreen Features Lightbox -->
+  <div id="features-lightbox" class="features-lightbox">
+    <button class="features-lightbox-close" aria-label="Close Fullscreen Features">&times;</button>
+    <button class="features-lightbox-scroll features-lightbox-scroll-up" aria-label="Scroll Up">&#x25B2;</button>
+    <div class="features-lightbox-content">
+      <h2 class="features-lightbox-title">Features</h2>
+      <ul class="features-lightbox-list"></ul>
+    </div>
+    <button class="features-lightbox-scroll features-lightbox-scroll-down" aria-label="Scroll Down">&#x25BC;</button>
   </div>
 
   <script src="script.js"></script>
