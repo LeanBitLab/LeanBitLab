@@ -134,9 +134,29 @@ header.scrolled {
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
 }
 .logo-accent {
   color: var(--accent);
+}
+.logo-e {
+  display: inline-block;
+  transform: rotate(-10deg) translateY(-0.5px); /* Tilted left and aligned */
+  transform-origin: center;
+}
+.logo-bit {
+  font-family: 'Silkscreen', monospace;
+  font-size: 0.85em; /* Scaled down slightly to align with Outfit line height */
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0 1px;
+}
+.logo-lab {
+  color: var(--text-primary);
+}
+.footer-logo {
+  font-size: 24px;
 }
 nav {
   display: flex;
