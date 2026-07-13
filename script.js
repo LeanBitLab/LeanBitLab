@@ -7,6 +7,31 @@ const repoMap = {
   'lwidget': 'lwidget'
 };
 
+// Database mapping of repositories to their screenshot files and raw URL paths
+const repoScreenshots = {
+  'leantype': {
+    baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/LeanType/main/docs/images/',
+    files: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
+  },
+  'ltvlauncher': {
+    baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/LtvLauncher/master/docs/images/',
+    files: ['screenshot_1.png', 'screenshot_2.png', 'screenshot_3.png', 'screenshot_4.png']
+  },
+  'lwidget': {
+    baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/Lwidget/main/docs/images/',
+    files: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png']
+  },
+  'adaptive-brightness-linux': {
+    baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/docs/screenshots/',
+    files: ['1.png', '2.png']
+  }
+};
+
+// Global variables to track the active gallery context for the fullscreen lightbox
+let activeCardPrevBtn = null;
+let activeCardNextBtn = null;
+let activeCardImgEl = null;
+
 // Format large numbers (e.g., 32848 -> 32.8k)
 function formatNumber(num) {
   if (num >= 1000) {
@@ -108,15 +133,7 @@ function filterProjects(category) {
       card.classList.add('filtered-in');
     } else {
       card.classList.remove('filtered-in');
-      card.classList.add('filtered-out');
-      
-      const onTransitionEnd = () => {
-        if (card.classList.contains('filtered-out')) {
-          card.style.display = 'none';
-        }
-        card.removeEventListener('transitionend', onTransitionEnd);
-      };
-      card.addEventListener('transitionend', onTransitionEnd);
+      card.style.display = 'none'; // Instant layout collapse on filtered-out
     }
   });
 }
@@ -186,6 +203,125 @@ function initScrollRevealFallback() {
   }
 }
 
+// Lazy create the inline screenshot gallery overlay container inside a card
+function createScreenshotOverlay(card, repoName) {
+  const overlay = document.createElement('div');
+  overlay.className = 'screenshot-preview-overlay';
+  overlay.innerHTML = `
+    <button class="screenshot-close-btn" aria-label="Close Preview">&times;</button>
+    <button class="screenshot-expand-btn" aria-label="Larger View">&#x2922;</button>
+    <div class="screenshot-spinner"></div>
+    <div class="screenshot-img-wrapper">
+      <button class="screenshot-nav-btn screenshot-nav-prev" aria-label="Previous image">&lsaquo;</button>
+      <img class="screenshot-img" alt="${repoName} screenshot" style="opacity: 0;">
+      <button class="screenshot-nav-btn screenshot-nav-next" aria-label="Next image">&rsaquo;</button>
+    </div>
+    <div class="screenshot-indicators"></div>
+  `;
+  card.appendChild(overlay);
+  
+  initOverlayNav(overlay, repoName);
+  return overlay;
+}
+
+// Set up gallery navigation logic for the screenshot overlay
+function initOverlayNav(overlay, repoName) {
+  const repoData = repoScreenshots[repoName];
+  if (!repoData) return;
+  
+  let currentIndex = 0;
+  const imgEl = overlay.querySelector('.screenshot-img');
+  const spinnerEl = overlay.querySelector('.screenshot-spinner');
+  const indicatorsContainer = overlay.querySelector('.screenshot-indicators');
+  
+  // Build dot indicators
+  repoData.files.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.className = 'screenshot-indicator-dot' + (idx === 0 ? ' active' : '');
+    indicatorsContainer.appendChild(dot);
+  });
+  
+  const updateImage = (index) => {
+    currentIndex = index;
+    spinnerEl.style.display = 'block';
+    imgEl.style.opacity = '0';
+    
+    // Update dots
+    const dots = indicatorsContainer.querySelectorAll('.screenshot-indicator-dot');
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    // Set raw image source from GitHub CDN
+    const filename = repoData.files[currentIndex];
+    imgEl.src = repoData.baseUrl + filename;
+  };
+  
+  // Fade in image when loaded and hide spinner
+  imgEl.addEventListener('load', () => {
+    spinnerEl.style.display = 'none';
+    imgEl.style.opacity = '1';
+    
+    // If fullscreen lightbox is open, synchronize its image source as well
+    const lightbox = document.getElementById('screenshot-lightbox');
+    if (lightbox && lightbox.classList.contains('active') && activeCardImgEl === imgEl) {
+      const lightboxImg = lightbox.querySelector('.screenshot-lightbox-img');
+      if (lightboxImg) {
+        lightboxImg.src = imgEl.src;
+      }
+    }
+  });
+  
+  // Prev navigation
+  overlay.querySelector('.screenshot-nav-prev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    let prevIdx = currentIndex - 1;
+    if (prevIdx < 0) prevIdx = repoData.files.length - 1;
+    updateImage(prevIdx);
+  });
+  
+  // Next navigation
+  overlay.querySelector('.screenshot-nav-next').addEventListener('click', (e) => {
+    e.stopPropagation();
+    let nextIdx = (currentIndex + 1) % repoData.files.length;
+    updateImage(nextIdx);
+  });
+  
+  // Close overlay
+  overlay.querySelector('.screenshot-close-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    overlay.classList.remove('active');
+  });
+
+  // Expand (Larger View) handler
+  overlay.querySelector('.screenshot-expand-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const lightbox = document.getElementById('screenshot-lightbox');
+    const lightboxImg = lightbox.querySelector('.screenshot-lightbox-img');
+    if (lightbox && lightboxImg) {
+      // Store references to this card's controllers for fullscreen navigation
+      activeCardPrevBtn = overlay.querySelector('.screenshot-nav-prev');
+      activeCardNextBtn = overlay.querySelector('.screenshot-nav-next');
+      activeCardImgEl = imgEl;
+      
+      lightboxImg.src = imgEl.src;
+      lightbox.classList.add('active');
+    }
+  });
+  
+  // Prevent click propagation within the overlay to keep the repository link safe
+  overlay.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+  
+  // Display initial image
+  updateImage(0);
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
@@ -201,6 +337,66 @@ document.addEventListener('DOMContentLoaded', () => {
       filterProjects(category);
     });
   });
+
+  // Set up screenshot buttons click listeners
+  const screenshotButtons = document.querySelectorAll('.btn-screenshot');
+  screenshotButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const repoName = btn.getAttribute('data-repo');
+      const card = btn.closest('.project-card');
+      if (!card) return;
+      
+      let overlay = card.querySelector('.screenshot-preview-overlay');
+      if (!overlay) {
+        overlay = createScreenshotOverlay(card, repoName);
+      }
+      
+      // Trigger browser reflow and show overlay
+      overlay.offsetHeight;
+      overlay.classList.add('active');
+    });
+  });
+
+  // Fullscreen Lightbox setup and close listeners
+  const lightbox = document.getElementById('screenshot-lightbox');
+  if (lightbox) {
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      activeCardPrevBtn = null;
+      activeCardNextBtn = null;
+      activeCardImgEl = null;
+    };
+    
+    lightbox.querySelector('.screenshot-lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', closeLightbox);
+    lightbox.querySelector('.screenshot-lightbox-img').addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent closing when clicking the image content
+    });
+
+    // Lightbox navigation bindings (synchronizes with card indices)
+    const prevLightboxBtn = lightbox.querySelector('.screenshot-lightbox-nav-prev');
+    if (prevLightboxBtn) {
+      prevLightboxBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (activeCardPrevBtn) {
+          activeCardPrevBtn.click();
+        }
+      });
+    }
+
+    const nextLightboxBtn = lightbox.querySelector('.screenshot-lightbox-nav-next');
+    if (nextLightboxBtn) {
+      nextLightboxBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (activeCardNextBtn) {
+          activeCardNextBtn.click();
+        }
+      });
+    }
+  }
 
   // Mobile navigation drawer toggle
   const mobileToggle = document.getElementById('mobile-toggle');

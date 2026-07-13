@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LeanBitLab - Crafting bloat-free, efficient, privacy-focused open source experiences for Android and Linux.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.youtube.com https://*.ytimg.com https://*.makeuseofimages.com https://github-stats-extended.vercel.app; connect-src 'self' https://api.github.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.youtube.com https://*.ytimg.com https://*.makeuseofimages.com https://github-stats-extended.vercel.app https://raw.githubusercontent.com; connect-src 'self' https://api.github.com;">
   <title>LeanBitLab | Build Lean. Build Right.</title>
   
   <!-- Google Fonts -->
@@ -28,18 +28,21 @@
         <span class="logo-accent">Lean</span>BitLab
       </a>
       <nav id="nav-menu">
-        <a href="#projects">Projects</a>
-        <a href="#featured">Media</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#sponsors">Sponsors</a>
-        <a href="#contact" class="btn btn-secondary">Contact</a>
+        <a href="#projects" style="--nav-item-idx: 1;">Projects</a>
+        <a href="#featured" style="--nav-item-idx: 2;">Media</a>
+        <a href="#philosophy" style="--nav-item-idx: 3;">Philosophy</a>
+        <a href="#sponsors" style="--nav-item-idx: 4;">Sponsors</a>
+        <div class="nav-actions" style="--nav-item-idx: 5;">
+          <a href="#contact" class="btn btn-secondary nav-btn">Contact</a>
+          <a href="#sponsors" class="btn btn-primary nav-btn nav-mobile-only">Sponsor Us</a>
+        </div>
       </nav>
       <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
-      <a href="#sponsors" class="btn btn-primary nav-cta">
+      <a href="#sponsors" class="btn btn-primary nav-btn nav-cta">
         Sponsor Us
       </a>
     </div>
@@ -98,7 +101,10 @@
                 <span class="stat-val" id="downloads-leantype">32.8k</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/LeanType" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+            <div class="card-actions">
+              <a href="https://github.com/LeanBitLab/LeanType" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+              <button class="btn-screenshot" data-repo="leantype">Screenshots</button>
+            </div>
           </div>
         </div>
 
@@ -119,7 +125,10 @@
                 <span class="stat-val" id="downloads-ltvlauncher">13.5k</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/LtvLauncher" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+            <div class="card-actions">
+              <a href="https://github.com/LeanBitLab/LtvLauncher" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+              <button class="btn-screenshot" data-repo="ltvlauncher">Screenshots</button>
+            </div>
           </div>
         </div>
 
@@ -140,7 +149,10 @@
                 <span class="stat-val" id="downloads-lwidget">548</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+            <div class="card-actions">
+              <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+              <button class="btn-screenshot" data-repo="lwidget">Screenshots</button>
+            </div>
           </div>
         </div>
 
@@ -182,7 +194,10 @@
                 <span class="stat-val" id="downloads-adaptive-brightness-linux">1</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+            <div class="card-actions">
+              <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
+              <button class="btn-screenshot" data-repo="adaptive-brightness-linux">Screenshots</button>
+            </div>
           </div>
         </div>
 
@@ -507,6 +522,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div id="screenshot-lightbox" class="screenshot-lightbox">
+    <button class="screenshot-lightbox-close" aria-label="Close Fullscreen View">&times;</button>
+    <button class="screenshot-lightbox-nav screenshot-lightbox-nav-prev" aria-label="Previous Image">&lsaquo;</button>
+    <img class="screenshot-lightbox-img" src="" alt="Fullscreen screenshot preview">
+    <button class="screenshot-lightbox-nav screenshot-lightbox-nav-next" aria-label="Next Image">&rsaquo;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
