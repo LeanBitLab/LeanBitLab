@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LeanBitLab - Crafting bloat-free, efficient, privacy-focused open source experiences for Android and Linux.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.youtube.com https://*.ytimg.com https://*.makeuseofimages.com https://github-stats-extended.vercel.app; connect-src 'self' https://api.github.com;">
   <title>LeanBitLab | Build Lean. Build Right.</title>
   
   <!-- Google Fonts -->
@@ -56,7 +57,7 @@
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">Explore Projects</a>
-        <a href="https://github.com/sponsors/LeanBitLab" target="_blank" class="btn btn-secondary">
+        <a href="https://github.com/sponsors/LeanBitLab" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
           <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
@@ -73,9 +74,9 @@
         <h2>Our Projects</h2>
         <p>Resource-respecting applications built for power and simplicity.</p>
         <div class="filter-tabs">
-          <button class="tab-btn active" onclick="filterProjects('all')">All</button>
-          <button class="tab-btn" onclick="filterProjects('android')">Android</button>
-          <button class="tab-btn" onclick="filterProjects('linux')">Linux</button>
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="android">Android</button>
+          <button class="tab-btn" data-filter="linux">Linux</button>
         </div>
       </div>
 
@@ -97,7 +98,7 @@
                 <span class="stat-val" id="downloads-leantype">32.8k</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/LeanType" target="_blank" class="card-link">View Repository &rarr;</a>
+            <a href="https://github.com/LeanBitLab/LeanType" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
           </div>
         </div>
 
@@ -118,7 +119,7 @@
                 <span class="stat-val" id="downloads-ltvlauncher">13.5k</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/LtvLauncher" target="_blank" class="card-link">View Repository &rarr;</a>
+            <a href="https://github.com/LeanBitLab/LtvLauncher" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
           </div>
         </div>
 
@@ -139,7 +140,7 @@
                 <span class="stat-val" id="downloads-lwidget">548</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" class="card-link">View Repository &rarr;</a>
+            <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
           </div>
         </div>
 
@@ -160,7 +161,7 @@
                 <span class="stat-val" id="downloads-leantype-handwriting-plugin">191</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" class="card-link">View Repository &rarr;</a>
+            <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
           </div>
         </div>
 
@@ -181,7 +182,7 @@
                 <span class="stat-val" id="downloads-adaptive-brightness-linux">1</span>
               </div>
             </div>
-            <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" class="card-link">View Repository &rarr;</a>
+            <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
           </div>
         </div>
 
@@ -193,7 +194,7 @@
             <span class="project-type">Android</span>
             <h3>LeanBook</h3>
             <p>Unified lightweight bookkeeper for managing personal notes, tasks, bill reminders, and lists.</p>
-            <a href="https://github.com/LeanBitLab" target="_blank" class="card-link">Follow Progress &rarr;</a>
+            <a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress &rarr;</a>
           </div>
         </div>
 
@@ -205,7 +206,7 @@
             <span class="project-type">Android</span>
             <h3>RedditTube</h3>
             <p>Ad-free, optimized client offering a fluid YouTube-like UI tailored for browsing Reddit videos.</p>
-            <a href="https://github.com/LeanBitLab" target="_blank" class="card-link">Follow Progress &rarr;</a>
+            <a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress &rarr;</a>
           </div>
         </div>
 
@@ -217,7 +218,7 @@
             <span class="project-type">Android</span>
             <h3>Minimal Dialer</h3>
             <p>Stripped-down, high-speed dialer utility focused entirely on calls and search with no bloat.</p>
-            <a href="https://github.com/LeanBitLab" target="_blank" class="card-link">Follow Progress &rarr;</a>
+            <a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress &rarr;</a>
           </div>
         </div>
       </div>
@@ -234,7 +235,8 @@
       <div class="media-grid">
         <!-- HowToMen Card -->
         <div class="media-card">
-          <a href="https://youtu.be/qqScar10Oxc?t=436" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/qqScar10Oxc?t=436" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/qqScar10Oxc/mqdefault.jpg" alt="HowToMen Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -255,7 +257,8 @@
 
         <!-- MakeUseOf Card -->
         <div class="media-card">
-          <a href="https://www.makeuseof.com/free-offline-first-android-keyboard-gives-privacy-gboard-never-offer/" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://www.makeuseof.com/free-offline-first-android-keyboard-gives-privacy-gboard-never-offer/" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://static0.makeuseofimages.com/wordpress/wp-content/uploads/wm/2026/04/leantype-on-android.png?q=70&amp;fit=crop&amp;w=1200&amp;h=628&amp;dpr=1" alt="MakeUseOf Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -276,7 +279,8 @@
 
         <!-- Silver Android Card -->
         <div class="media-card">
-          <a href="https://youtu.be/h9ig3Ff3vgE?t=337" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/h9ig3Ff3vgE?t=337" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/h9ig3Ff3vgE/mqdefault.jpg" alt="Silver Android Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -297,7 +301,8 @@
 
         <!-- TechReviewBD Card -->
         <div class="media-card">
-          <a href="https://youtu.be/lH8_n9W4t2s?t=160" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/lH8_n9W4t2s?t=160" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/lH8_n9W4t2s/mqdefault.jpg" alt="TechReviewBD Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -318,7 +323,8 @@
 
         <!-- Apps Lovers Card -->
         <div class="media-card">
-          <a href="https://youtu.be/jciphONXvis?t=287" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/jciphONXvis?t=287" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/jciphONXvis/mqdefault.jpg" alt="عشاق التطبيقات Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -339,7 +345,8 @@
 
         <!-- Enoch Boateng Card -->
         <div class="media-card">
-          <a href="https://youtu.be/WQBRlP1HOXY?t=2" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/WQBRlP1HOXY?t=2" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/WQBRlP1HOXY/mqdefault.jpg" alt="Enoch Boateng Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -360,7 +367,8 @@
 
         <!-- AppFlix Review Card -->
         <div class="media-card">
-          <a href="https://youtu.be/i3xL2CzkK5k?t=118" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/i3xL2CzkK5k?t=118" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/i3xL2CzkK5k/mqdefault.jpg" alt="AppFlix Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -381,7 +389,8 @@
 
         <!-- Supreme Guru Tech Card -->
         <div class="media-card">
-          <a href="https://youtu.be/Dc9-82IfVec?t=118" target="_blank" class="media-link">
+          <div class="card-glow"></div>
+          <a href="https://youtu.be/Dc9-82IfVec?t=118" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/Dc9-82IfVec/mqdefault.jpg" alt="Supreme Guru Tech Review" class="media-thumbnail">
               <div class="play-overlay">
@@ -441,28 +450,28 @@
       <div class="sponsors-marquee-container">
         <div class="sponsors-marquee-track">
           <div class="sponsors-marquee-list">
-            <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank">wshrguy</a></span>
-            <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank">BeppeBoppo</a></span>
-            <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank">as3droid</a></span>
-            <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank">SRGWML</a></span>
-            <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank">adven2rer</a></span>
-            <span class="sponsor-name"><a href="https://github.com/jimmietron" target="_blank">jimmietron</a></span>
-            <span class="sponsor-name"><a href="https://github.com/Redoregon" target="_blank">Redoregon</a></span>
-            <span class="sponsor-name"><a href="https://github.com/VinVel" target="_blank">VinVel</a></span>
+            <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank" rel="noopener noreferrer">wshrguy</a></span>
+            <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank" rel="noopener noreferrer">BeppeBoppo</a></span>
+            <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank" rel="noopener noreferrer">as3droid</a></span>
+            <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank" rel="noopener noreferrer">SRGWML</a></span>
+            <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank" rel="noopener noreferrer">adven2rer</a></span>
+            <span class="sponsor-name"><a href="https://github.com/jimmietron" target="_blank" rel="noopener noreferrer">jimmietron</a></span>
+            <span class="sponsor-name"><a href="https://github.com/Redoregon" target="_blank" rel="noopener noreferrer">Redoregon</a></span>
+            <span class="sponsor-name"><a href="https://github.com/VinVel" target="_blank" rel="noopener noreferrer">VinVel</a></span>
             <span class="sponsor-name">Johan Marten</span>
-            <span class="sponsor-name"><a href="https://github.com/BareTread" target="_blank">BareTread</a></span>
+            <span class="sponsor-name"><a href="https://github.com/BareTread" target="_blank" rel="noopener noreferrer">BareTread</a></span>
           </div>
           <div class="sponsors-marquee-list">
-            <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank">wshrguy</a></span>
-            <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank">BeppeBoppo</a></span>
-            <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank">as3droid</a></span>
-            <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank">SRGWML</a></span>
-            <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank">adven2rer</a></span>
-            <span class="sponsor-name"><a href="https://github.com/jimmietron" target="_blank">jimmietron</a></span>
-            <span class="sponsor-name"><a href="https://github.com/Redoregon" target="_blank">Redoregon</a></span>
-            <span class="sponsor-name"><a href="https://github.com/VinVel" target="_blank">VinVel</a></span>
+            <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank" rel="noopener noreferrer">wshrguy</a></span>
+            <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank" rel="noopener noreferrer">BeppeBoppo</a></span>
+            <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank" rel="noopener noreferrer">as3droid</a></span>
+            <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank" rel="noopener noreferrer">SRGWML</a></span>
+            <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank" rel="noopener noreferrer">adven2rer</a></span>
+            <span class="sponsor-name"><a href="https://github.com/jimmietron" target="_blank" rel="noopener noreferrer">jimmietron</a></span>
+            <span class="sponsor-name"><a href="https://github.com/Redoregon" target="_blank" rel="noopener noreferrer">Redoregon</a></span>
+            <span class="sponsor-name"><a href="https://github.com/VinVel" target="_blank" rel="noopener noreferrer">VinVel</a></span>
             <span class="sponsor-name">Johan Marten</span>
-            <span class="sponsor-name"><a href="https://github.com/BareTread" target="_blank">BareTread</a></span>
+            <span class="sponsor-name"><a href="https://github.com/BareTread" target="_blank" rel="noopener noreferrer">BareTread</a></span>
           </div>
         </div>
       </div>
@@ -470,7 +479,7 @@
       <div class="sponsors-cta">
         <p>Want to support open-source, bloat-free software?</p>
         <div class="sponsors-cta-buttons">
-          <a href="https://github.com/sponsors/LeanBitLab" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/sponsors/LeanBitLab" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
@@ -491,10 +500,10 @@
       </div>
       <div class="footer-links">
         <h4>Community</h4>
-        <a href="https://t.me/LeanBitLab" target="_blank">Telegram Channel</a>
-        <a href="https://www.reddit.com/r/LeanBitLab_/" target="_blank">Reddit Community</a>
-        <a href="https://x.com/LeanBitLab" target="_blank">Twitter / X</a>
-        <a href="https://github.com/LeanBitLab" target="_blank">GitHub Org</a>
+        <a href="https://t.me/LeanBitLab" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
+        <a href="https://www.reddit.com/r/LeanBitLab_/" target="_blank" rel="noopener noreferrer">Reddit Community</a>
+        <a href="https://x.com/LeanBitLab" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+        <a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer">GitHub Org</a>
       </div>
     </div>
   </footer>

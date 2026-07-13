@@ -15,6 +15,23 @@ function formatNumber(num) {
   return num.toString();
 }
 
+// Animate count-up of stats using requestAnimationFrame
+function animateStat(el, targetVal) {
+  let startTimestamp = null;
+  const duration = 1200; // 1.2 seconds animation
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    const easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+    const current = Math.floor(easeProgress * targetVal);
+    el.textContent = formatNumber(current);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
 // Fetch live statistics from GitHub API
 async function fetchGithubStats() {
   try {
@@ -30,10 +47,10 @@ async function fetchGithubStats() {
       const domId = repoMap[repoNameLower];
       
       if (domId) {
-        // Update Stars
+        // Update Stars with animation
         const starsEl = document.getElementById(`stars-${domId}`);
         if (starsEl) {
-          starsEl.textContent = formatNumber(repo.stargazers_count);
+          animateStat(starsEl, repo.stargazers_count);
         }
         
         // Fetch Releases for Downloads
@@ -53,7 +70,7 @@ async function fetchGithubStats() {
             
             const downloadsEl = document.getElementById(`downloads-${domId}`);
             if (downloadsEl) {
-              downloadsEl.textContent = formatNumber(downloadsCount);
+              animateStat(downloadsEl, downloadsCount);
             }
           }
         } catch (err) {
@@ -66,13 +83,13 @@ async function fetchGithubStats() {
   }
 }
 
-// Filter projects by category tab
+// Filter projects by category tab with smooth transitions
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');
   const buttons = document.querySelectorAll('.tab-btn');
   
   buttons.forEach(btn => {
-    if (btn.outerHTML.includes(`'${category}'`)) {
+    if (btn.getAttribute('data-filter') === category) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
@@ -81,30 +98,111 @@ function filterProjects(category) {
 
   cards.forEach(card => {
     const cardCategory = card.getAttribute('data-category');
-    if (category === 'all' || cardCategory === category) {
+    const matches = (category === 'all' || cardCategory === category);
+    
+    if (matches) {
+      card.classList.remove('filtered-out');
       card.style.display = 'block';
+      // Trigger reflow to ensure display change has taken effect
+      card.offsetHeight; 
+      card.classList.add('filtered-in');
     } else {
-      card.style.display = 'none';
+      card.classList.remove('filtered-in');
+      card.classList.add('filtered-out');
+      
+      const onTransitionEnd = () => {
+        if (card.classList.contains('filtered-out')) {
+          card.style.display = 'none';
+        }
+        card.removeEventListener('transitionend', onTransitionEnd);
+      };
+      card.addEventListener('transitionend', onTransitionEnd);
     }
   });
 }
 
-// Shrink header on scroll
-window.addEventListener('scroll', () => {
+// Initialize cursor spotlight effect
+function initSpotlightEffect() {
+  const cards = document.querySelectorAll('.project-card, .media-card');
+  cards.forEach(card => {
+    let tick = false;
+    card.addEventListener('mousemove', (e) => {
+      if (!tick) {
+        window.requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+          tick = false;
+        });
+        tick = true;
+      }
+    }, { passive: true });
+  });
+}
+
+// Fixed header scrolled styles toggler (passive scroll listener)
+function initHeaderScroll() {
   const header = document.querySelector('header');
-  if (window.scrollY > 50) {
-    header.style.background = 'rgba(8, 12, 16, 0.95)';
-    header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
-  } else {
-    header.style.background = 'rgba(8, 12, 16, 0.7)';
-    header.style.boxShadow = 'none';
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
   }
-});
+}
+
+// IntersectionObserver fallback for scroll reveal animations
+function initScrollRevealFallback() {
+  if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-visible');
+          }
+        });
+      },
+      { 
+        root: null,
+        threshold: 0.1 
+      }
+    );
+
+    const animatedElements = document.querySelectorAll(
+      '.projects-grid > *, .media-card, .phil-card, .section-header'
+    );
+    
+    animatedElements.forEach(el => {
+      el.classList.add('scroll-hidden');
+      observer.observe(el);
+    });
+  }
+}
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
+  initSpotlightEffect();
+  initHeaderScroll();
+  initScrollRevealFallback();
   
+  // Set up tab button listeners
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-filter');
+      filterProjects(category);
+    });
+  });
+
+  // Mobile navigation drawer toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
   
