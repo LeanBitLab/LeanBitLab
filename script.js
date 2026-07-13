@@ -564,6 +564,14 @@ async function initFeaturesNav(overlay, repoName) {
   }
 }
 
+// Dismiss all open card overlays (screenshots and features)
+function closeAllOverlays() {
+  const activeOverlays = document.querySelectorAll('.screenshot-preview-overlay.active, .features-preview-overlay.active');
+  activeOverlays.forEach(overlay => {
+    overlay.classList.remove('active');
+  });
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
@@ -591,6 +599,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = btn.closest('.project-card');
       if (!card) return;
       
+      // Close other active card overlays first
+      closeAllOverlays();
+      
       let overlay = card.querySelector('.screenshot-preview-overlay');
       if (!overlay) {
         overlay = createScreenshotOverlay(card, repoName);
@@ -611,6 +622,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const repoName = btn.getAttribute('data-repo');
       const card = btn.closest('.project-card');
       if (!card) return;
+
+      // Close other active card overlays first
+      closeAllOverlays();
 
       let overlay = card.querySelector('.features-preview-overlay');
       if (!overlay) {
