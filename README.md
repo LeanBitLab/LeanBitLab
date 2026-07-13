@@ -79,7 +79,8 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/jimmietron">jimmietron</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/Redoregon">Redoregon</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/VinVel">VinVel</a></strong> &nbsp;&bull;&nbsp;
-  <strong>Johan Marten</strong>
+  <strong>Johan Marten</strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/BareTread">BareTread</a></strong>
 </p>
 
 ---
