@@ -171,11 +171,14 @@ async function fetchGithubStats() {
         
         // Fetch Releases for Downloads
         try {
-          const releasesResponse = await fetch(`https://api.github.com/repos/LeanBitLab/${repo.name}/releases`);
-          if (releasesResponse.ok) {
+          let downloadsCount = 0;
+          let page = 1;
+          while (true) {
+            const releasesResponse = await fetch(`https://api.github.com/repos/LeanBitLab/${repo.name}/releases?per_page=100&page=${page}`);
+            if (!releasesResponse.ok) break;
             const releases = await releasesResponse.json();
-            let downloadsCount = 0;
-            
+            if (!Array.isArray(releases) || releases.length === 0) break;
+
             for (const release of releases) {
               if (release.assets) {
                 for (const asset of release.assets) {
@@ -183,11 +186,14 @@ async function fetchGithubStats() {
                 }
               }
             }
-            
-            const downloadsEl = document.getElementById(`downloads-${domId}`);
-            if (downloadsEl) {
-              animateStat(downloadsEl, downloadsCount);
-            }
+
+            if (releases.length < 100) break;
+            page++;
+          }
+
+          const downloadsEl = document.getElementById(`downloads-${domId}`);
+          if (downloadsEl) {
+            animateStat(downloadsEl, downloadsCount);
           }
         } catch (err) {
           console.error(`Error fetching releases for ${repo.name}:`, err);

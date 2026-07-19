@@ -24,18 +24,26 @@ def get_repos_info():
 def get_repo_downloads(repo_name):
     total = 0
     token = os.getenv("GITHUB_TOKEN")
-    try:
-        url = f"https://api.github.com/repos/LeanBitLab/{repo_name}/releases"
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        if token:
-            req.add_header("Authorization", f"token {token}")
-        with urllib.request.urlopen(req) as response:
-            releases = json.loads(response.read().decode())
-            for r in releases:
-                for asset in r.get("assets", []):
-                    total += asset.get("download_count", 0)
-    except Exception as e:
-        print(f"Error fetching downloads for {repo_name}: {e}")
+    page = 1
+    while True:
+        try:
+            url = f"https://api.github.com/repos/LeanBitLab/{repo_name}/releases?per_page=100&page={page}"
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            if token:
+                req.add_header("Authorization", f"token {token}")
+            with urllib.request.urlopen(req) as response:
+                releases = json.loads(response.read().decode())
+                if not releases:
+                    break
+                for r in releases:
+                    for asset in r.get("assets", []):
+                        total += asset.get("download_count", 0)
+                if len(releases) < 100:
+                    break
+                page += 1
+        except Exception as e:
+            print(f"Error fetching downloads for {repo_name} (page {page}): {e}")
+            break
     return total
 
 def format_number(num):
