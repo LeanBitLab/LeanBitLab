@@ -81,7 +81,8 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/VinVel">VinVel</a></strong> &nbsp;&bull;&nbsp;
   <strong>Johan Marten</strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/BareTread">BareTread</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/spielist">spielist</a></strong>
+  <strong><a href="https://github.com/spielist">spielist</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/mtg92">mtg92</a></strong>
 </p>
 
 ---
