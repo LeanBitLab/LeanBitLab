@@ -501,38 +501,11 @@
         <p>Special thanks to the amazing people keeping the lab running.</p>
       </div>
       
-      <div class="sponsors-marquee-container">
-        <div class="sponsors-marquee-track">
-          <div class="sponsors-marquee-list">
-            <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank" rel="noopener noreferrer">wshrguy</a></span>
-            <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank" rel="noopener noreferrer">BeppeBoppo</a></span>
-            <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank" rel="noopener noreferrer">as3droid</a></span>
-            <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank" rel="noopener noreferrer">SRGWML</a></span>
-            <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank" rel="noopener noreferrer">adven2rer</a></span>
-            <span class="sponsor-name"><a href="https://github.com/jimmietron" target="_blank" rel="noopener noreferrer">jimmietron</a></span>
-            <span class="sponsor-name"><a href="https://github.com/Redoregon" target="_blank" rel="noopener noreferrer">Redoregon</a></span>
-            <span class="sponsor-name"><a href="https://github.com/VinVel" target="_blank" rel="noopener noreferrer">VinVel</a></span>
-            <span class="sponsor-name">Johan Marten</span>
-            <span class="sponsor-name"><a href="https://github.com/BareTread" target="_blank" rel="noopener noreferrer">BareTread</a></span>
-            <span class="sponsor-name"><a href="https://github.com/spielist" target="_blank" rel="noopener noreferrer">spielist</a></span>
-            <span class="sponsor-name"><a href="https://github.com/mtg92" target="_blank" rel="noopener noreferrer">mtg92</a></span>
-          </div>
-          <div class="sponsors-marquee-list">
-            <span class="sponsor-name"><a href="https://github.com/wshrguy" target="_blank" rel="noopener noreferrer">wshrguy</a></span>
-            <span class="sponsor-name"><a href="https://github.com/BeppeBoppo" target="_blank" rel="noopener noreferrer">BeppeBoppo</a></span>
-            <span class="sponsor-name"><a href="https://github.com/as3droid" target="_blank" rel="noopener noreferrer">as3droid</a></span>
-            <span class="sponsor-name"><a href="https://github.com/SRGWML" target="_blank" rel="noopener noreferrer">SRGWML</a></span>
-            <span class="sponsor-name"><a href="https://github.com/adven2rer" target="_blank" rel="noopener noreferrer">adven2rer</a></span>
-            <span class="sponsor-name"><a href="https://github.com/jimmietron" target="_blank" rel="noopener noreferrer">jimmietron</a></span>
-            <span class="sponsor-name"><a href="https://github.com/Redoregon" target="_blank" rel="noopener noreferrer">Redoregon</a></span>
-            <span class="sponsor-name"><a href="https://github.com/VinVel" target="_blank" rel="noopener noreferrer">VinVel</a></span>
-            <span class="sponsor-name">Johan Marten</span>
-            <span class="sponsor-name"><a href="https://github.com/BareTread" target="_blank" rel="noopener noreferrer">BareTread</a></span>
-            <span class="sponsor-name"><a href="https://github.com/spielist" target="_blank" rel="noopener noreferrer">spielist</a></span>
-            <span class="sponsor-name"><a href="https://github.com/mtg92" target="_blank" rel="noopener noreferrer">mtg92</a></span>
-          </div>
-        </div>
+      <div class="sponsors-view-toggle">
+        <button class="sponsor-toggle-btn active" data-view="allTime">All Time</button>
+        <button class="sponsor-toggle-btn" data-view="thisMonth">This Month</button>
       </div>
+      <div id="sponsors-bubbles" class="sponsors-bubbles"></div>
 
       <div class="sponsors-cta">
         <p>Want to support open-source, bloat-free software?</p>
@@ -585,6 +558,7 @@
     <button class="features-lightbox-scroll features-lightbox-scroll-down" aria-label="Scroll Down">&#x25BC;</button>
   </div>
 
+  <script src="sponsor-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

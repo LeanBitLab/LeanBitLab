@@ -578,12 +578,222 @@ function closeAllOverlays() {
   });
 }
 
+// Shuffle array using Fisher-Yates
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Render sponsor bubbles packed inside a pill like balls resting at the bottom of a container
+function renderSponsors(view) {
+  const container = document.getElementById('sponsors-bubbles');
+  if (!container || typeof sponsorData === 'undefined') return;
+
+  const data = sponsorData[view];
+  if (!data || data.length === 0) {
+    container.innerHTML = '<p style="color: var(--text-secondary); font-size: 14px;">No sponsors this month yet.</p>';
+    return;
+  }
+
+  container.innerHTML = '';
+
+  const isMobile = window.innerWidth < 768;
+  const GAP = 4;
+
+  // Pill dimensions — centered with margin: 0 auto
+  const pillWidth = isMobile ? Math.min(window.innerWidth - 32, 360) : 820;
+  const pillHeight = isMobile ? 240 : 300;
+  const pillR = pillHeight / 2;
+
+  container.style.width = pillWidth + 'px';
+  container.style.maxWidth = '100%';
+  container.style.height = pillHeight + 'px';
+
+  // Area of pill stadium: rectangle + 2 semicircles = (W - H)*H + PI*(H/2)^2
+  const pillArea = (pillWidth - pillHeight) * pillHeight + Math.PI * Math.pow(pillR, 2);
+  const PACKING_FACTOR = 0.52; // fraction of container area allocated for 100% capacity fill
+
+  // Build circles array with radii mathematically proportional to $700 / $1000 container capacity
+  const totalCount = data.length;
+  const circles = shuffleArray(data).map((sponsor, i) => {
+    const circleArea = (sponsor.ratio || 0.001) * pillArea * PACKING_FACTOR;
+    const rFromArea = Math.sqrt(circleArea / Math.PI);
+    const minR = isMobile ? 12 : 14; // Min radius 14px (28px diameter)
+    const maxR = pillR - 6; // Max radius allowing unclamped 50%+ ratio balls
+    const radius = Math.max(minR, Math.min(maxR, rFromArea));
+
+    // Distribute initial X evenly across full pill width (from left cap to right cap)
+    const margin = radius + 10;
+    const x = margin + (i / Math.max(1, totalCount - 1)) * (pillWidth - 2 * margin);
+    const y = radius + 10 + Math.random() * (pillHeight * 0.25);
+    return {
+      sponsor,
+      r: radius,
+      x,
+      y
+    };
+  });
+
+  // Sort largest first for priority placement
+  circles.sort((a, b) => b.r - a.r);
+
+  // Constrain circle center strictly inside stadium pill
+  function constrainToPill(c) {
+    const pad = c.r + 4;
+    const maxR = pillR - pad;
+    if (maxR <= 0) return;
+
+    // Left cap
+    if (c.x < pillR) {
+      const dx = c.x - pillR;
+      const dy = c.y - pillR;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > maxR && dist > 0) {
+        c.x = pillR + (dx / dist) * maxR;
+        c.y = pillR + (dy / dist) * maxR;
+      }
+    }
+    // Right cap
+    else if (c.x > pillWidth - pillR) {
+      const dx = c.x - (pillWidth - pillR);
+      const dy = c.y - pillR;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > maxR && dist > 0) {
+        c.x = (pillWidth - pillR) + (dx / dist) * maxR;
+        c.y = pillR + (dy / dist) * maxR;
+      }
+    }
+    // Center rectangle section
+    else {
+      c.y = Math.max(pad, Math.min(pillHeight - pad, c.y));
+    }
+    c.x = Math.max(pad, Math.min(pillWidth - pad, c.x));
+  }
+
+  // Physics simulation steps (downward gravity + collision separation + wall bounds)
+  const ITERATIONS = 400;
+
+  for (let iter = 0; iter < ITERATIONS; iter++) {
+    // 1. Downward gravity
+    for (const c of circles) {
+      c.y += 0.5;
+    }
+
+    // 2. Collision resolution between overlapping balls
+    for (let i = 0; i < circles.length; i++) {
+      for (let j = i + 1; j < circles.length; j++) {
+        const a = circles[i];
+        const b = circles[j];
+        let dx = b.x - a.x;
+        let dy = b.y - a.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist === 0) {
+          dx = (Math.random() - 0.5) * 2;
+          dy = (Math.random() - 0.5) * 2;
+          dist = Math.sqrt(dx * dx + dy * dy);
+        }
+        const minDist = a.r + b.r + GAP;
+        if (dist < minDist) {
+          const overlap = (minDist - dist) / 2;
+          const nx = dx / dist;
+          const ny = dy / dist;
+          a.x -= nx * overlap;
+          a.y -= ny * overlap;
+          b.x += nx * overlap;
+          b.y += ny * overlap;
+        }
+      }
+    }
+
+    // 3. Wall constraint
+    for (const c of circles) {
+      constrainToPill(c);
+    }
+  }
+
+  // Render the settled balls inside container
+  circles.forEach((c) => {
+    const baseWidth = Math.round(c.r * 2);
+    const name = c.sponsor.name;
+    const isMultiWord = name.includes(' ');
+
+    const maxWordLength = isMultiWord
+      ? Math.max(...name.split(' ').map(w => w.length))
+      : name.length;
+
+    // Dynamically calculate font size per circle name (non-hover)
+    // Sized so name fits inside available circle width if possible (clamped 7.5px - 14px)
+    const idealFontSize = parseFloat(((baseWidth * 0.80) / (maxWordLength * 0.58)).toFixed(1));
+    const fontSize = Math.max(7.5, Math.min(14, idealFontSize));
+
+    const x = c.x - c.r;
+    const y = c.y - c.r;
+
+    // Calculate text width needed at standard hover font size (11.5px on mobile, 13px on desktop)
+    const hoverFontSize = isMobile ? 11.5 : 13;
+    const hoverTextWidth = maxWordLength * (hoverFontSize * 0.65);
+    const availableWidthAtHoverFont = baseWidth * 0.72;
+
+    let hoverWidth = baseWidth;
+    if (hoverTextWidth > availableWidthAtHoverFont) {
+      // Expand circle diameter so hover font fits comfortably inside with padding
+      const maxAllowedHoverWidth = isMobile ? (pillWidth - 16) : (pillWidth - 24);
+      const computedHoverWidth = Math.ceil((hoverTextWidth / 0.66) + 18);
+      hoverWidth = Math.min(maxAllowedHoverWidth, computedHoverWidth);
+    }
+
+    const offsetX = -Math.round((hoverWidth - baseWidth) / 2);
+    const offsetY = -Math.round((hoverWidth - baseWidth) / 2);
+
+    const isLink = !!c.sponsor.github;
+    const el = document.createElement(isLink ? 'a' : 'div');
+    el.className = `sponsor-bubble tier-${c.sponsor.tier} ${isMultiWord ? 'multi-word' : 'single-word'}`;
+    el.style.setProperty('--base-width', `${baseWidth}px`);
+    el.style.setProperty('--hover-width', `${hoverWidth}px`);
+    el.style.setProperty('--offset-x', `${offsetX}px`);
+    el.style.setProperty('--offset-y', `${offsetY}px`);
+    el.style.setProperty('--font-size', `${fontSize}px`);
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+
+    if (isLink) {
+      el.href = `https://github.com/${c.sponsor.github}`;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    }
+
+    const nameSpanEl = document.createElement('span');
+    nameSpanEl.className = 'sponsor-bubble-name';
+    nameSpanEl.textContent = name;
+    el.appendChild(nameSpanEl);
+
+    container.appendChild(el);
+  });
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
   initSpotlightEffect();
   initHeaderScroll();
   initScrollRevealFallback();
+
+  // Render sponsor bubbles
+  renderSponsors('allTime');
+
+  // Sponsor view toggle
+  const toggleBtns = document.querySelectorAll('.sponsor-toggle-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderSponsors(btn.getAttribute('data-view'));
+    });
+  });
   
   // Set up tab button listeners
   const tabButtons = document.querySelectorAll('.tab-btn');
