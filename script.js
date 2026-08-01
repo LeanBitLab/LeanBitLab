@@ -4,7 +4,8 @@ const repoMap = {
   'leantype': 'leantype',
   'leantype-handwriting-plugin': 'leantype-handwriting-plugin',
   'ltvlauncher': 'ltvlauncher',
-  'lwidget': 'lwidget'
+  'lwidget': 'lwidget',
+  'rdtube': 'rdtube'
 };
 
 // Database mapping of repositories to their screenshot files and raw URL paths
@@ -24,6 +25,10 @@ const repoScreenshots = {
   'adaptive-brightness-linux': {
     baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/docs/screenshots/',
     files: ['1.png', '2.png']
+  },
+  'rdtube': {
+    baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/RdTube/main/docs/images/',
+    files: ['R1.png', 'R2.png', 'R3.png', 'R4.png', 'R5.png']
   }
 };
 
@@ -48,6 +53,10 @@ const readmeConfig = {
   'adaptive-brightness-linux': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/README.md',
     header: "## 🚀 Key Features"
+  },
+  'rdtube': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/RdTube/main/README.md',
+    header: "## Features"
   }
 };
 
@@ -112,6 +121,19 @@ const fallbackFeatures = {
     '<strong>🎨 Visual Profile Editor</strong> - Add, edit, or delete dynamic time blocks and target levels.',
     '<strong>💾 Force Learn Profiles</strong> - Instantly save manual override offsets into active time block memory.',
     '<strong>🔄 Restore Defaults</strong> - Instantly resets curves to factory-calibrated defaults.'
+  ],
+  'rdtube': [
+    '<strong>🔑 No API Key Required</strong> - Works instantly right after installation with zero setup or API client registration.',
+    '<strong>👤 No Account Required</strong> - 100% anonymous browsing out of the box with zero sign-in or Reddit credentials required.',
+    '<strong>📱 Single-Column & Vertical Pager Feeds</strong> - Smooth vertical video scrolling with instant background prefetching.',
+    '<strong>🎬 Media3 ExoPlayer Engine</strong> - Integrated video player supporting dynamic playback speed, quality selector, and automatic lifecycle pause.',
+    '<strong>🔁 Auto-Play & Auto-Rotate</strong> - Toggle continuous auto-next video playback and sensor orientation lock.',
+    '<strong>⬇️ Video Downloads</strong> - Save Reddit videos directly to your device storage with audio-video merging.',
+    '<strong>🎛️ Volume & Brightness Gestures</strong> - Intuitive edge drag gesture controls for volume and brightness.',
+    '<strong>⚡ Parallel Coroutine Fetching</strong> - High-throughput multi-subreddit API requests (3x–5x faster feed load times).',
+    '<strong>🔍 Subreddit Search & Subscriptions</strong> - Search subreddits instantly and manage custom subscriptions stored 100% locally.',
+    '<strong>📜 Local Persistence & History</strong> - Watch history, liked videos, and preferences stay on your device.',
+    '<strong>🎨 Obsidian Dark Theme</strong> - Glassmorphism UI, vibrant crimson accents (#FF2A4B), and rounded edge styling.'
   ]
 };
 
