@@ -3,6 +3,7 @@ const repoMap = {
   'adaptive-brightness-linux': 'adaptive-brightness-linux',
   'leantype': 'leantype',
   'leantype-handwriting-plugin': 'leantype-handwriting-plugin',
+  'leantype-translation-plugin': 'leantype-translation-plugin',
   'ltvlauncher': 'ltvlauncher',
   'lwidget': 'lwidget',
   'rdtube': 'rdtube'
@@ -48,6 +49,10 @@ const readmeConfig = {
   },
   'leantype-handwriting-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/Leantype-Handwriting-Plugin/main/README.md',
+    header: "## How it works"
+  },
+  'leantype-translation-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/Leantype-Translation-Plugin/main/README.md',
     header: "## How it works"
   },
   'adaptive-brightness-linux': {
@@ -112,6 +117,10 @@ const fallbackFeatures = {
   'leantype-handwriting-plugin': [
     '<strong>Dynamic Plugin loader</strong> - APK isolates Google ML Kit Digital Ink Recognition to comply with FOSS guidelines.',
     '<strong>DexClassLoader Engine</strong> - Core keyboard loads the handwriting APK dynamically only when imported by the user.'
+  ],
+  'leantype-translation-plugin': [
+    '<strong>🌐 Direct Integration</strong> - Translation plugin enabling Google Translate directly within the LeanType keyboard.',
+    '<strong>Dynamic Plugin Loader</strong> - Core keyboard loads translation APK dynamically when enabled by the user.'
   ],
   'adaptive-brightness-linux': [
     '<strong>📈 Interactive Spline Curve</strong> - Draggable spline nodes to adjust 24-hour target levels in real time.',
