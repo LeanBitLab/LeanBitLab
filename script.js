@@ -16,7 +16,7 @@ const repoScreenshots = {
     files: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
   },
   'ltvlauncher': {
-    baseUrl: 'https://raw.githubusercontent.com/LeanBitLab/LtvLauncher/master/docs/images/',
+    baseUrl: 'https://raw.githubusercontent.com/leanbitlab-org/LtvLauncher/master/docs/images/',
     files: ['screenshot_1.png', 'screenshot_2.png', 'screenshot_3.png', 'screenshot_4.png']
   },
   'lwidget': {
@@ -40,7 +40,7 @@ const readmeConfig = {
     header: "## What's New in LeanType"
   },
   'ltvlauncher': {
-    url: 'https://raw.githubusercontent.com/LeanBitLab/LtvLauncher/master/README.md',
+    url: 'https://raw.githubusercontent.com/leanbitlab-org/LtvLauncher/master/README.md',
     header: "## Key Features & Enhancements"
   },
   'lwidget': {
@@ -182,30 +182,34 @@ function animateStat(el, targetVal) {
 // Fetch live statistics from GitHub API
 async function fetchGithubStats() {
   try {
-    const reposResponse = await fetch('https://api.github.com/users/LeanBitLab/repos?per_page=100');
-    if (!reposResponse.ok) throw new Error('Failed to fetch repositories list');
-    
-    const repos = await reposResponse.json();
-    
+    const [userResponse, orgResponse] = await Promise.all([
+      fetch('https://api.github.com/users/LeanBitLab/repos?per_page=100'),
+      fetch('https://api.github.com/orgs/leanbitlab-org/repos?per_page=100')
+    ]);
+
+    const userRepos = userResponse.ok ? await userResponse.json() : [];
+    const orgRepos = orgResponse.ok ? await orgResponse.json() : [];
+    const repos = [...(Array.isArray(userRepos) ? userRepos : []), ...(Array.isArray(orgRepos) ? orgRepos : [])];
+
     for (const repo of repos) {
       if (repo.fork) continue;
-      
+
       const repoNameLower = repo.name.toLowerCase();
       const domId = repoMap[repoNameLower];
-      
+
       if (domId) {
         // Update Stars with animation
         const starsEl = document.getElementById(`stars-${domId}`);
         if (starsEl) {
           animateStat(starsEl, repo.stargazers_count);
         }
-        
+
         // Fetch Releases for Downloads
         try {
           let downloadsCount = 0;
           let page = 1;
           while (true) {
-            const releasesResponse = await fetch(`https://api.github.com/repos/LeanBitLab/${repo.name}/releases?per_page=100&page=${page}`);
+            const releasesResponse = await fetch(`https://api.github.com/repos/${repo.full_name}/releases?per_page=100&page=${page}`);
             if (!releasesResponse.ok) break;
             const releases = await releasesResponse.json();
             if (!Array.isArray(releases) || releases.length === 0) break;
