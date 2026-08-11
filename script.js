@@ -179,64 +179,30 @@ function animateStat(el, targetVal) {
   window.requestAnimationFrame(step);
 }
 
-// Fetch live statistics from GitHub API
+// Fetch pre-computed statistics from local stats.json
 async function fetchGithubStats() {
   try {
-    const [userResponse, orgResponse] = await Promise.all([
-      fetch('https://api.github.com/users/LeanBitLab/repos?per_page=100'),
-      fetch('https://api.github.com/orgs/leanbitlab-org/repos?per_page=100')
-    ]);
-
-    const userRepos = userResponse.ok ? await userResponse.json() : [];
-    const orgRepos = orgResponse.ok ? await orgResponse.json() : [];
-    const repos = [...(Array.isArray(userRepos) ? userRepos : []), ...(Array.isArray(orgRepos) ? orgRepos : [])];
-
-    for (const repo of repos) {
-      if (repo.fork) continue;
-
-      const repoNameLower = repo.name.toLowerCase();
-      const domId = repoMap[repoNameLower];
-
+    const response = await fetch('./stats.json');
+    if (!response.ok) throw new Error('Failed to load stats.json');
+    
+    const statsData = await response.json();
+    
+    for (const [repoKey, data] of Object.entries(statsData)) {
+      const domId = repoMap[repoKey];
       if (domId) {
-        // Update Stars with animation
         const starsEl = document.getElementById(`stars-${domId}`);
         if (starsEl) {
-          animateStat(starsEl, repo.stargazers_count);
+          animateStat(starsEl, data.stars);
         }
-
-        // Fetch Releases for Downloads
-        try {
-          let downloadsCount = 0;
-          let page = 1;
-          while (true) {
-            const releasesResponse = await fetch(`https://api.github.com/repos/${repo.full_name}/releases?per_page=100&page=${page}`);
-            if (!releasesResponse.ok) break;
-            const releases = await releasesResponse.json();
-            if (!Array.isArray(releases) || releases.length === 0) break;
-
-            for (const release of releases) {
-              if (release.assets) {
-                for (const asset of release.assets) {
-                  downloadsCount += asset.download_count || 0;
-                }
-              }
-            }
-
-            if (releases.length < 100) break;
-            page++;
-          }
-
-          const downloadsEl = document.getElementById(`downloads-${domId}`);
-          if (downloadsEl) {
-            animateStat(downloadsEl, downloadsCount);
-          }
-        } catch (err) {
-          console.error(`Error fetching releases for ${repo.name}:`, err);
+        
+        const downloadsEl = document.getElementById(`downloads-${domId}`);
+        if (downloadsEl) {
+          animateStat(downloadsEl, data.downloads);
         }
       }
     }
   } catch (error) {
-    console.error('Error fetching live GitHub stats:', error);
+    console.warn('Using pre-rendered static stats for project cards:', error);
   }
 }
 

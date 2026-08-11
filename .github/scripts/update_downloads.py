@@ -142,9 +142,23 @@ def main():
     active_repos = [r for r in repos if not r["name"].startswith(".")]
     generate_stats_card(total_stars, total_downloads, len(active_repos), "stats.svg")
     
-    readme_path = "README.md"
-    if not os.path.exists(readme_path):
-        readme_path = "../../README.md"  # if run from script folder
+    # Export stats.json for website
+    json_path = "stats.json"
+    if not os.path.exists(json_path) and os.path.exists("../../stats.json"):
+        json_path = "../../stats.json"
+        
+    stats_export = {}
+    for repo_key, data in repo_data.items():
+        stats_export[repo_key] = {
+            "name": data["name"],
+            "owner": data["owner"],
+            "stars": data["stars"],
+            "downloads": data["downloads"],
+            "downloads_formatted": format_number(data["downloads"])
+        }
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(stats_export, f, indent=2)
+    print("Exported stats.json successfully!")
         
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
