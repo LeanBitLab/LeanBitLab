@@ -8,7 +8,7 @@
 
 **Crafting bloat-free, efficient Android and Linux experiences.**
 
-[![Website](https://img.shields.io/badge/Website-leanbitlab.github.io-7C4DFF?style=flat&logo=google-chrome&logoColor=white)](https://leanbitlab.github.io/LeanBitLab/) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab) [![Total Stars](https://img.shields.io/badge/Total%20Stars-1.1k-7C4DFF?style=flat&logo=github)](https://github.com/LeanBitLab) [![Total Downloads](https://img.shields.io/badge/Total%20Downloads-77.3k-7C4DFF?style=flat&logo=github)](https://github.com/LeanBitLab)
+[![Website](https://img.shields.io/badge/Website-leanbitlab.github.io-7C4DFF?style=flat&logo=google-chrome&logoColor=white)](https://leanbitlab.github.io/LeanBitLab/) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab)
 <br/>
 
 <!-- GitHub Stats with combined stats from all repos -->
