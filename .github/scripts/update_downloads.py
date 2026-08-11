@@ -4,30 +4,41 @@ import json
 import urllib.request
 
 def get_repos_info():
-    url = "https://api.github.com/users/LeanBitLab/repos?per_page=100"
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    urls = [
+        "https://api.github.com/users/LeanBitLab/repos?per_page=100",
+        "https://api.github.com/orgs/leanbitlab-org/repos?per_page=100"
+    ]
     token = os.getenv("GITHUB_TOKEN")
-    if token:
-        req.add_header("Authorization", f"token {token}")
+    repos = []
     
-    with urllib.request.urlopen(req) as response:
-        repos = json.loads(response.read().decode())
-        return [
-            {
-                "name": repo["name"],
-                "stars": repo.get("stargazers_count", 0)
-            }
-            for repo in repos
-            if not repo.get("fork", False)
-        ]
+    for url in urls:
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            if token:
+                req.add_header("Authorization", f"token {token}")
+            with urllib.request.urlopen(req) as response:
+                items = json.loads(response.read().decode())
+                if isinstance(items, list):
+                    for repo in items:
+                        if not repo.get("fork", False):
+                            repos.append({
+                                "name": repo["name"],
+                                "full_name": repo["full_name"],
+                                "owner": repo["owner"]["login"],
+                                "stars": repo.get("stargazers_count", 0)
+                            })
+        except Exception as e:
+            print(f"Error fetching repos from {url}: {e}")
+            
+    return repos
 
-def get_repo_downloads(repo_name):
+def get_repo_downloads(full_name):
     total = 0
     token = os.getenv("GITHUB_TOKEN")
     page = 1
     while True:
         try:
-            url = f"https://api.github.com/repos/LeanBitLab/{repo_name}/releases?per_page=100&page={page}"
+            url = f"https://api.github.com/repos/{full_name}/releases?per_page=100&page={page}"
             req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
             if token:
                 req.add_header("Authorization", f"token {token}")
@@ -42,7 +53,7 @@ def get_repo_downloads(repo_name):
                     break
                 page += 1
         except Exception as e:
-            print(f"Error fetching downloads for {repo_name} (page {page}): {e}")
+            print(f"Error fetching downloads for {full_name} (page {page}): {e}")
             break
     return total
 
@@ -53,22 +64,30 @@ def format_number(num):
 
 def main():
     repos = get_repos_info()
-    print(f"Found repos: {[r['name'] for r in repos]}")
+    print(f"Found repos: {[r['full_name'] for r in repos]}")
     
-    repo_stars = {}
-    repo_downloads = {}
+    repo_data = {}
     total_downloads = 0
+    total_stars = 0
     
     for repo in repos:
         name = repo["name"]
+        full_name = repo["full_name"]
+        owner = repo["owner"]
         stars = repo["stars"]
-        downloads = get_repo_downloads(name)
+        downloads = get_repo_downloads(full_name)
         
-        repo_stars[name.lower()] = stars
-        repo_downloads[name.lower()] = downloads
+        repo_data[name.lower()] = {
+            "name": name,
+            "owner": owner,
+            "stars": stars,
+            "downloads": downloads
+        }
         total_downloads += downloads
-        print(f"Repo {name}: {stars} stars, {downloads} downloads")
+        total_stars += stars
+        print(f"Repo {full_name}: {stars} stars, {downloads} downloads")
         
+    print(f"Total stars: {total_stars}")
     print(f"Total downloads: {total_downloads}")
     
     readme_path = "README.md"
@@ -79,38 +98,48 @@ def main():
         content = f.read()
         
     # Update Total Downloads badge
-    # Regex to find: Total%20Downloads-value-7C4DFF
     total_formatted = format_number(total_downloads)
     total_pattern = r'Total%20Downloads-[^-\s)]+-7C4DFF'
     total_replacement = f'Total%20Downloads-{total_formatted}-7C4DFF'
     content, total_count = re.subn(total_pattern, total_replacement, content)
     print(f"Total Downloads badge updated: {total_count > 0}")
+
+    # Update Total Stars badge if present
+    total_stars_formatted = format_number(total_stars)
+    total_stars_pattern = r'Total%20Stars-[^-\s)]+-7C4DFF'
+    total_stars_replacement = f'Total%20Stars-{total_stars_formatted}-7C4DFF'
+    content, total_stars_count = re.subn(total_stars_pattern, total_stars_replacement, content)
+    print(f"Total Stars badge updated: {total_stars_count > 0}")
     
     # Update Stars badges in the table
-    # Pattern looks for: [![Stars](https://img.shields.io/badge/Stars-<value>-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/<repo_name>/stargazers)
     def replace_stars(match):
-        repo_name = match.group(2)
-        stars = repo_stars.get(repo_name.lower(), 0)
-        stars_formatted = format_number(stars)
-        return f'[![Stars](https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/{repo_name}/stargazers)'
+        owner = match.group(2)
+        repo_name = match.group(3)
+        data = repo_data.get(repo_name.lower())
+        if data:
+            stars_formatted = format_number(data["stars"])
+            return f'[![Stars](https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square)](https://github.com/{data["owner"]}/{data["name"]}/stargazers)'
+        return match.group(0)
         
-    stars_pattern = r'\[!\[Stars\]\(https://img\.shields\.io/badge/Stars-([^-\s?)]+)-7C4DFF\?style=flat-square\)\]\(https://github\.com/LeanBitLab/([a-zA-Z0-9_-]+)/stargazers\)'
+    stars_pattern = r'\[!\[Stars\]\(https://img\.shields\.io/badge/Stars-([^-\s?)]+)-7C4DFF\?style=flat-square\)\]\(https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/stargazers\)'
     content, stars_count = re.subn(stars_pattern, replace_stars, content)
     print(f"Repo Star badges updated: {stars_count}")
     
     # Update Downloads badges in the table
-    # Pattern looks for: [![Downloads](https://img.shields.io/badge/Downloads-<value>-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/<repo_name>/releases/latest)
     def replace_downloads(match):
-        repo_name = match.group(2)
-        downloads = repo_downloads.get(repo_name.lower(), 0)
-        downloads_formatted = format_number(downloads)
-        return f'[![Downloads](https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/{repo_name}/releases/latest)'
+        owner = match.group(2)
+        repo_name = match.group(3)
+        data = repo_data.get(repo_name.lower())
+        if data:
+            downloads_formatted = format_number(data["downloads"])
+            return f'[![Downloads](https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square)](https://github.com/{data["owner"]}/{data["name"]}/releases/latest)'
+        return match.group(0)
         
-    downloads_pattern = r'\[!\[Downloads\]\(https://img\.shields\.io/badge/Downloads-([^-\s?)]+)-7C4DFF\?style=flat-square\)\]\(https://github\.com/LeanBitLab/([a-zA-Z0-9_-]+)/releases/latest\)'
+    downloads_pattern = r'\[!\[Downloads\]\(https://img\.shields\.io/badge/Downloads-([^-\s?)]+)-7C4DFF\?style=flat-square\)\]\(https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest\)'
     content, downloads_count = re.subn(downloads_pattern, replace_downloads, content)
     print(f"Repo Download badges updated: {downloads_count}")
     
-    if total_count > 0 or stars_count > 0 or downloads_count > 0:
+    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0:
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(content)
         print("README.md updated successfully!")
