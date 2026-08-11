@@ -37,11 +37,4 @@
       <text x="175" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="600" fill="#ffffff">2.2k+</text>
     </g>
   </g>
-
-  <!-- Rank Badge Circle -->
-  <g transform="translate(380, 100)">
-    <circle cx="0" cy="0" r="32" fill="none" stroke="#1e1e2d" stroke-width="6"/>
-    <circle cx="0" cy="0" r="32" fill="none" stroke="#7C4DFF" stroke-width="6" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="20"/>
-    <text x="0" y="8" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="24" font-weight="700" fill="#7C4DFF">A+</text>
-  </g>
 </svg>
