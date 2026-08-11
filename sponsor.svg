@@ -1,0 +1,14 @@
+<svg width="170" height="40" viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sponsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA4C89" />
+      <stop offset="100%" stop-color="#D32F2F" />
+    </linearGradient>
+  </defs>
+  <rect width="170" height="40" rx="20" fill="url(#sponsGrad)"/>
+  <!-- Heart Icon -->
+  <g transform="translate(20, 12)">
+    <path fill="#ffffff" d="M8 14.5l-1.16-1.06C2.72 9.68 0 7.21 0 4.17 0 1.69 1.94 0 4.4 0c1.39 0 2.73.65 3.6 1.68C8.87.65 10.21 0 11.6 0 14.06 0 16 1.69 16 4.17c0 3.04-2.72 5.51-6.84 9.27L8 14.5z"/>
+  </g>
+  <text x="44" y="24" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Sponsor Us</text>
+</svg>

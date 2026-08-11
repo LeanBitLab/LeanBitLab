@@ -67,12 +67,28 @@ def generate_stats_card(total_stars, total_downloads, repo_count, output_path="s
     downloads_fmt = format_number(total_downloads)
     
     svg = f'''<svg width="495" height="160" viewBox="0 0 495 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="494" height="159" x="0.5" y="0.5" rx="10" fill="#0d0f17" stroke="#2a2a3c" stroke-width="1"/>
+  <style>
+    .bg {{ fill: #ffffff; stroke: #e1e4e8; stroke-width: 1px; rx: 10px; }}
+    .header {{ font: 600 18px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: #7C4DFF; }}
+    .stat-label {{ font: 400 14px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: #57606a; }}
+    .stat-value {{ font: 600 14px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: #1f2328; }}
+    .accent {{ fill: #7C4DFF; }}
+
+    @media (prefers-color-scheme: dark) {{
+      .bg {{ fill: #0d0f17; stroke: #2a2a3c; }}
+      .stat-label {{ fill: #9e9e9e; }}
+      .stat-value {{ fill: #ffffff; }}
+      .header {{ fill: #7C4DFF; }}
+      .accent {{ fill: #7C4DFF; }}
+    }}
+  </style>
+
+  <rect class="bg" width="494" height="159" x="0.5" y="0.5" rx="10"/>
   
   <!-- Centered Title -->
   <g transform="translate(247.5, 35)">
-    <path fill="#7C4DFF" transform="translate(-130, -13)" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"/>
-    <text x="10" y="0" text-anchor="middle" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="18" font-weight="600" fill="#7C4DFF">LeanBitLab's GitHub Stats</text>
+    <path class="accent" transform="translate(-130, -13)" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"/>
+    <text x="10" y="0" text-anchor="middle" class="header">LeanBitLab's GitHub Stats</text>
   </g>
 
   <!-- Stat Items (2-Column Grid) -->
@@ -80,16 +96,16 @@ def generate_stats_card(total_stars, total_downloads, repo_count, output_path="s
   <g transform="translate(35, 75)">
     <!-- Total Stars -->
     <g transform="translate(0, 0)">
-      <path fill="#7C4DFF" d="M8 0L10.472 5.008L16 5.816L12 9.712L12.944 15.216L8 12.616L3.056 15.216L4 9.712L0 5.816L5.528 5.008L8 0Z"/>
-      <text x="24" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="400" fill="#9e9e9e">Total Stars:</text>
-      <text x="104" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="600" fill="#ffffff">{stars_fmt}</text>
+      <path class="accent" d="M8 0L10.472 5.008L16 5.816L12 9.712L12.944 15.216L8 12.616L3.056 15.216L4 9.712L0 5.816L5.528 5.008L8 0Z"/>
+      <text x="24" y="13" class="stat-label">Total Stars:</text>
+      <text x="104" y="13" class="stat-value">{stars_fmt}</text>
     </g>
     
     <!-- Public Repositories -->
     <g transform="translate(0, 36)">
-      <path fill="#7C4DFF" d="M4 1.75C4 .783 4.783 0 5.75 0h4.5c.967 0 1.75.783 1.75 1.75v1.5c0 .967-.783 1.75-1.75 1.75h-4.5A1.75 1.75 0 0 1 4 3.25zm1.75-.25a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25zM1.75 6C.783 6 0 6.783 0 7.75v6.5C0 15.217.783 16 1.75 16h12.5A1.75 1.75 0 0 0 16 14.25v-6.5A1.75 1.75 0 0 0 14.25 6zM1.5 7.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v6.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25z"/>
-      <text x="24" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="400" fill="#9e9e9e">Public Repos:</text>
-      <text x="116" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="600" fill="#ffffff">{repo_count}</text>
+      <path class="accent" d="M4 1.75C4 .783 4.783 0 5.75 0h4.5c.967 0 1.75.783 1.75 1.75v1.5c0 .967-.783 1.75-1.75 1.75h-4.5A1.75 1.75 0 0 1 4 3.25zm1.75-.25a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25zM1.75 6C.783 6 0 6.783 0 7.75v6.5C0 15.217.783 16 1.75 16h12.5A1.75 1.75 0 0 0 16 14.25v-6.5A1.75 1.75 0 0 0 14.25 6zM1.5 7.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v6.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25z"/>
+      <text x="24" y="13" class="stat-label">Public Repos:</text>
+      <text x="116" y="13" class="stat-value">{repo_count}</text>
     </g>
   </g>
 
@@ -97,16 +113,16 @@ def generate_stats_card(total_stars, total_downloads, repo_count, output_path="s
   <g transform="translate(255, 75)">
     <!-- Total Downloads -->
     <g transform="translate(0, 0)">
-      <path fill="#7C4DFF" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
-      <text x="24" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="400" fill="#9e9e9e">Total Downloads:</text>
-      <text x="142" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="600" fill="#ffffff">{downloads_fmt}</text>
+      <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
+      <text x="24" y="13" class="stat-label">Total Downloads:</text>
+      <text x="142" y="13" class="stat-value">{downloads_fmt}</text>
     </g>
 
     <!-- Total Commits -->
     <g transform="translate(0, 36)">
-      <path fill="#7C4DFF" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <text x="24" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="400" fill="#9e9e9e">Total Commits:</text>
-      <text x="126" y="13" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="14" font-weight="600" fill="#ffffff">2.2k+</text>
+      <path class="accent" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      <text x="24" y="13" class="stat-label">Total Commits:</text>
+      <text x="126" y="13" class="stat-value">2.2k+</text>
     </g>
   </g>
 </svg>'''

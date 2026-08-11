@@ -8,12 +8,19 @@
 
 **Crafting bloat-free, efficient Android and Linux experiences.**
 
-[![Website](https://img.shields.io/badge/Website-leanbitlab.github.io-7C4DFF?style=flat&logo=google-chrome&logoColor=white)](https://leanbitlab.github.io/LeanBitLab/) [![Sponsor](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=flat&logo=github-sponsors)](https://github.com/sponsors/LeanBitLab)
-<br/>
+<p align="center">
+  <a href="https://leanbitlab.github.io/LeanBitLab/">
+    <img alt="Official Website" src="./website.svg?v=1" height="38">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/sponsors/LeanBitLab">
+    <img alt="Sponsor Us" src="./sponsor.svg?v=1" height="38">
+  </a>
+</p>
 
 <!-- GitHub Stats with combined stats from all repos -->
 <a href="https://github.com/LeanBitLab">
-  <img alt="LeanBitLab's GitHub Stats" src="./stats.svg?v=3">
+  <img alt="LeanBitLab's GitHub Stats" src="./stats.svg?v=4">
 </a>
 
 </div>
@@ -30,12 +37,12 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **[LeanType](https://github.com/LeanBitLab/LeanType)** | AI-enhanced keyboard with custom providers & dedicated keys | [![Stars](https://img.shields.io/badge/Stars-671-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LeanType/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-55.3k-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LeanType/releases/latest) |
+| **[LeanType](https://github.com/LeanBitLab/LeanType)** | AI-enhanced keyboard with custom providers & dedicated keys | [![Stars](https://img.shields.io/badge/Stars-672-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LeanType/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-55.3k-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/LeanType/releases/latest) |
 | **[LTvLauncher](https://github.com/leanbitlab-org/LtvLauncher)** | Minimal TV launcher with WiFi widget & OLED screensaver | [![Stars](https://img.shields.io/badge/Stars-287-7C4DFF?style=flat-square)](https://github.com/leanbitlab-org/LtvLauncher/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-19.3k-7C4DFF?style=flat-square)](https://github.com/leanbitlab-org/LtvLauncher/releases/latest) |
-| **[Lwidget](https://github.com/LeanBitLab/Lwidget)** | Time, events, tasks, battery & data usage widget | [![Stars](https://img.shields.io/badge/Stars-41-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Lwidget/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-858-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Lwidget/releases/latest) |
-| **[RdTube](https://github.com/LeanBitLab/RdTube)** | YouTube-like UI for Reddit videos | [![Stars](https://img.shields.io/badge/Stars-33-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/RdTube/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-444-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/RdTube/releases/latest) |
-| **[LeanType Handwriting Plugin](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin)** | Handwriting recognition layout plugin for LeanType | [![Stars](https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-799-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest) |
-| **[LeanType Translation Plugin](https://github.com/LeanBitLab/Leantype-Translation-Plugin)** | Google Translate layout plugin for LeanType | [![Stars](https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-664-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest) |
+| **[Lwidget](https://github.com/LeanBitLab/Lwidget)** | Time, events, tasks, battery & data usage widget | [![Stars](https://img.shields.io/badge/Stars-41-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Lwidget/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-862-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Lwidget/releases/latest) |
+| **[RdTube](https://github.com/LeanBitLab/RdTube)** | YouTube-like UI for Reddit videos | [![Stars](https://img.shields.io/badge/Stars-34-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/RdTube/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-444-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/RdTube/releases/latest) |
+| **[LeanType Handwriting Plugin](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin)** | Handwriting recognition layout plugin for LeanType | [![Stars](https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-803-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest) |
+| **[LeanType Translation Plugin](https://github.com/LeanBitLab/Leantype-Translation-Plugin)** | Google Translate layout plugin for LeanType | [![Stars](https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers) [![Downloads](https://img.shields.io/badge/Downloads-677-7C4DFF?style=flat-square)](https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest) |
 | **LeanBook** | Notes, Tasks, Reminders, Bills, Shopping list | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
 | **Minimal Dialer** | Clean, simple phone dialer | [![In Development](https://img.shields.io/badge/-In_Development-7C4DFF?style=flat-square)](https://github.com/LeanBitLab) |
 

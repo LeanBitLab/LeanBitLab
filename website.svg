@@ -1,0 +1,14 @@
+<svg width="170" height="40" viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="webGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C4DFF" />
+      <stop offset="100%" stop-color="#651FFF" />
+    </linearGradient>
+  </defs>
+  <rect width="170" height="40" rx="20" fill="url(#webGrad)"/>
+  <!-- Globe Icon -->
+  <g transform="translate(18, 11)">
+    <path fill="#ffffff" d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0zm6.8 8h-3.15a13.3 13.3 0 0 0-1.2-4.48A7.22 7.22 0 0 1 15.8 8zM9 1.8c.84 1.45 1.5 3.73 1.72 6.2H7.28C7.5 5.53 8.16 3.25 9 1.8zM2.2 8A7.22 7.22 0 0 1 6.55 3.52 13.3 13.3 0 0 0 5.35 8H2.2zm0 2h3.15c.18 1.62.6 3.12 1.2 4.48A7.22 7.22 0 0 1 2.2 10zm5.08 0h3.44c-.22 2.47-.88 4.75-1.72 6.2-.84-1.45-1.5-3.73-1.72-6.2zm4.17 4.48c.6-1.36 1.02-2.86 1.2-4.48h3.15a7.22 7.22 0 0 1-4.35 4.48z"/>
+  </g>
+  <text x="44" y="24" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Official Website</text>
+</svg>
