@@ -203,29 +203,27 @@ def main():
     
     # Update Stars badges in the table
     def replace_stars(match):
-        owner = match.group(2)
-        repo_name = match.group(3)
+        repo_name = match.group(2)
         data = repo_data.get(repo_name.lower())
         if data:
             stars_formatted = format_number(data["stars"])
-            return f'[![Stars](https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square)](https://github.com/{data["owner"]}/{data["name"]}/stargazers)'
+            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/stargazers"><img src="https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square&amp;logo=github&amp;labelColor=161b22" alt="Stars"></a>'
         return match.group(0)
         
-    stars_pattern = r'\[!\[Stars\]\(https://img\.shields\.io/badge/Stars-([^-\s?)]+)-7C4DFF\?style=flat-square\)\]\(https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/stargazers\)'
+    stars_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/stargazers"><img src="https://img\.shields\.io/badge/Stars-([^-\s?]+)-7C4DFF[^"]*" alt="Stars"></a>'
     content, stars_count = re.subn(stars_pattern, replace_stars, content)
     print(f"Repo Star badges updated: {stars_count}")
     
     # Update Downloads badges in the table
     def replace_downloads(match):
-        owner = match.group(2)
-        repo_name = match.group(3)
+        repo_name = match.group(2)
         data = repo_data.get(repo_name.lower())
         if data:
             downloads_formatted = format_number(data["downloads"])
-            return f'[![Downloads](https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square)](https://github.com/{data["owner"]}/{data["name"]}/releases/latest)'
+            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/releases/latest"><img src="https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square&amp;logo=github&amp;labelColor=161b22" alt="Downloads"></a>'
         return match.group(0)
         
-    downloads_pattern = r'\[!\[Downloads\]\(https://img\.shields\.io/badge/Downloads-([^-\s?)]+)-7C4DFF\?style=flat-square\)\]\(https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest\)'
+    downloads_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest"><img src="https://img\.shields\.io/badge/Downloads-([^-\s?]+)-7C4DFF[^"]*" alt="Downloads"></a>'
     content, downloads_count = re.subn(downloads_pattern, replace_downloads, content)
     print(f"Repo Download badges updated: {downloads_count}")
     
