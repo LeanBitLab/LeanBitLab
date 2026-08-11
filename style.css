@@ -245,6 +245,30 @@ nav a:hover {
   padding: 180px 0 100px;
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 1200px;
+  height: 90%;
+  background: url('./banner.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0) 90%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0) 90%);
 }
 .badge-pill {
   display: inline-block;
