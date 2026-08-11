@@ -207,7 +207,7 @@ def main():
         data = repo_data.get(repo_name.lower())
         if data:
             stars_formatted = format_number(data["stars"])
-            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/stargazers"><img src="https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square&amp;logo=github&amp;labelColor=161b22" alt="Stars"></a>'
+            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/stargazers"><img src="https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>'
         return match.group(0)
         
     stars_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/stargazers"><img src="https://img\.shields\.io/badge/Stars-([^-\s?]+)-7C4DFF[^"]*" alt="Stars"></a>'
@@ -220,7 +220,7 @@ def main():
         data = repo_data.get(repo_name.lower())
         if data:
             downloads_formatted = format_number(data["downloads"])
-            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/releases/latest"><img src="https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square&amp;logo=github&amp;labelColor=161b22" alt="Downloads"></a>'
+            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/releases/latest"><img src="https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>'
         return match.group(0)
         
     downloads_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest"><img src="https://img\.shields\.io/badge/Downloads-([^-\s?]+)-7C4DFF[^"]*" alt="Downloads"></a>'
