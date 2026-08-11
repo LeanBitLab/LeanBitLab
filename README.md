@@ -31,6 +31,12 @@
 
 We create open-source applications focused on **efficiency**, **privacy**, and **user experience**. We specialize in building bloat-free, high-performance software that respects device resources and delivers a premium user experience across Android and Linux environments.
 
+<br/>
+
+<p align="center">
+  <img src="./banner.png" alt="LeanBitLab Banner" width="100%">
+</p>
+
 ---
 
 ## 📱 Android Projects
