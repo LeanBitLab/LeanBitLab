@@ -13,7 +13,7 @@
 
 <!-- GitHub Stats with combined stats from all repos -->
 <a href="https://github.com/LeanBitLab">
-  <img alt="LeanBitLab's GitHub Stats" src="./stats.svg?v=2">
+  <img alt="LeanBitLab's GitHub Stats" src="./stats.svg?v=3">
 </a>
 
 </div>
