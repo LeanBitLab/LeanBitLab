@@ -54,8 +54,8 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td><b><a href="https://github.com/LeanBitLab/LeanType">⌨️ LeanType</a></b></td>
       <td>AI-enhanced keyboard with custom providers &amp; dedicated keys</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-672-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-55.3k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-673-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-55.5k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Minimal TV launcher with WiFi widget &amp; OLED screensaver protection</td>
       <td>
         <a href="https://github.com/leanbitlab-org/LtvLauncher/stargazers"><img src="https://img.shields.io/badge/Stars-287-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Downloads-19.3k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Downloads-19.4k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Unified widget tracking time, calendar events, tasks, battery &amp; data usage</td>
       <td>
         <a href="https://github.com/LeanBitLab/Lwidget/stargazers"><img src="https://img.shields.io/badge/Stars-41-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Downloads-862-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Downloads-868-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -87,7 +87,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Handwriting recognition layout plugin for LeanType keyboard</td>
       <td>
         <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-803-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-807-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -95,7 +95,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Google Translate layout plugin for LeanType keyboard</td>
       <td>
         <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-677-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-703-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>

@@ -47,7 +47,7 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
       <text x="24" y="13" class="stat-label">Total Downloads:</text>
-      <text x="142" y="13" class="stat-value">77.5k</text>
+      <text x="142" y="13" class="stat-value">77.7k</text>
     </g>
 
     <!-- Total Commits -->
