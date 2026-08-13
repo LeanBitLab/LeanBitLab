@@ -16,30 +16,30 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 673,
-    "downloads": 55472,
-    "downloads_formatted": "55.5k"
+    "stars": 674,
+    "downloads": 56334,
+    "downloads_formatted": "56.3k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 8,
-    "downloads": 807,
-    "downloads_formatted": "807"
+    "downloads": 823,
+    "downloads_formatted": "823"
   },
   "leantype-translation-plugin": {
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 2,
-    "downloads": 703,
-    "downloads_formatted": "703"
+    "downloads": 767,
+    "downloads_formatted": "767"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
     "stars": 41,
-    "downloads": 868,
-    "downloads_formatted": "868"
+    "downloads": 875,
+    "downloads_formatted": "875"
   },
   "rdtube": {
     "name": "RdTube",
@@ -51,9 +51,9 @@
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 287,
-    "downloads": 19394,
-    "downloads_formatted": "19.4k"
+    "stars": 289,
+    "downloads": 19507,
+    "downloads_formatted": "19.5k"
   },
   ".github": {
     "name": ".github",
