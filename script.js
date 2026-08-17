@@ -1007,10 +1007,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Active scroll-spy for desktop and mobile navigation links
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll('section[id], footer[id]');
   const navLinksAll = document.querySelectorAll('.nav-link');
 
   const onScrollSpy = () => {
+    // Check if user has scrolled to the bottom of the page
+    const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
+
+    if (isAtBottom) {
+      navLinksAll.forEach(link => {
+        if (link.getAttribute('href') === '#contact') {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+      return;
+    }
+
     const scrollPos = window.scrollY + 140;
     let currentId = '';
 
