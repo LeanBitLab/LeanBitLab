@@ -409,6 +409,31 @@ function initOverlayNav(overlay, repoName) {
       lightbox.classList.add('active');
     }
   });
+
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const imgWrapper = overlay.querySelector('.screenshot-img-wrapper');
+  if (imgWrapper) {
+    imgWrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    imgWrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 35;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swiped left -> Next
+        let nextIdx = (currentIndex + 1) % repoData.files.length;
+        updateImage(nextIdx);
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swiped right -> Prev
+        let prevIdx = currentIndex - 1;
+        if (prevIdx < 0) prevIdx = repoData.files.length - 1;
+        updateImage(prevIdx);
+      }
+    }, { passive: true });
+  }
   
   // Prevent click propagation within the overlay to keep the repository link safe
   overlay.addEventListener('click', (e) => {
@@ -605,9 +630,10 @@ function renderSponsors(view) {
   const isMobile = window.innerWidth < 768;
   const GAP = 4;
 
-  // Pill dimensions — centered with margin: 0 auto
-  const pillWidth = isMobile ? Math.min(window.innerWidth - 32, 360) : 820;
-  const pillHeight = isMobile ? 240 : 300;
+  // Pill dimensions — centered with margin: 0 auto, fluid on small devices
+  const availableWidth = Math.max(280, window.innerWidth - 32);
+  const pillWidth = isMobile ? Math.min(availableWidth, 380) : 820;
+  const pillHeight = isMobile ? Math.min(240, Math.max(200, Math.round(pillWidth * 0.68))) : 300;
   const pillR = pillHeight / 2;
 
   container.style.width = pillWidth + 'px';
@@ -623,7 +649,7 @@ function renderSponsors(view) {
   const circles = shuffleArray(data).map((sponsor, i) => {
     const circleArea = (sponsor.ratio || 0.001) * pillArea * PACKING_FACTOR;
     const rFromArea = Math.sqrt(circleArea / Math.PI);
-    const minR = isMobile ? 12 : 14; // Min radius 14px (28px diameter)
+    const minR = isMobile ? (pillWidth < 340 ? 10 : 12) : 14;
     const maxR = pillR - 6; // Max radius allowing unclamped 50%+ ratio balls
     const radius = Math.max(minR, Math.min(maxR, rFromArea));
 
@@ -889,6 +915,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+
+    // Touch swipe support for fullscreen lightbox
+    let lbTouchStartX = 0;
+    let lbTouchEndX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      lbTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    lightbox.addEventListener('touchend', (e) => {
+      lbTouchEndX = e.changedTouches[0].screenX;
+      const threshold = 40;
+      if (lbTouchEndX < lbTouchStartX - threshold && activeCardNextBtn) {
+        activeCardNextBtn.click();
+      } else if (lbTouchEndX > lbTouchStartX + threshold && activeCardPrevBtn) {
+        activeCardPrevBtn.click();
+      }
+    }, { passive: true });
   }
 
   // Fullscreen Features Lightbox close and scroll listeners
@@ -923,22 +966,84 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Mobile navigation drawer toggle
+  // Mobile navigation drawer toggle with scroll lock and outside-click dismissal
   const mobileToggle = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
   
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
+    const closeMenu = () => {
+      mobileToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active', isActive);
+      document.body.classList.toggle('menu-open', isActive);
     });
     
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+        closeMenu();
       });
     });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
   }
+
+  // Active scroll-spy for desktop and mobile navigation links
+  const sections = document.querySelectorAll('section[id]');
+  const navLinksAll = document.querySelectorAll('.nav-link');
+
+  const onScrollSpy = () => {
+    const scrollPos = window.scrollY + 140;
+    let currentId = '';
+
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentId = sec.getAttribute('id');
+      }
+    });
+
+    navLinksAll.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === '#' + currentId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', onScrollSpy, { passive: true });
+  onScrollSpy();
+
+  // Handle window resize dynamically for sponsor bubbles
+  let resizeDebounce;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeDebounce);
+    resizeDebounce = setTimeout(() => {
+      const activeToggle = document.querySelector('.sponsor-toggle-btn.active');
+      const view = activeToggle ? activeToggle.getAttribute('data-view') : 'allTime';
+      renderSponsors(view);
+      onScrollSpy();
+    }, 150);
+  });
 });
