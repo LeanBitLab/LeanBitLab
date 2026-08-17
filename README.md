@@ -13,7 +13,7 @@
     <img alt="Official Website" src="./website.svg?v=1" height="38">
   </a>
   &nbsp;&nbsp;
-  <a href="https://github.com/sponsors/LeanBitLab">
+  <a href="https://github.com/LeanBitLab#%EF%B8%8F-support-us">
     <img alt="Sponsor Us" src="./sponsor.svg?v=1" height="38">
   </a>
 </p>
@@ -154,8 +154,9 @@ We build apps that are functional, efficient, and respect your resources — whe
 Your support helps us maintain our current projects and develop new bloat-free experiences.
 
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
+[![Open Collective](https://img.shields.io/badge/Open_Collective-leanbitlab--org-2972F4?style=for-the-badge&logo=open-collective&logoColor=white)](https://opencollective.com/leanbitlab-org)
 
-### 💖 Active Sponsors
+### 💖 GitHub Sponsors
 
 Thank you to our amazing sponsors!
 

@@ -218,7 +218,8 @@ nav a:hover {
 .nav-mobile-only {
   display: none !important;
 }
-.heart-icon {
+.heart-icon,
+.oc-icon {
   width: 16px;
   height: 16px;
 }
