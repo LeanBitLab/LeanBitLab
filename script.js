@@ -4,6 +4,7 @@ const repoMap = {
   'leantype': 'leantype',
   'leantype-handwriting-plugin': 'leantype-handwriting-plugin',
   'leantype-translation-plugin': 'leantype-translation-plugin',
+  'leantype-voice-plugin': 'leantype-voice-plugin',
   'ltvlauncher': 'ltvlauncher',
   'lwidget': 'lwidget',
   'rdtube': 'rdtube'
@@ -54,6 +55,10 @@ const readmeConfig = {
   'leantype-translation-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/Leantype-Translation-Plugin/main/README.md',
     header: "## How it works"
+  },
+  'leantype-voice-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Voice-Plugin/master/README.md',
+    header: "## Architecture"
   },
   'adaptive-brightness-linux': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/README.md',
@@ -121,6 +126,12 @@ const fallbackFeatures = {
   'leantype-translation-plugin': [
     '<strong>🌐 Direct Integration</strong> - Translation plugin enabling Google Translate directly within the LeanType keyboard.',
     '<strong>Dynamic Plugin Loader</strong> - Core keyboard loads translation APK dynamically when enabled by the user.'
+  ],
+  'leantype-voice-plugin': [
+    '<strong>🎙️ Offline Whisper Engine</strong> - Native whisper.cpp integration with ARM64 NEON optimizations.',
+    '<strong>⚡ AIDL IPC Interface</strong> - Standardized IVoiceEngine contract with real-time audio streaming.',
+    '<strong>📦 Async Model Management</strong> - Non-blocking background model imports and on-demand unloading.',
+    '<strong>🔒 100% Private</strong> - Zero network permissions required; all voice processing stays strictly on-device.'
   ],
   'adaptive-brightness-linux': [
     '<strong>📈 Interactive Spline Curve</strong> - Draggable spline nodes to adjust 24-hour target levels in real time.',
