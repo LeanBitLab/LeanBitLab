@@ -181,7 +181,8 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/BareTread">BareTread</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/spielist">spielist</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/mtg92">mtg92</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/sergio-asenjo">sergio-asenjo</a></strong>
+  <strong><a href="https://github.com/sergio-asenjo">sergio-asenjo</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/PareTrast">PareTrast</a></strong>
 </p>
 
 ---
