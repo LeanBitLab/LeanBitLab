@@ -54,8 +54,8 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td><b><a href="https://github.com/LeanBitLab/LeanType">⌨️ LeanType</a></b></td>
       <td>AI-enhanced keyboard with custom providers &amp; dedicated keys</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-718-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-60.3k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-721-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-59.6k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Unified widget tracking time, calendar events, tasks, battery &amp; data usage</td>
       <td>
         <a href="https://github.com/LeanBitLab/Lwidget/stargazers"><img src="https://img.shields.io/badge/Stars-41-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Downloads-923-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Downloads-931-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -79,7 +79,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Sleek, YouTube Shorts-style video browsing client for Reddit</td>
       <td>
         <a href="https://github.com/LeanBitLab/RdTube/stargazers"><img src="https://img.shields.io/badge/Stars-35-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-511-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-517-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -87,15 +87,15 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Handwriting recognition layout plugin for LeanType keyboard</td>
       <td>
         <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-9-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-968-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.0k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin">🌐 Translation Plugin</a></b></td>
       <td>Google Translate layout plugin for LeanType keyboard</td>
       <td>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.4k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-3-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.6k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -103,7 +103,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Offline speech-to-text voice input plugin for LeanType keyboard</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-5-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-301-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-408-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
