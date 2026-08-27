@@ -663,18 +663,19 @@ function renderSponsors(view) {
   container.style.maxWidth = '100%';
   container.style.height = pillHeight + 'px';
 
-  // Area of pill stadium: rectangle + 2 semicircles = (W - H)*H + PI*(H/2)^2
-  const pillArea = (pillWidth - pillHeight) * pillHeight + Math.PI * Math.pow(pillR, 2);
-  const PACKING_FACTOR = 0.52; // fraction of container area allocated for 100% capacity fill
-
-  // Build circles array with radii mathematically proportional to $700 / $1000 container capacity
+  // Absolute capacity benchmark ratio (0.50 = 50% container allocation)
+  // Guarantees that "This Month" ($100) renders noticeably smaller than "All Time" ($460)
+  const REFERENCE_MAX_RATIO = 0.50;
   const totalCount = data.length;
+
   const circles = shuffleArray(data).map((sponsor, i) => {
-    const circleArea = (sponsor.ratio || 0.001) * pillArea * PACKING_FACTOR;
-    const rFromArea = Math.sqrt(circleArea / Math.PI);
-    const minR = isMobile ? (pillWidth < 340 ? 10 : 12) : 14;
-    const maxR = pillR - 6; // Max radius allowing unclamped 50%+ ratio balls
-    const radius = Math.max(minR, Math.min(maxR, rFromArea));
+    const rVal = sponsor.ratio || 0.001;
+    let radius;
+    if (isMobile) {
+      radius = 9.5 + Math.pow(Math.min(1, rVal / REFERENCE_MAX_RATIO), 0.45) * 44;
+    } else {
+      radius = 13.5 + Math.pow(Math.min(1, rVal / REFERENCE_MAX_RATIO), 0.45) * 72;
+    }
 
     // Distribute initial X evenly across full pill width (from left cap to right cap)
     const margin = radius + 10;
@@ -682,7 +683,7 @@ function renderSponsors(view) {
     const y = radius + 10 + Math.random() * (pillHeight * 0.25);
     return {
       sponsor,
-      r: radius,
+      r: Math.round(radius),
       x,
       y
     };
@@ -725,7 +726,7 @@ function renderSponsors(view) {
   }
 
   // Physics simulation steps (downward gravity + collision separation + wall bounds)
-  const ITERATIONS = 400;
+  const ITERATIONS = 450;
 
   for (let iter = 0; iter < ITERATIONS; iter++) {
     // 1. Downward gravity
@@ -765,27 +766,40 @@ function renderSponsors(view) {
     }
   }
 
+  // Helper to compute visual width of text taking uppercase and wide glyphs (W, M) into account
+  const computeVisualLength = (str) => {
+    let len = 0;
+    for (const char of str) {
+      if (/[WMwm]/.test(char)) len += 1.35;
+      else if (/[A-Z]/.test(char)) len += 1.15;
+      else if (/[ijl1\.\-]/.test(char)) len += 0.55;
+      else len += 0.9;
+    }
+    return len;
+  };
+
   // Render the settled balls inside container
   circles.forEach((c) => {
     const baseWidth = Math.round(c.r * 2);
     const name = c.sponsor.name;
     const isMultiWord = name.includes(' ');
+    const subTierClass = (c.sponsor.subTier || '').toLowerCase().replace(/\s+/g, '-');
 
-    const maxWordLength = isMultiWord
-      ? Math.max(...name.split(' ').map(w => w.length))
-      : name.length;
+    const maxWordVisualLength = isMultiWord
+      ? Math.max(...name.split(' ').map(w => computeVisualLength(w)))
+      : computeVisualLength(name);
 
-    // Dynamically calculate font size per circle name (non-hover)
-    // Sized so name fits inside available circle width if possible (clamped 7.5px - 14px)
-    const idealFontSize = parseFloat(((baseWidth * 0.80) / (maxWordLength * 0.58)).toFixed(1));
-    const fontSize = Math.max(7.5, Math.min(14, idealFontSize));
+    // Compute proportional font size clamped per circle diameter
+    const targetFontSize = (baseWidth * 0.76) / Math.max(3, maxWordVisualLength);
+    const maxAllowedFont = Math.min(14.5, baseWidth * 0.15 + 4);
+    const fontSize = Math.max(7.5, Math.min(maxAllowedFont, targetFontSize));
 
     const x = c.x - c.r;
     const y = c.y - c.r;
 
     // Calculate text width needed at standard hover font size (11.5px on mobile, 13px on desktop)
     const hoverFontSize = isMobile ? 11.5 : 13;
-    const hoverTextWidth = maxWordLength * (hoverFontSize * 0.65);
+    const hoverTextWidth = maxWordVisualLength * (hoverFontSize * 0.65);
     const availableWidthAtHoverFont = baseWidth * 0.72;
 
     let hoverWidth = baseWidth;
@@ -801,7 +815,8 @@ function renderSponsors(view) {
 
     const isLink = !!c.sponsor.github;
     const el = document.createElement(isLink ? 'a' : 'div');
-    el.className = `sponsor-bubble tier-${c.sponsor.tier} ${isMultiWord ? 'multi-word' : 'single-word'}`;
+    el.className = `sponsor-bubble tier-${c.sponsor.tier} subtier-${subTierClass} ${isMultiWord ? 'multi-word' : 'single-word'}`;
+    el.title = `${name} (${c.sponsor.subTier || c.sponsor.tier})`;
     el.style.setProperty('--base-width', `${baseWidth}px`);
     el.style.setProperty('--hover-width', `${hoverWidth}px`);
     el.style.setProperty('--offset-x', `${offsetX}px`);
