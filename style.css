@@ -157,12 +157,13 @@ header.scrolled {
   font-family: 'Pixelify Sans', sans-serif;
   font-weight: 700;
   color: #8a68db;
-  font-size: 1.18em;                /* cap-height compensation matching Outfit */
-  letter-spacing: -0.02em;
+  font-size: 1.12em;              /* precisely matches the cap-height of the original banner */
   display: inline-block;
-  transform: translateY(0.055em);   /* optical baseline alignment */
-  margin-left: 0.02em;              /* hugs the 'n' */
-  margin-right: 0.12em;             /* breathing gap before 'Lab' */
+  vertical-align: baseline;       /* sit on the shared baseline */
+  transform: translateY(0.04em);  /* optical nudge down onto the ink line */
+  letter-spacing: -0.02em;
+  margin-left: 0.02em;
+  margin-right: 0.12em;
 }
 .footer-logo {
   font-size: 24px;
