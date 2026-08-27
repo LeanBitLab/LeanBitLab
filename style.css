@@ -157,13 +157,12 @@ header.scrolled {
   font-family: 'Pixelify Sans', sans-serif;
   font-weight: 700;
   color: #8a68db;
-  font-size: 1.12em;              /* precisely matches the cap-height of the original banner */
+  font-size: 1.12em;              /* cap-height compensation only */
   display: inline-block;
-  vertical-align: baseline;       /* sit on the shared baseline */
-  transform: translateY(0.04em);  /* optical nudge down onto the ink line */
+  vertical-align: baseline;       /* sit on the same baseline as Lean/Lab */
+  transform: none;                /* no manual nudging */
   letter-spacing: -0.02em;
-  margin-left: 0.02em;
-  margin-right: 0.12em;
+  margin: 0;                      /* kills the gap before Lab */
 }
 .footer-logo {
   font-size: 24px;
