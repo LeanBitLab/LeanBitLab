@@ -3,6 +3,7 @@ const repoMap = {
   'adaptive-brightness-linux': 'adaptive-brightness-linux',
   'leantype': 'leantype',
   'leantype-handwriting-plugin': 'leantype-handwriting-plugin',
+  'leantype-offline-ai-plugin': 'leantype-offline-ai-plugin',
   'leantype-translation-plugin': 'leantype-translation-plugin',
   'leantype-voice-plugin': 'leantype-voice-plugin',
   'ltvlauncher': 'ltvlauncher',
@@ -59,6 +60,10 @@ const readmeConfig = {
   'leantype-voice-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Voice-Plugin/master/README.md',
     header: "## Architecture"
+  },
+  'leantype-offline-ai-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Offline-AI-Plugin/main/README.md',
+    header: "## ✨ Features"
   },
   'adaptive-brightness-linux': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/README.md',
@@ -132,6 +137,13 @@ const fallbackFeatures = {
     '<strong>⚡ AIDL IPC Interface</strong> - Standardized IVoiceEngine contract with real-time audio streaming.',
     '<strong>📦 Async Model Management</strong> - Non-blocking background model imports and on-demand unloading.',
     '<strong>🔒 100% Private</strong> - Zero network permissions required; all voice processing stays strictly on-device.'
+  ],
+  'leantype-offline-ai-plugin': [
+    '<strong>🧠 100% On-Device AI</strong> - Local inference powered by optimized llama.cpp ARM64/x86_64 JNI binaries.',
+    '<strong>🛡️ Zero Internet & Complete Privacy</strong> - Runs entirely offline with zero network connectivity or external telemetry.',
+    '<strong>⚡ Fast Neural Proofreading & Grammar Correction</strong> - Correct spelling, fix punctuation, and refine writing with local GGUF models.',
+    '<strong>🔒 Designed for Offline Editions</strong> - Built specifically for LeanType Offline and Offline Lite flavors with zero internet permissions.',
+    '<strong>📦 Dynamic Isolated Architecture</strong> - Loaded on-demand via DexClassLoader with isolated native libraries and zero footprint when inactive.'
   ],
   'adaptive-brightness-linux': [
     '<strong>📈 Interactive Spline Curve</strong> - Draggable spline nodes to adjust 24-hour target levels in real time.',
