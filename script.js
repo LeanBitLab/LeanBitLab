@@ -653,31 +653,44 @@ function renderSponsors(view) {
   const isMobile = window.innerWidth < 768;
   const GAP = 4;
 
-  // Pill dimensions — centered with margin: 0 auto, fluid on small devices
+  // Calculate total funded ratio in the current view
+  const totalRatio = data.reduce((sum, s) => sum + (s.ratio || 0), 0);
+  const fillFactor = Math.min(1.0, Math.max(0.15, totalRatio));
+
+  // Dynamic Pill dimensions: container scales dynamically with the total funded amount
   const availableWidth = Math.max(280, window.innerWidth - 32);
-  const pillWidth = isMobile ? Math.min(availableWidth, 380) : 820;
-  const pillHeight = isMobile ? Math.min(240, Math.max(200, Math.round(pillWidth * 0.68))) : 300;
+  let pillWidth, pillHeight;
+
+  if (isMobile) {
+    pillWidth = Math.min(availableWidth, Math.round(300 + fillFactor * 80));
+    pillHeight = Math.round(190 + fillFactor * 50);
+  } else {
+    pillWidth = Math.round(580 + fillFactor * 260);
+    pillHeight = Math.round(230 + fillFactor * 80);
+  }
   const pillR = pillHeight / 2;
 
   container.style.width = pillWidth + 'px';
   container.style.maxWidth = '100%';
   container.style.height = pillHeight + 'px';
 
-  // Absolute capacity benchmark ratio (0.50 = 50% container allocation)
-  // Guarantees that "This Month" ($100) renders noticeably smaller than "All Time" ($460)
-  const REFERENCE_MAX_RATIO = 0.50;
-  const totalCount = data.length;
+  // Exact area of stadium pill container: (W - H)*H + PI*(H/2)^2
+  const pillArea = (pillWidth - pillHeight) * pillHeight + Math.PI * Math.pow(pillR, 2);
+  const PACKING_FACTOR = 0.46; // Fraction of container area allocated for packed balls
 
+  // Circle sizes are directly dependent upon the container area and each sponsor's contribution share
+  const totalCount = data.length;
   const circles = shuffleArray(data).map((sponsor, i) => {
     const rVal = sponsor.ratio || 0.001;
-    let radius;
-    if (isMobile) {
-      radius = 9.5 + Math.pow(Math.min(1, rVal / REFERENCE_MAX_RATIO), 0.45) * 44;
-    } else {
-      radius = 13.5 + Math.pow(Math.min(1, rVal / REFERENCE_MAX_RATIO), 0.45) * 72;
-    }
+    const effectiveRatio = Math.pow(rVal / 0.50, 0.85) * 0.50;
+    const circleArea = effectiveRatio * pillArea * PACKING_FACTOR;
+    const rawR = Math.sqrt(circleArea / Math.PI);
+    
+    const minR = isMobile ? 9 : 13;
+    const maxR = pillR - 12;
+    const radius = Math.max(minR, Math.min(maxR, rawR));
 
-    // Distribute initial X evenly across full pill width (from left cap to right cap)
+    // Distribute initial X evenly across dynamic pill width
     const margin = radius + 10;
     const x = margin + (i / Math.max(1, totalCount - 1)) * (pillWidth - 2 * margin);
     const y = radius + 10 + Math.random() * (pillHeight * 0.25);
