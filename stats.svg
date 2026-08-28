@@ -30,7 +30,7 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 0L10.472 5.008L16 5.816L12 9.712L12.944 15.216L8 12.616L3.056 15.216L4 9.712L0 5.816L5.528 5.008L8 0Z"/>
       <text x="24" y="13" class="stat-label">Total Stars:</text>
-      <text x="104" y="13" class="stat-value">1.1k</text>
+      <text x="104" y="13" class="stat-value">1.2k</text>
     </g>
     
     <!-- Public Repositories -->
@@ -47,7 +47,7 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
       <text x="24" y="13" class="stat-label">Total Downloads:</text>
-      <text x="142" y="13" class="stat-value">89.0k</text>
+      <text x="142" y="13" class="stat-value">90.0k</text>
     </g>
 
     <!-- Total Commits -->
