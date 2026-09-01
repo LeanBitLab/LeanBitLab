@@ -16,58 +16,58 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 873,
-    "downloads": 67617,
-    "downloads_formatted": "67.6k"
+    "stars": 878,
+    "downloads": 68104,
+    "downloads_formatted": "68.1k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 11,
-    "downloads": 1735,
-    "downloads_formatted": "1.7k"
+    "downloads": 1800,
+    "downloads_formatted": "1.8k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 2,
-    "downloads": 373,
-    "downloads_formatted": "373"
+    "downloads": 408,
+    "downloads_formatted": "408"
   },
   "leantype-translation-plugin": {
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 6,
-    "downloads": 2836,
-    "downloads_formatted": "2.8k"
+    "downloads": 2944,
+    "downloads_formatted": "2.9k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
-    "stars": 11,
-    "downloads": 1485,
-    "downloads_formatted": "1.5k"
+    "stars": 12,
+    "downloads": 1598,
+    "downloads_formatted": "1.6k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
-    "stars": 45,
-    "downloads": 987,
-    "downloads_formatted": "987"
+    "stars": 46,
+    "downloads": 1014,
+    "downloads_formatted": "1.0k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 36,
-    "downloads": 539,
-    "downloads_formatted": "539"
+    "downloads": 541,
+    "downloads_formatted": "541"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 311,
-    "downloads": 21782,
-    "downloads_formatted": "21.8k"
+    "stars": 314,
+    "downloads": 21903,
+    "downloads_formatted": "21.9k"
   },
   ".github": {
     "name": ".github",
