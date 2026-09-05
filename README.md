@@ -127,7 +127,6 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Official audio sound packs repository and custom pack creator guide for LeanType</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/stargazers"><img src="https://img.shields.io/badge/Stars-0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/releases/latest"><img src="https://img.shields.io/badge/Downloads-0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
