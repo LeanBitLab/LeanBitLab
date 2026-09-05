@@ -115,6 +115,22 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       </td>
     </tr>
     <tr>
+      <td><b><a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin">🔍 OCR Plugin</a></b></td>
+      <td>Offline on-device Optical Character Recognition plugin for LeanType keyboard</td>
+      <td>
+        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-34-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
+    <tr>
+      <td><b><a href="https://github.com/LeanBitLab/LeanType-SoundPacks">🔊 Sound Packs</a></b></td>
+      <td>Official audio sound packs repository and custom pack creator guide for LeanType</td>
+      <td>
+        <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/stargazers"><img src="https://img.shields.io/badge/Stars-0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/releases/latest"><img src="https://img.shields.io/badge/Downloads-0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
+    <tr>
       <td><b>📝 LeanBook</b></td>
       <td>Notes, Tasks, Reminders, Bills &amp; Shopping list</td>
       <td>
@@ -192,7 +208,8 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/sergio-asenjo">sergio-asenjo</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/PareTrast">PareTrast</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/kaoneko">kaoneko</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/frostynumeral">frostynumeral</a></strong>
+  <strong><a href="https://github.com/frostynumeral">frostynumeral</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/thewalkingcat">thewalkingcat</a></strong>
 </p>
 
 ---

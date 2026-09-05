@@ -3,7 +3,9 @@ const repoMap = {
   'adaptive-brightness-linux': 'adaptive-brightness-linux',
   'leantype': 'leantype',
   'leantype-handwriting-plugin': 'leantype-handwriting-plugin',
+  'leantype-ocr-plugin': 'leantype-ocr-plugin',
   'leantype-offline-ai-plugin': 'leantype-offline-ai-plugin',
+  'leantype-soundpacks': 'leantype-soundpacks',
   'leantype-translation-plugin': 'leantype-translation-plugin',
   'leantype-voice-plugin': 'leantype-voice-plugin',
   'ltvlauncher': 'ltvlauncher',
@@ -61,9 +63,17 @@ const readmeConfig = {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Voice-Plugin/master/README.md',
     header: "## Architecture"
   },
+  'leantype-ocr-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-OCR-Plugin/main/README.md',
+    header: "## ✨ Features"
+  },
   'leantype-offline-ai-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Offline-AI-Plugin/main/README.md',
     header: "## ✨ Features"
+  },
+  'leantype-soundpacks': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-SoundPacks/main/README.md',
+    header: "## 🎵 Available Official Packs"
   },
   'adaptive-brightness-linux': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/README.md',
@@ -138,12 +148,23 @@ const fallbackFeatures = {
     '<strong>📦 Async Model Management</strong> - Non-blocking background model imports and on-demand unloading.',
     '<strong>🔒 100% Private</strong> - Zero network permissions required; all voice processing stays strictly on-device.'
   ],
+  'leantype-ocr-plugin': [
+    '<strong>🔒 100% Offline & Private</strong> - Zero network permissions; all vision and ML Kit neural models run strictly on-device.',
+    '<strong>⚡ Bundled ML Kit V2</strong> - Accurate offline text recognition across Latin, Devanagari, Chinese, Japanese, and Korean scripts.',
+    '<strong>🧩 Lightweight DexClassLoader</strong> - Dynamically loaded on demand with zero idle memory or background battery overhead.',
+    '<strong>📱 Multi-Architecture Support</strong> - Pre-configured ABI splits (arm64-v8a, armeabi-v7a, x86, x86_64) for minimal footprint.'
+  ],
   'leantype-offline-ai-plugin': [
     '<strong>🧠 100% On-Device AI</strong> - Local inference powered by optimized llama.cpp ARM64/x86_64 JNI binaries.',
     '<strong>🛡️ Zero Internet & Complete Privacy</strong> - Runs entirely offline with zero network connectivity or external telemetry.',
     '<strong>⚡ Fast Neural Proofreading & Grammar Correction</strong> - Correct spelling, fix punctuation, and refine writing with local GGUF models.',
     '<strong>🔒 Designed for Offline Editions</strong> - Built specifically for LeanType Offline and Offline Lite flavors with zero internet permissions.',
     '<strong>📦 Dynamic Isolated Architecture</strong> - Loaded on-demand via DexClassLoader with isolated native libraries and zero footprint when inactive.'
+  ],
+  'leantype-soundpacks': [
+    '<strong>🎵 Official Sound Packs</strong> - High quality keyboard sound packs including Deep Thock, Crisp Click, Typewriter, Creamy Linear, 8-Bit Chiptune, and more.',
+    '<strong>🛠️ Custom Pack Creator</strong> - Simple JSON-based format to create, customize, and import your own audio sound packs.',
+    '<strong>🎛️ Dynamic Audio Engine</strong> - Full support for random pitch variation, per-key audio mapping, and volume tuning.'
   ],
   'adaptive-brightness-linux': [
     '<strong>📈 Interactive Spline Curve</strong> - Draggable spline nodes to adjust 24-hour target levels in real time.',
