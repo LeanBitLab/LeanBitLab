@@ -16,30 +16,30 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 937,
-    "downloads": 74521,
-    "downloads_formatted": "74.5k"
+    "stars": 942,
+    "downloads": 74884,
+    "downloads_formatted": "74.9k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 14,
-    "downloads": 2390,
+    "downloads": 2442,
     "downloads_formatted": "2.4k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 9,
-    "downloads": 756,
-    "downloads_formatted": "756"
+    "downloads": 830,
+    "downloads_formatted": "830"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 7,
-    "downloads": 720,
-    "downloads_formatted": "720"
+    "downloads": 751,
+    "downloads_formatted": "751"
   },
   "leantype-soundpacks": {
     "name": "LeanType-SoundPacks",
@@ -52,36 +52,36 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 8,
-    "downloads": 3816,
-    "downloads_formatted": "3.8k"
+    "downloads": 3897,
+    "downloads_formatted": "3.9k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 18,
-    "downloads": 2739,
-    "downloads_formatted": "2.7k"
+    "downloads": 2847,
+    "downloads_formatted": "2.8k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
-    "stars": 49,
-    "downloads": 1120,
+    "stars": 50,
+    "downloads": 1140,
     "downloads_formatted": "1.1k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 36,
-    "downloads": 593,
-    "downloads_formatted": "593"
+    "downloads": 600,
+    "downloads_formatted": "600"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 326,
-    "downloads": 23292,
-    "downloads_formatted": "23.3k"
+    "stars": 327,
+    "downloads": 23420,
+    "downloads_formatted": "23.4k"
   },
   ".github": {
     "name": ".github",
