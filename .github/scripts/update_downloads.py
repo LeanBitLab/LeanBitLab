@@ -57,14 +57,36 @@ def get_repo_downloads(full_name):
             break
     return total
 
+def get_repo_commits(full_name):
+    token = os.getenv("GITHUB_TOKEN")
+    try:
+        url = f"https://api.github.com/repos/{full_name}/commits?per_page=1"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        if token:
+            req.add_header("Authorization", f"token {token}")
+        with urllib.request.urlopen(req) as response:
+            link = response.headers.get("Link", "")
+            if link:
+                m = re.search(r'[?&]page=(\d+)>; rel="last"', link)
+                if m:
+                    return int(m.group(1))
+            content = json.loads(response.read().decode())
+            if isinstance(content, list) and len(content) > 0:
+                return 1
+            return 0
+    except Exception as e:
+        print(f"Error fetching commits for {full_name}: {e}")
+        return 0
+
 def format_number(num):
     if num >= 1000:
         return f"{num / 1000:.1f}k"
     return str(num)
 
-def generate_stats_card(total_stars, total_downloads, repo_count, output_path="stats.svg"):
+def generate_stats_card(total_stars, total_downloads, repo_count, total_commits, output_path="stats.svg"):
     stars_fmt = format_number(total_stars)
     downloads_fmt = format_number(total_downloads)
+    commits_fmt = f"{format_number(total_commits)}+" if total_commits > 0 else "2.2k+"
     
     svg = f'''<svg width="495" height="160" viewBox="0 0 495 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
@@ -122,7 +144,7 @@ def generate_stats_card(total_stars, total_downloads, repo_count, output_path="s
     <g transform="translate(0, 36)">
       <path class="accent" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
       <text x="24" y="13" class="stat-label">Total Commits:</text>
-      <text x="126" y="13" class="stat-value">2.2k+</text>
+      <text x="126" y="13" class="stat-value">{commits_fmt}</text>
     </g>
   </g>
 </svg>'''
@@ -138,6 +160,7 @@ def main():
     repo_data = {}
     total_downloads = 0
     total_stars = 0
+    total_commits = 0
     
     for repo in repos:
         name = repo["name"]
@@ -145,22 +168,26 @@ def main():
         owner = repo["owner"]
         stars = repo["stars"]
         downloads = get_repo_downloads(full_name)
+        commits = get_repo_commits(full_name)
         
         repo_data[name.lower()] = {
             "name": name,
             "owner": owner,
             "stars": stars,
-            "downloads": downloads
+            "downloads": downloads,
+            "commits": commits
         }
         total_downloads += downloads
         total_stars += stars
-        print(f"Repo {full_name}: {stars} stars, {downloads} downloads")
+        total_commits += commits
+        print(f"Repo {full_name}: {stars} stars, {downloads} downloads, {commits} commits")
         
     print(f"Total stars: {total_stars}")
     print(f"Total downloads: {total_downloads}")
+    print(f"Total commits: {total_commits}")
     
     active_repos = [r for r in repos if not r["name"].startswith(".")]
-    generate_stats_card(total_stars, total_downloads, len(active_repos), "stats.svg")
+    generate_stats_card(total_stars, total_downloads, len(active_repos), total_commits, "stats.svg")
     
     # Export stats.json for website
     json_path = "stats.json"
