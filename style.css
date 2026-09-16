@@ -887,11 +887,23 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
 }
+.community-btn-discord:hover {
+  border-color: #5865F2;
+  color: #5865F2;
+  background: rgba(88, 101, 242, 0.1);
+  box-shadow: 0 0 14px rgba(88, 101, 242, 0.3);
+}
 .community-btn-telegram:hover {
   border-color: #2CA5E0;
   color: #2CA5E0;
   background: rgba(44, 165, 224, 0.1);
   box-shadow: 0 0 14px rgba(44, 165, 224, 0.3);
+}
+.community-btn-youtube:hover {
+  border-color: #FF0000;
+  color: #FF0000;
+  background: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 14px rgba(255, 0, 0, 0.3);
 }
 .community-btn-reddit:hover {
   border-color: #FF4500;

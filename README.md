@@ -219,7 +219,9 @@ Thank you to our amazing sponsors!
 
 <div align="center">
 
+[![Discord](https://img.shields.io/badge/Discord-Join_Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/2U22D3qFe) 
 [![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) 
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@LeanBitLab) 
 [![Reddit](https://img.shields.io/badge/Reddit-r/LeanBitLab__-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/LeanBitLab_/) 
 [![X (Twitter)](https://img.shields.io/badge/-Follow_Us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/LeanBitLab)
 
