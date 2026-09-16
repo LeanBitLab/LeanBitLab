@@ -52,7 +52,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
   <tbody>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType">⌨️ LeanType</a></b></td>
-      <td>AI-enhanced keyboard with custom providers &amp; dedicated keys</td>
+      <td>Privacy-first Android keyboard with multi-provider AI proofreading, offline voice typing, OCR, and deep customization</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-955-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-76.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -60,7 +60,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/leanbitlab-org/LtvLauncher">📺 LTvLauncher</a></b></td>
-      <td>Minimal TV launcher with WiFi widget &amp; OLED screensaver protection</td>
+      <td>Fast, ad-free Android TV launcher with remote-friendly D-pad navigation, custom categories, widgets, and OLED screensaver</td>
       <td>
         <a href="https://github.com/leanbitlab-org/LtvLauncher/stargazers"><img src="https://img.shields.io/badge/Stars-334-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Downloads-24.3k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -68,7 +68,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Lwidget">📊 Lwidget</a></b></td>
-      <td>Unified widget tracking time, calendar events, tasks, battery &amp; data usage</td>
+      <td>Offline Material You Android widget displaying system stats, step counter, calendar, tasks, and weather with zero network permissions</td>
       <td>
         <a href="https://github.com/LeanBitLab/Lwidget/stargazers"><img src="https://img.shields.io/badge/Stars-52-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -76,7 +76,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/RdTube">🎬 RdTube</a></b></td>
-      <td>Sleek, YouTube Shorts-style video browsing client for Reddit</td>
+      <td>Private, high-performance Reddit video client featuring a Shorts-style feed, pure OLED theme, hardware acceleration, and zero tracking</td>
       <td>
         <a href="https://github.com/LeanBitLab/RdTube/stargazers"><img src="https://img.shields.io/badge/Stars-37-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-610-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -84,7 +84,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin">✍️ Handwriting Plugin</a></b></td>
-      <td>Handwriting recognition layout plugin for LeanType keyboard</td>
+      <td>On-device handwriting recognition layout plugin for LeanType supporting 300+ languages via Google ML Kit</td>
       <td>
         <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-14-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-2.7k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -92,7 +92,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin">🌐 Translation Plugin</a></b></td>
-      <td>Google Translate layout plugin for LeanType keyboard</td>
+      <td>100% on-device offline translation plugin for LeanType supporting 59+ languages powered by ML Kit</td>
       <td>
         <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-4.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -100,7 +100,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin">🎙️ Voice Plugin</a></b></td>
-      <td>Offline speech-to-text voice input plugin for LeanType keyboard</td>
+      <td>Fast, offline on-device speech-to-text voice typing plugin for LeanType powered by whisper.cpp and ARM NEON</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-18-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-3.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -108,7 +108,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin">🤖 Offline AI Plugin</a></b></td>
-      <td>Dynamic on-device neural proofreading &amp; local LLM plugin for LeanType powered by llama.cpp</td>
+      <td>100% on-device neural proofreading and local LLM plugin for LeanType powered by llama.cpp and local GGUF models</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-862-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -116,7 +116,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin">🔍 OCR Plugin</a></b></td>
-      <td>Offline on-device Optical Character Recognition plugin for LeanType keyboard</td>
+      <td>Offline on-device Optical Character Recognition (OCR) plugin for LeanType supporting Latin, CJK, and Devanagari scripts</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-10-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.1k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
@@ -124,7 +124,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-SoundPacks">🔊 Sound Packs</a></b></td>
-      <td>Official audio sound packs repository and custom pack creator guide for LeanType</td>
+      <td>Curated zero-latency mechanical &amp; acoustic audio sound packs repository and custom pack creator guide for LeanType</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/stargazers"><img src="https://img.shields.io/badge/Stars-4-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
       </td>
@@ -161,7 +161,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
   <tbody>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/adaptive-brightness-linux">💡 Adaptive Brightness Linux</a></b></td>
-      <td>Backlight manager providing ambient-light adaptive brightness control for Linux displays</td>
+      <td>Intelligent Rust auto-brightness daemon &amp; TUI for Linux featuring ALS sensor curves, DDC/CI monitor control, and adaptive learning</td>
       <td>
         <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers"><img src="https://img.shields.io/badge/Stars-12-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest"><img src="https://img.shields.io/badge/Downloads-7-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
