@@ -208,7 +208,9 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/PareTrast">PareTrast</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/kaoneko">kaoneko</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/frostynumeral">frostynumeral</a></strong> &nbsp;&bull;&nbsp;
-  <strong><a href="https://github.com/thewalkingcat">thewalkingcat</a></strong>
+  <strong><a href="https://github.com/thewalkingcat">thewalkingcat</a></strong> &nbsp;&bull;&nbsp;
+  <strong><a href="https://github.com/jurag9999">jurag9999</a></strong> &nbsp;&bull;&nbsp;
+  <strong>qu***t***</strong>
 </p>
 
 ---
