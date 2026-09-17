@@ -2,6 +2,7 @@ import os
 import re
 import json
 import urllib.request
+import datetime
 
 def get_repos_info():
     urls = [
@@ -165,6 +166,25 @@ def mask_private_name(name: str) -> str:
     return f"{clean[0]}****{clean[-1]}"
 
 
+def get_tier_info(amount: float) -> dict:
+    """Computes tier and subTier based on dollar amount."""
+    if amount >= 250:
+        return {"tier": "diamond", "subTier": "Diamond"}
+    if amount >= 100:
+        return {"tier": "gold", "subTier": "Gold II"}
+    if amount >= 50:
+        return {"tier": "gold", "subTier": "Gold I"}
+    if amount >= 25:
+        return {"tier": "silver", "subTier": "Silver II"}
+    if amount >= 10:
+        return {"tier": "silver", "subTier": "Silver I"}
+    if amount >= 5:
+        return {"tier": "bronze", "subTier": "Bronze"}
+    if amount >= 2:
+        return {"tier": "supporter", "subTier": "Supporter II"}
+    return {"tier": "supporter", "subTier": "Supporter I"}
+
+
 def get_github_sponsors(token: str):
     """Fetches public and private sponsors for LeanBitLab via GitHub GraphQL API."""
     if not token:
@@ -180,6 +200,10 @@ def get_github_sponsors(token: str):
               ... on User { login name }
               ... on Organization { login name }
             }
+            tier {
+              monthlyPriceInDollars
+              isOneTime
+            }
           }
         }
         allSponsors: sponsorshipsAsMaintainer(first: 100, activeOnly: false, includePrivate: true) {
@@ -187,6 +211,10 @@ def get_github_sponsors(token: str):
             sponsorEntity {
               ... on User { login name }
               ... on Organization { login name }
+            }
+            tier {
+              monthlyPriceInDollars
+              isOneTime
             }
           }
         }
@@ -215,9 +243,8 @@ def get_github_sponsors(token: str):
         return None
 
 
-def update_sponsors_section(content: str, token: str) -> tuple[str, bool]:
+def update_sponsors_section(content: str, user_data: dict) -> tuple[str, bool]:
     """Updates the GitHub Sponsors section in README while preserving order and privacy."""
-    user_data = get_github_sponsors(token)
     if not user_data:
         return content, False
 
@@ -326,6 +353,214 @@ def update_sponsors_section(content: str, token: str) -> tuple[str, bool]:
     return new_content, updated
 
 
+def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
+    """Directly updates sponsor-data.js for the site without requiring private gitignored ledgers."""
+    if not user_data or not os.path.exists(sponsor_data_path):
+        return False
+
+    pub_nodes = user_data.get("publicSponsors", {}).get("nodes", [])
+    all_nodes = user_data.get("allSponsors", {}).get("nodes", [])
+
+    pub_logins = {
+        n["sponsorEntity"]["login"].lower()
+        for n in pub_nodes
+        if n.get("sponsorEntity") and n["sponsorEntity"].get("login")
+    }
+
+    try:
+        with open(sponsor_data_path, "r", encoding="utf-8") as f:
+            text = f.read()
+
+        m = re.search(r'const\s+sponsorData\s*=\s*(\{.*?\});?\s*$', text, re.DOTALL)
+        if not m:
+            print("Notice: Could not parse sponsorData object in sponsor-data.js")
+            return False
+
+        json_str = re.sub(r'(\ballTime|\bthisMonth)\s*:', r'"\1":', m.group(1))
+        data = json.loads(json_str)
+
+        all_time = data.get("allTime", [])
+        this_month = data.get("thisMonth", [])
+        changed = False
+
+        # 1. Normalize existing private masks (e.g. qu***t*** -> q****t)
+        for s in all_time:
+            name = s.get("name", "")
+            if "*" in name or name.startswith("qu"):
+                masked = mask_private_name(name)
+                if s.get("name") != masked or s.get("github") is not None:
+                    s["name"] = masked
+                    s["github"] = None
+                    changed = True
+
+        for s in this_month:
+            name = s.get("name", "")
+            if "*" in name or name.startswith("qu"):
+                masked = mask_private_name(name)
+                if s.get("name") != masked or s.get("github") is not None:
+                    s["name"] = masked
+                    s["github"] = None
+                    changed = True
+
+        # 2. Existing sponsor keys
+        existing_keys = set()
+        for s in all_time:
+            if s.get("github"):
+                existing_keys.add(s["github"].lower())
+            if s.get("name"):
+                existing_keys.add(s["name"].lower())
+
+        # 3. Add new sponsors from GitHub
+        new_added = 0
+        for n in all_nodes:
+            entity = n.get("sponsorEntity") or {}
+            login = entity.get("login")
+            if not login:
+                continue
+
+            login_lower = login.lower()
+            is_pub = login_lower in pub_logins
+            masked = mask_private_name(login)
+
+            if login_lower in existing_keys or masked.lower() in existing_keys:
+                continue
+
+            existing_keys.add(login_lower)
+            if not is_pub:
+                existing_keys.add(masked.lower())
+
+            tier_obj = n.get("tier") or {}
+            amount = tier_obj.get("monthlyPriceInDollars") or 5
+            tier_info = get_tier_info(amount)
+
+            all_time_ratio = round(amount / 1000.0, 4)
+            month_ratio = round(amount / 700.0, 4)
+
+            display_name = login if is_pub else masked
+            github_handle = login if is_pub else None
+
+            all_time.append({
+                "name": display_name,
+                "github": github_handle,
+                "tier": tier_info["tier"],
+                "subTier": tier_info["subTier"],
+                "ratio": all_time_ratio
+            })
+
+            this_month.append({
+                "name": display_name,
+                "github": github_handle,
+                "tier": tier_info["tier"],
+                "subTier": tier_info["subTier"],
+                "ratio": month_ratio
+            })
+
+            new_added += 1
+            changed = True
+
+        if not changed:
+            print("Site sponsor-data.js is already up to date.")
+            return False
+
+        all_time.sort(key=lambda s: s.get("ratio", 0), reverse=True)
+        this_month.sort(key=lambda s: s.get("ratio", 0), reverse=True)
+
+        now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        output = f"""// Auto-generated by .github/scripts/update_downloads.py — do not edit manually
+// Generated: {now_iso}
+const sponsorData = {{
+  allTime: {json.dumps(all_time, indent=4)},
+  thisMonth: {json.dumps(this_month, indent=4)}
+}};
+"""
+        with open(sponsor_data_path, "w", encoding="utf-8") as f:
+            f.write(output)
+
+        if new_added > 0:
+            print(f"Added {new_added} new sponsor(s) to site sponsor-data.js!")
+        else:
+            print("Updated site sponsor-data.js successfully!")
+        return True
+
+    except Exception as e:
+        print(f"Notice: Could not update sponsor-data.js: {e}")
+        return False
+
+
+def sync_local_sponsors_json(sponsors_json_path: str, user_data: dict) -> bool:
+    """Updates local sponsors.json if it exists (kept strictly gitignored)."""
+    if not user_data or not os.path.exists(sponsors_json_path):
+        return False
+
+    pub_nodes = user_data.get("publicSponsors", {}).get("nodes", [])
+    all_nodes = user_data.get("allSponsors", {}).get("nodes", [])
+
+    pub_logins = {
+        n["sponsorEntity"]["login"].lower()
+        for n in pub_nodes
+        if n.get("sponsorEntity") and n["sponsorEntity"].get("login")
+    }
+
+    try:
+        with open(sponsors_json_path, "r", encoding="utf-8") as f:
+            sponsors = json.load(f)
+
+        changed = False
+        existing_keys = set()
+        for s in sponsors:
+            gh = s.get("github")
+            name = s.get("name", "")
+            if gh:
+                existing_keys.add(gh.lower())
+            if name:
+                existing_keys.add(name.lower())
+                if "*" in name or name.startswith("qu"):
+                    masked = mask_private_name(name)
+                    if s["name"] != masked:
+                        s["name"] = masked
+                        s["github"] = None
+                        changed = True
+
+        today = datetime.date.today().isoformat()
+        for n in all_nodes:
+            entity = n.get("sponsorEntity") or {}
+            login = entity.get("login")
+            if not login:
+                continue
+
+            login_lower = login.lower()
+            masked = mask_private_name(login)
+            is_pub = login_lower in pub_logins
+
+            if login_lower in existing_keys or masked.lower() in existing_keys:
+                continue
+
+            existing_keys.add(login_lower)
+            tier_obj = n.get("tier") or {}
+            amount = tier_obj.get("monthlyPriceInDollars") or 5
+            is_one_time = tier_obj.get("isOneTime", False)
+            c_type = "one-time" if is_one_time else "monthly"
+
+            sponsors.append({
+                "name": login if is_pub else masked,
+                "github": login if is_pub else None,
+                "contributions": [
+                    {"type": c_type, "amount": amount, "date": today}
+                ]
+            })
+            changed = True
+
+        if changed:
+            with open(sponsors_json_path, "w", encoding="utf-8") as f:
+                json.dump(sponsors, f, indent=2)
+            print("Local Pdoc/sponsors/sponsors.json updated.")
+            return True
+        return False
+    except Exception as e:
+        print(f"Notice: Could not sync local sponsors.json: {e}")
+        return False
+
+
 def main():
     repos = get_repos_info()
     if not repos:
@@ -429,11 +664,27 @@ def main():
     content, downloads_count = re.subn(downloads_pattern, replace_downloads, content)
     print(f"Repo Download badges updated: {downloads_count}")
     
-    # Update Sponsors list in README
+    # Update Sponsors in README & site sponsor-data.js
     sponsors_token = os.getenv("SPONSORS_TOKEN") or os.getenv("GITHUB_TOKEN")
-    content, sponsors_updated = update_sponsors_section(content, sponsors_token)
+    user_data = get_github_sponsors(sponsors_token)
 
-    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or sponsors_updated:
+    readme_sponsors_updated = False
+    if user_data:
+        content, readme_sponsors_updated = update_sponsors_section(content, user_data)
+        
+        sponsor_data_path = "sponsor-data.js"
+        if not os.path.exists(sponsor_data_path) and os.path.exists("../../sponsor-data.js"):
+            sponsor_data_path = "../../sponsor-data.js"
+        update_sponsor_data_js(sponsor_data_path, user_data)
+
+        # Local-only ledger sync if Pdoc exists (kept strictly gitignored)
+        local_sponsors_json = "Pdoc/sponsors/sponsors.json"
+        if not os.path.exists(local_sponsors_json) and os.path.exists("../../Pdoc/sponsors/sponsors.json"):
+            local_sponsors_json = "../../Pdoc/sponsors/sponsors.json"
+        if os.path.exists(local_sponsors_json):
+            sync_local_sponsors_json(local_sponsors_json, user_data)
+
+    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or readme_sponsors_updated:
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(content)
         print("README.md updated successfully!")
