@@ -200,13 +200,21 @@ def get_github_sponsors(token: str):
               ... on User { login name }
               ... on Organization { login name }
             }
+          }
+        }
+        allSponsors: sponsorshipsAsMaintainer(first: 100, activeOnly: false, includePrivate: true) {
+          nodes {
+            sponsorEntity {
+              ... on User { login name }
+              ... on Organization { login name }
+            }
             tier {
               monthlyPriceInDollars
               isOneTime
             }
           }
         }
-        allSponsors: sponsorshipsAsMaintainer(first: 100, activeOnly: false, includePrivate: true) {
+        activeSponsors: sponsorshipsAsMaintainer(first: 100, activeOnly: true, includePrivate: true) {
           nodes {
             sponsorEntity {
               ... on User { login name }
@@ -354,12 +362,13 @@ def update_sponsors_section(content: str, user_data: dict) -> tuple[str, bool]:
 
 
 def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
-    """Directly updates sponsor-data.js for the site without requiring private gitignored ledgers."""
+    """Directly updates sponsor-data.js: keeps historical in allTime and actively prunes cancelled from thisMonth."""
     if not user_data or not os.path.exists(sponsor_data_path):
         return False
 
     pub_nodes = user_data.get("publicSponsors", {}).get("nodes", [])
     all_nodes = user_data.get("allSponsors", {}).get("nodes", [])
+    active_nodes = user_data.get("activeSponsors", {}).get("nodes", [])
 
     pub_logins = {
         n["sponsorEntity"]["login"].lower()
@@ -380,10 +389,10 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
         data = json.loads(json_str)
 
         all_time = data.get("allTime", [])
-        this_month = data.get("thisMonth", [])
+        original_this_month = data.get("thisMonth", [])
         changed = False
 
-        # 1. Normalize existing private masks (e.g. qu***t*** -> q****t)
+        # 1. Normalize existing private masks (e.g. qu***t*** -> q****t) in all_time
         for s in all_time:
             name = s.get("name", "")
             if "*" in name or name.startswith("qu"):
@@ -393,16 +402,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                     s["github"] = None
                     changed = True
 
-        for s in this_month:
-            name = s.get("name", "")
-            if "*" in name or name.startswith("qu"):
-                masked = mask_private_name(name)
-                if s.get("name") != masked or s.get("github") is not None:
-                    s["name"] = masked
-                    s["github"] = None
-                    changed = True
-
-        # 2. Existing sponsor keys
+        # 2. Existing sponsor keys in all_time
         existing_keys = set()
         for s in all_time:
             if s.get("github"):
@@ -410,7 +410,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
             if s.get("name"):
                 existing_keys.add(s["name"].lower())
 
-        # 3. Add new sponsors from GitHub
+        # 3. Add new historical sponsors to all_time (past sponsors are never removed)
         new_added = 0
         for n in all_nodes:
             entity = n.get("sponsorEntity") or {}
@@ -432,9 +432,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
             tier_obj = n.get("tier") or {}
             amount = tier_obj.get("monthlyPriceInDollars") or 5
             tier_info = get_tier_info(amount)
-
             all_time_ratio = round(amount / 1000.0, 4)
-            month_ratio = round(amount / 700.0, 4)
 
             display_name = login if is_pub else masked
             github_handle = login if is_pub else None
@@ -446,8 +444,35 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                 "subTier": tier_info["subTier"],
                 "ratio": all_time_ratio
             })
+            new_added += 1
+            changed = True
 
-            this_month.append({
+        # 4. Dynamically rebuild thisMonth strictly from activeSponsors (pruning cancelled sponsors)
+        new_this_month = []
+        active_seen = set()
+        for n in active_nodes:
+            entity = n.get("sponsorEntity") or {}
+            login = entity.get("login")
+            if not login:
+                continue
+
+            login_lower = login.lower()
+            if login_lower in active_seen:
+                continue
+            active_seen.add(login_lower)
+
+            is_pub = login_lower in pub_logins
+            masked = mask_private_name(login)
+
+            tier_obj = n.get("tier") or {}
+            amount = tier_obj.get("monthlyPriceInDollars") or 5
+            tier_info = get_tier_info(amount)
+            month_ratio = round(amount / 700.0, 4)
+
+            display_name = login if is_pub else masked
+            github_handle = login if is_pub else None
+
+            new_this_month.append({
                 "name": display_name,
                 "github": github_handle,
                 "tier": tier_info["tier"],
@@ -455,22 +480,29 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                 "ratio": month_ratio
             })
 
-            new_added += 1
+        # Preserve any manual non-GitHub sponsors in thisMonth if present in original
+        for s in original_this_month:
+            if s.get("github") is None and not ("*" in s.get("name", "") or s.get("name", "").startswith("qu")):
+                if not any(item["name"] == s["name"] for item in new_this_month):
+                    new_this_month.append(s)
+
+        # Sort both lists descending by ratio
+        all_time.sort(key=lambda s: s.get("ratio", 0), reverse=True)
+        new_this_month.sort(key=lambda s: s.get("ratio", 0), reverse=True)
+
+        if new_this_month != original_this_month:
             changed = True
 
         if not changed:
             print("Site sponsor-data.js is already up to date.")
             return False
 
-        all_time.sort(key=lambda s: s.get("ratio", 0), reverse=True)
-        this_month.sort(key=lambda s: s.get("ratio", 0), reverse=True)
-
         now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
         output = f"""// Auto-generated by .github/scripts/update_downloads.py — do not edit manually
 // Generated: {now_iso}
 const sponsorData = {{
   allTime: {json.dumps(all_time, indent=4)},
-  thisMonth: {json.dumps(this_month, indent=4)}
+  thisMonth: {json.dumps(new_this_month, indent=4)}
 }};
 """
         with open(sponsor_data_path, "w", encoding="utf-8") as f:
@@ -479,7 +511,7 @@ const sponsorData = {{
         if new_added > 0:
             print(f"Added {new_added} new sponsor(s) to site sponsor-data.js!")
         else:
-            print("Updated site sponsor-data.js successfully!")
+            print("Site sponsor-data.js updated successfully with active sponsors!")
         return True
 
     except Exception as e:
