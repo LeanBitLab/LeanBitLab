@@ -16,30 +16,30 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 957,
-    "downloads": 76965,
-    "downloads_formatted": "77.0k"
+    "stars": 958,
+    "downloads": 77113,
+    "downloads_formatted": "77.1k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 14,
-    "downloads": 2704,
+    "downloads": 2715,
     "downloads_formatted": "2.7k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 10,
-    "downloads": 1171,
+    "downloads": 1185,
     "downloads_formatted": "1.2k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
-    "stars": 8,
-    "downloads": 874,
-    "downloads_formatted": "874"
+    "stars": 9,
+    "downloads": 881,
+    "downloads_formatted": "881"
   },
   "leantype-soundpacks": {
     "name": "LeanType-SoundPacks",
@@ -52,14 +52,14 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 8,
-    "downloads": 4264,
+    "downloads": 4272,
     "downloads_formatted": "4.3k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 19,
-    "downloads": 3298,
+    "downloads": 3324,
     "downloads_formatted": "3.3k"
   },
   "lwidget": {
@@ -80,7 +80,7 @@
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
     "stars": 335,
-    "downloads": 24381,
+    "downloads": 24424,
     "downloads_formatted": "24.4k"
   },
   ".github": {
