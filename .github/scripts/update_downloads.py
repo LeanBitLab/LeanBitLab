@@ -153,20 +153,195 @@ def generate_stats_card(total_stars, total_downloads, repo_count, total_commits,
         f.write(svg)
     print(f"Generated {output_path} successfully!")
 
+def mask_private_name(name: str) -> str:
+    """Masks private sponsor name showing first and last letter (e.g. a****c)."""
+    if not name:
+        return "a****c"
+    clean = name.strip().replace("*", "")
+    if not clean:
+        return "a****c"
+    if len(clean) == 1:
+        return f"{clean}****"
+    return f"{clean[0]}****{clean[-1]}"
+
+
+def get_github_sponsors(token: str):
+    """Fetches public and private sponsors for LeanBitLab via GitHub GraphQL API."""
+    if not token:
+        print("Notice: No SPONSORS_TOKEN or GITHUB_TOKEN provided for sponsors sync.")
+        return None
+
+    query = """
+    query {
+      user(login: "LeanBitLab") {
+        publicSponsors: sponsorshipsAsMaintainer(first: 100, activeOnly: false, includePrivate: false) {
+          nodes {
+            sponsorEntity {
+              ... on User { login name }
+              ... on Organization { login name }
+            }
+          }
+        }
+        allSponsors: sponsorshipsAsMaintainer(first: 100, activeOnly: false, includePrivate: true) {
+          nodes {
+            sponsorEntity {
+              ... on User { login name }
+              ... on Organization { login name }
+            }
+          }
+        }
+      }
+    }
+    """
+    try:
+        req = urllib.request.Request(
+            "https://api.github.com/graphql",
+            data=json.dumps({"query": query}).encode("utf-8"),
+            headers={
+                "Authorization": f"bearer {token}",
+                "Content-Type": "application/json",
+                "User-Agent": "LeanBitLab-Sync"
+            }
+        )
+        with urllib.request.urlopen(req) as response:
+            res = json.loads(response.read().decode("utf-8"))
+            if "errors" in res:
+                print(f"Notice: GraphQL errors while fetching sponsors: {res['errors']}")
+                return None
+            user_data = res.get("data", {}).get("user")
+            return user_data
+    except Exception as e:
+        print(f"Notice: Could not fetch sponsors from GitHub GraphQL API: {e}")
+        return None
+
+
+def update_sponsors_section(content: str, token: str) -> tuple[str, bool]:
+    """Updates the GitHub Sponsors section in README while preserving order and privacy."""
+    user_data = get_github_sponsors(token)
+    if not user_data:
+        return content, False
+
+    pub_nodes = user_data.get("publicSponsors", {}).get("nodes", [])
+    all_nodes = user_data.get("allSponsors", {}).get("nodes", [])
+
+    pub_logins = {
+        n["sponsorEntity"]["login"].lower()
+        for n in pub_nodes
+        if n.get("sponsorEntity") and n["sponsorEntity"].get("login")
+    }
+
+    # Locate existing sponsors block
+    match = re.search(r'<!-- SPONSORS_LIST:START -->(.*?)<!-- SPONSORS_LIST:END -->', content, re.DOTALL)
+    existing_html = ""
+    has_markers = False
+    if match:
+        has_markers = True
+        existing_html = match.group(1)
+    else:
+        # Fallback: look for <p align="center"> under ### 💖 GitHub Sponsors
+        p_match = re.search(
+            r'### 💖 GitHub Sponsors\s*\n\s*Thank you to our amazing sponsors!\s*\n\s*(<p align="center">.*?</p>)',
+            content,
+            re.DOTALL
+        )
+        if p_match:
+            existing_html = p_match.group(1)
+
+    seen = set()
+    formatted_items = []
+
+    # Parse existing items to preserve their exact order and any manual entries
+    if existing_html:
+        item_pattern = re.compile(
+            r'<strong>(?:<a href="https://github\.com/([^"/]+)">([^<]+)</a>|([^<]+))</strong>'
+        )
+        for m in item_pattern.finditer(existing_html):
+            gh_user = m.group(1)
+            plain_text = m.group(3)
+
+            if gh_user:
+                seen.add(gh_user.lower())
+                formatted_items.append(f'<strong><a href="https://github.com/{gh_user}">{gh_user}</a></strong>')
+            elif plain_text:
+                pt = plain_text.strip()
+                if '*' in pt or pt.lower().startswith('qu'):
+                    seen.add('quiet-tangent')
+                    formatted_items.append(f'<strong>{mask_private_name(pt)}</strong>')
+                else:
+                    seen.add(pt.lower())
+                    formatted_items.append(f'<strong>{pt}</strong>')
+
+    # Append any new sponsors from GitHub API
+    new_sponsors_added = 0
+    for n in all_nodes:
+        entity = n.get("sponsorEntity") or {}
+        login = entity.get("login")
+        if not login:
+            continue
+        login_lower = login.lower()
+        if login_lower in seen:
+            continue
+        seen.add(login_lower)
+        new_sponsors_added += 1
+        if login_lower in pub_logins:
+            formatted_items.append(f'<strong><a href="https://github.com/{login}">{login}</a></strong>')
+        else:
+            formatted_items.append(f'<strong>{mask_private_name(login)}</strong>')
+
+    if not formatted_items:
+        return content, False
+
+    lines = []
+    for i, item in enumerate(formatted_items):
+        if i < len(formatted_items) - 1:
+            lines.append(f"  {item} &nbsp;&bull;&nbsp;")
+        else:
+            lines.append(f"  {item}")
+
+    sponsors_block = '<p align="center">\n' + "\n".join(lines) + "\n</p>"
+
+    if has_markers:
+        new_content = re.sub(
+            r'(<!-- SPONSORS_LIST:START -->)(.*?)(<!-- SPONSORS_LIST:END -->)',
+            f'\\1\n{sponsors_block}\n\\3',
+            content,
+            flags=re.DOTALL
+        )
+    else:
+        pattern = r'(### 💖 GitHub Sponsors\s*\n\s*Thank you to our amazing sponsors!\s*\n\s*)<p align="center">.*?</p>'
+        new_content = re.sub(
+            pattern,
+            f'\\1<!-- SPONSORS_LIST:START -->\n{sponsors_block}\n<!-- SPONSORS_LIST:END -->',
+            content,
+            flags=re.DOTALL
+        )
+
+    updated = (new_content != content)
+    if new_sponsors_added > 0:
+        print(f"Added {new_sponsors_added} new sponsor(s) to README!")
+    elif updated:
+        print("Sponsors list in README updated successfully!")
+    else:
+        print("Sponsors list in README is already up to date.")
+    return new_content, updated
+
+
 def main():
     repos = get_repos_info()
-    print(f"Found repos: {[r['full_name'] for r in repos]}")
-    
-    repo_data = {}
+    if not repos:
+        print("No repositories found.")
+        return
+
     total_downloads = 0
     total_stars = 0
     total_commits = 0
+    repo_data = {}
     
-    for repo in repos:
-        name = repo["name"]
-        full_name = repo["full_name"]
-        owner = repo["owner"]
-        stars = repo["stars"]
+    for r in repos:
+        name = r["name"]
+        full_name = r["full_name"]
+        owner = r["owner"]
+        stars = r["stars"]
         downloads = get_repo_downloads(full_name)
         commits = get_repo_commits(full_name)
         
@@ -254,12 +429,16 @@ def main():
     content, downloads_count = re.subn(downloads_pattern, replace_downloads, content)
     print(f"Repo Download badges updated: {downloads_count}")
     
-    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0:
+    # Update Sponsors list in README
+    sponsors_token = os.getenv("SPONSORS_TOKEN") or os.getenv("GITHUB_TOKEN")
+    content, sponsors_updated = update_sponsors_section(content, sponsors_token)
+
+    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or sponsors_updated:
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(content)
         print("README.md updated successfully!")
     else:
-        print("No badges updated in README.md")
+        print("No badges or sponsors updated in README.md")
 
 if __name__ == "__main__":
     main()

@@ -23,6 +23,7 @@ jobs:
       - name: Run update script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SPONSORS_TOKEN: ${{ secrets.SPONSORS_TOKEN || secrets.GITHUB_TOKEN }}
         run: python .github/scripts/update_downloads.py
 
       - name: Commit and push if changed

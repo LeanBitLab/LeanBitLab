@@ -191,6 +191,7 @@ Your support helps us maintain our current projects and develop new bloat-free e
 
 Thank you to our amazing sponsors!
 
+<!-- SPONSORS_LIST:START -->
 <p align="center">
   <strong><a href="https://github.com/wshrguy">wshrguy</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/BeppeBoppo">BeppeBoppo</a></strong> &nbsp;&bull;&nbsp;
@@ -210,8 +211,9 @@ Thank you to our amazing sponsors!
   <strong><a href="https://github.com/frostynumeral">frostynumeral</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/thewalkingcat">thewalkingcat</a></strong> &nbsp;&bull;&nbsp;
   <strong><a href="https://github.com/jurag9999">jurag9999</a></strong> &nbsp;&bull;&nbsp;
-  <strong>qu***t***</strong>
+  <strong>q****t</strong>
 </p>
+<!-- SPONSORS_LIST:END -->
 
 ---
 
