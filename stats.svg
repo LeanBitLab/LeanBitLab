@@ -47,14 +47,14 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
       <text x="24" y="13" class="stat-label">Total Downloads:</text>
-      <text x="142" y="13" class="stat-value">116.5k</text>
+      <text x="142" y="13" class="stat-value">117.7k</text>
     </g>
 
     <!-- Total Commits -->
     <g transform="translate(0, 36)">
       <path class="accent" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
       <text x="24" y="13" class="stat-label">Total Commits:</text>
-      <text x="126" y="13" class="stat-value">5.4k+</text>
+      <text x="126" y="13" class="stat-value">5.5k+</text>
     </g>
   </g>
 </svg>
