@@ -1132,4 +1132,54 @@ document.addEventListener('DOMContentLoaded', () => {
       onScrollSpy();
     }, 150);
   });
+
+  // --- Theme Toggle Logic ---
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  const getPreferredTheme = () => {
+    const stored = localStorage.getItem('leanbitlab-theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  };
+
+  const applyTheme = (theme, save = false) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (save) {
+      try {
+        localStorage.setItem('leanbitlab-theme', theme);
+      } catch (e) {}
+    }
+    if (themeToggle) {
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+      themeToggle.setAttribute('title', `Switch to ${nextTheme} theme`);
+    }
+  };
+
+  if (themeToggle) {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || getPreferredTheme();
+    applyTheme(currentTheme, false);
+
+    themeToggle.addEventListener('click', () => {
+      const activeTheme = document.documentElement.getAttribute('data-theme') || getPreferredTheme();
+      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme, true);
+    });
+  }
+
+  // React to OS-level theme changes when user has not explicitly set a manual preference
+  try {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = (e) => {
+      if (!localStorage.getItem('leanbitlab-theme')) {
+        applyTheme(e.matches ? 'dark' : 'light', false);
+      }
+    };
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(handleSystemThemeChange);
+    }
+  } catch (e) {}
 });
+
