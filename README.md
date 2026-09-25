@@ -176,13 +176,17 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
 
 > **"Everything you need. Nothing you don't."**
 
-We build apps that are functional, efficient, and respect your resources — whether it's a simple utility or a complete productivity suite.
+We build software that is functional, efficient, and respects your resources, whether it's a simple utility or a complete productivity suite.
+
+- **100% Free Forever**: None of our apps have paywalls, locked "pro" features, subscriptions, or in-app purchases, and they never will. Everything we build is fully accessible and free for everyone.
+- **Zero Bloat & Privacy First**: No hidden telemetry, tracking, or background drain. Your device resources and personal data remain strictly yours.
+- **Community Sustained**: LeanBitLab is entirely independent and supported by voluntary community donations and sponsorships.
 
 ---
 
 ## ❤️ Support Us
 
-Your support helps us maintain our current projects and develop new bloat-free experiences.
+Because our apps are 100% free with no paywalls, premium tiers, or ads, your support is what helps us maintain our current projects and develop new bloat-free experiences.
 
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
 [![Open Collective](https://img.shields.io/badge/Open_Collective-leanbitlab--org-2972F4?style=for-the-badge&logo=open-collective&logoColor=white)](https://opencollective.com/leanbitlab-org)
