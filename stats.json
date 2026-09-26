@@ -17,28 +17,28 @@
     "name": "LeanType",
     "owner": "LeanBitLab",
     "stars": 994,
-    "downloads": 82669,
-    "downloads_formatted": "82.7k"
+    "downloads": 83068,
+    "downloads_formatted": "83.1k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 17,
-    "downloads": 3136,
-    "downloads_formatted": "3.1k"
+    "downloads": 3185,
+    "downloads_formatted": "3.2k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 1702,
-    "downloads_formatted": "1.7k"
+    "downloads": 1750,
+    "downloads_formatted": "1.8k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 11,
-    "downloads": 1053,
+    "downloads": 1076,
     "downloads_formatted": "1.1k"
   },
   "leantype-soundpacks": {
@@ -52,36 +52,36 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 10,
-    "downloads": 4891,
-    "downloads_formatted": "4.9k"
+    "downloads": 4959,
+    "downloads_formatted": "5.0k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 24,
-    "downloads": 3807,
+    "downloads": 3842,
     "downloads_formatted": "3.8k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
-    "stars": 58,
-    "downloads": 1315,
+    "stars": 59,
+    "downloads": 1329,
     "downloads_formatted": "1.3k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 39,
-    "downloads": 633,
-    "downloads_formatted": "633"
+    "downloads": 636,
+    "downloads_formatted": "636"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 346,
-    "downloads": 25630,
-    "downloads_formatted": "25.6k"
+    "stars": 348,
+    "downloads": 25805,
+    "downloads_formatted": "25.8k"
   },
   ".github": {
     "name": ".github",
