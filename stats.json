@@ -3,8 +3,8 @@
     "name": "adaptive-brightness-linux",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 8,
-    "downloads_formatted": "8"
+    "downloads": 9,
+    "downloads_formatted": "9"
   },
   "leanbitlab": {
     "name": "LeanBitLab",
@@ -16,29 +16,29 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 994,
-    "downloads": 83068,
-    "downloads_formatted": "83.1k"
+    "stars": 996,
+    "downloads": 83591,
+    "downloads_formatted": "83.6k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 17,
-    "downloads": 3185,
+    "downloads": 3231,
     "downloads_formatted": "3.2k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 1750,
+    "downloads": 1812,
     "downloads_formatted": "1.8k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 11,
-    "downloads": 1076,
+    "downloads": 1100,
     "downloads_formatted": "1.1k"
   },
   "leantype-soundpacks": {
@@ -52,36 +52,36 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 10,
-    "downloads": 4959,
+    "downloads": 5037,
     "downloads_formatted": "5.0k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 24,
-    "downloads": 3842,
-    "downloads_formatted": "3.8k"
+    "downloads": 3871,
+    "downloads_formatted": "3.9k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
     "stars": 59,
-    "downloads": 1329,
+    "downloads": 1343,
     "downloads_formatted": "1.3k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 39,
-    "downloads": 636,
-    "downloads_formatted": "636"
+    "downloads": 639,
+    "downloads_formatted": "639"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 348,
-    "downloads": 25805,
-    "downloads_formatted": "25.8k"
+    "stars": 349,
+    "downloads": 25992,
+    "downloads_formatted": "26.0k"
   },
   ".github": {
     "name": ".github",
