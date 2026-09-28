@@ -54,16 +54,16 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td><b><a href="https://github.com/LeanBitLab/LeanType">⌨️ LeanType</a></b></td>
       <td>Privacy-first Android keyboard with multi-provider AI proofreading, offline voice typing, OCR, and deep customization</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-996-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-83.6k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-1.0k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-84.0k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/leanbitlab-org/LtvLauncher">📺 LTvLauncher</a></b></td>
       <td>Fast, ad-free Android TV launcher with remote-friendly D-pad navigation, custom categories, widgets, and OLED screensaver</td>
       <td>
-        <a href="https://github.com/leanbitlab-org/LtvLauncher/stargazers"><img src="https://img.shields.io/badge/Stars-349-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Downloads-26.0k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/leanbitlab-org/LtvLauncher/stargazers"><img src="https://img.shields.io/badge/Stars-350-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Downloads-26.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -79,15 +79,15 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Private, high-performance Reddit video client featuring a Shorts-style feed, pure OLED theme, hardware acceleration, and zero tracking</td>
       <td>
         <a href="https://github.com/LeanBitLab/RdTube/stargazers"><img src="https://img.shields.io/badge/Stars-39-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-639-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-641-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin">✍️ Handwriting Plugin</a></b></td>
       <td>On-device handwriting recognition layout plugin for LeanType supporting 300+ languages via Google ML Kit</td>
       <td>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-17-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-3.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-18-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-3.3k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -95,7 +95,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>100% on-device offline translation plugin for LeanType supporting 59+ languages powered by ML Kit</td>
       <td>
         <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-10-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-5.0k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-5.1k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
@@ -119,7 +119,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Offline on-device Optical Character Recognition (OCR) plugin for LeanType supporting Latin, CJK, and Devanagari scripts</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-12-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.8k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-1.9k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
