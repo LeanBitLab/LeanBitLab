@@ -16,29 +16,29 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 1000,
-    "downloads": 83993,
-    "downloads_formatted": "84.0k"
+    "stars": 1001,
+    "downloads": 84459,
+    "downloads_formatted": "84.5k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 18,
-    "downloads": 3263,
+    "downloads": 3302,
     "downloads_formatted": "3.3k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 1855,
+    "downloads": 1909,
     "downloads_formatted": "1.9k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 11,
-    "downloads": 1118,
+    "downloads": 1141,
     "downloads_formatted": "1.1k"
   },
   "leantype-soundpacks": {
@@ -52,36 +52,36 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 10,
-    "downloads": 5096,
-    "downloads_formatted": "5.1k"
+    "downloads": 5154,
+    "downloads_formatted": "5.2k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 24,
-    "downloads": 3904,
+    "downloads": 3931,
     "downloads_formatted": "3.9k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
     "stars": 59,
-    "downloads": 1348,
-    "downloads_formatted": "1.3k"
+    "downloads": 1358,
+    "downloads_formatted": "1.4k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 39,
-    "downloads": 641,
-    "downloads_formatted": "641"
+    "downloads": 644,
+    "downloads_formatted": "644"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 350,
-    "downloads": 26182,
-    "downloads_formatted": "26.2k"
+    "stars": 351,
+    "downloads": 26303,
+    "downloads_formatted": "26.3k"
   },
   ".github": {
     "name": ".github",
