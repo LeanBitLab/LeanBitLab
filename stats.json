@@ -16,30 +16,30 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 1001,
-    "downloads": 84459,
-    "downloads_formatted": "84.5k"
+    "stars": 1009,
+    "downloads": 85030,
+    "downloads_formatted": "85.0k"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 18,
-    "downloads": 3302,
+    "downloads": 3349,
     "downloads_formatted": "3.3k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 1909,
-    "downloads_formatted": "1.9k"
+    "downloads": 1961,
+    "downloads_formatted": "2.0k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 11,
-    "downloads": 1141,
-    "downloads_formatted": "1.1k"
+    "downloads": 1188,
+    "downloads_formatted": "1.2k"
   },
   "leantype-soundpacks": {
     "name": "LeanType-SoundPacks",
@@ -52,36 +52,36 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 10,
-    "downloads": 5154,
+    "downloads": 5220,
     "downloads_formatted": "5.2k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 24,
-    "downloads": 3931,
-    "downloads_formatted": "3.9k"
+    "downloads": 3960,
+    "downloads_formatted": "4.0k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
-    "stars": 59,
-    "downloads": 1358,
+    "stars": 60,
+    "downloads": 1372,
     "downloads_formatted": "1.4k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 39,
-    "downloads": 644,
-    "downloads_formatted": "644"
+    "downloads": 645,
+    "downloads_formatted": "645"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
     "stars": 351,
-    "downloads": 26303,
-    "downloads_formatted": "26.3k"
+    "downloads": 26480,
+    "downloads_formatted": "26.5k"
   },
   ".github": {
     "name": ".github",
