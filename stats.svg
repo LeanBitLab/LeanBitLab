@@ -37,7 +37,7 @@
     <g transform="translate(0, 36)">
       <path class="accent" d="M4 1.75C4 .783 4.783 0 5.75 0h4.5c.967 0 1.75.783 1.75 1.75v1.5c0 .967-.783 1.75-1.75 1.75h-4.5A1.75 1.75 0 0 1 4 3.25zm1.75-.25a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25zM1.75 6C.783 6 0 6.783 0 7.75v6.5C0 15.217.783 16 1.75 16h12.5A1.75 1.75 0 0 0 16 14.25v-6.5A1.75 1.75 0 0 0 14.25 6zM1.5 7.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v6.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25z"/>
       <text x="24" y="13" class="stat-label">Public Repos:</text>
-      <text x="116" y="13" class="stat-value">12</text>
+      <text x="116" y="13" class="stat-value">13</text>
     </g>
   </g>
 
@@ -47,14 +47,14 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
       <text x="24" y="13" class="stat-label">Total Downloads:</text>
-      <text x="142" y="13" class="stat-value">139.9k</text>
+      <text x="142" y="13" class="stat-value">140.9k</text>
     </g>
 
     <!-- Total Commits -->
     <g transform="translate(0, 36)">
       <path class="accent" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
       <text x="24" y="13" class="stat-label">Total Commits:</text>
-      <text x="126" y="13" class="stat-value">5.9k+</text>
+      <text x="126" y="13" class="stat-value">6.0k+</text>
     </g>
   </g>
 </svg>
