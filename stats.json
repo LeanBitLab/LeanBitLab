@@ -16,36 +16,36 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 1043,
-    "downloads": 91980,
-    "downloads_formatted": "92.0k"
+    "stars": 1045,
+    "downloads": 92474,
+    "downloads_formatted": "92.5k"
   },
   "leantype-gif-plugin": {
     "name": "LeanType-Gif-Plugin",
     "owner": "LeanBitLab",
     "stars": 1,
-    "downloads": 21,
-    "downloads_formatted": "21"
+    "downloads": 35,
+    "downloads_formatted": "35"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 19,
-    "downloads": 3824,
-    "downloads_formatted": "3.8k"
+    "downloads": 3876,
+    "downloads_formatted": "3.9k"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 13,
-    "downloads": 2595,
-    "downloads_formatted": "2.6k"
+    "downloads": 2657,
+    "downloads_formatted": "2.7k"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 1413,
+    "downloads": 1428,
     "downloads_formatted": "1.4k"
   },
   "leantype-soundpacks": {
@@ -59,36 +59,36 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 12,
-    "downloads": 5985,
-    "downloads_formatted": "6.0k"
+    "downloads": 6062,
+    "downloads_formatted": "6.1k"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 29,
-    "downloads": 4281,
+    "downloads": 4329,
     "downloads_formatted": "4.3k"
   },
   "lwidget": {
     "name": "Lwidget",
     "owner": "LeanBitLab",
     "stars": 60,
-    "downloads": 1565,
+    "downloads": 1592,
     "downloads_formatted": "1.6k"
   },
   "rdtube": {
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 39,
-    "downloads": 678,
-    "downloads_formatted": "678"
+    "downloads": 681,
+    "downloads_formatted": "681"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 374,
-    "downloads": 28584,
-    "downloads_formatted": "28.6k"
+    "stars": 377,
+    "downloads": 28737,
+    "downloads_formatted": "28.7k"
   },
   ".github": {
     "name": ".github",
