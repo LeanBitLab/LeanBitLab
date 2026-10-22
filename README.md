@@ -123,6 +123,22 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       </td>
     </tr>
     <tr>
+      <td><b><a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin">🇨🇳 CJK Plugin</a></b></td>
+      <td>Standalone CJK (Chinese Pinyin) companion plugin for LeanType powered by Google Pinyin C++ engine</td>
+      <td>
+        <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-36-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
+    <tr>
+      <td><b><a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin">🎞️ GIF Plugin</a></b></td>
+      <td>Standalone rich media, GIF, sticker, and meme search plugin for LeanType supporting GIPHY, KLIPY, and local media</td>
+      <td>
+        <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-117-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
+    <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-SoundPacks">🔊 Sound Packs</a></b></td>
       <td>Curated zero-latency mechanical &amp; acoustic audio sound packs repository and custom pack creator guide for LeanType</td>
       <td>

@@ -34,6 +34,20 @@
     "downloads": 100,
     "downloads_formatted": "100"
   },
+  "leantype-cjk-plugin": {
+    "name": "LeanType-CJK-Plugin",
+    "owner": "LeanBitLab",
+    "stars": 1,
+    "downloads": 36,
+    "downloads_formatted": "36"
+  },
+  "leantype-gif-plugin": {
+    "name": "LeanType-Gif-Plugin",
+    "owner": "LeanBitLab",
+    "stars": 2,
+    "downloads": 117,
+    "downloads_formatted": "117"
+  },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",

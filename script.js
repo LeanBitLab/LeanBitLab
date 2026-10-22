@@ -2,6 +2,8 @@
 const repoMap = {
   'adaptive-brightness-linux': 'adaptive-brightness-linux',
   'leantype': 'leantype',
+  'leantype-cjk-plugin': 'leantype-cjk-plugin',
+  'leantype-gif-plugin': 'leantype-gif-plugin',
   'leantype-handwriting-plugin': 'leantype-handwriting-plugin',
   'leantype-ocr-plugin': 'leantype-ocr-plugin',
   'leantype-offline-ai-plugin': 'leantype-offline-ai-plugin',
@@ -74,6 +76,14 @@ const readmeConfig = {
   'leantype-soundpacks': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-SoundPacks/main/README.md',
     header: "## 🎵 Available Official Packs"
+  },
+  'leantype-cjk-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-CJK-Plugin/master/README.md',
+    header: "### Key Highlights"
+  },
+  'leantype-gif-plugin': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Gif-Plugin/main/README.md',
+    header: "## ✨ Features"
   },
   'adaptive-brightness-linux': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/adaptive-brightness-linux/master/README.md',
@@ -165,6 +175,19 @@ const fallbackFeatures = {
     '<strong>🎵 Official Sound Packs</strong> - High quality keyboard sound packs including Deep Thock, Crisp Click, Typewriter, Creamy Linear, 8-Bit Chiptune, and more.',
     '<strong>🛠️ Custom Pack Creator</strong> - Simple JSON-based format to create, customize, and import your own audio sound packs.',
     '<strong>🎛️ Dynamic Audio Engine</strong> - Full support for random pitch variation, per-key audio mapping, and volume tuning.'
+  ],
+  'leantype-cjk-plugin': [
+    '<strong>🀄 In-Process CJK Engine</strong> - Real-time Chinese Pinyin input powered by the Google Pinyin C++ engine (libjni_pinyin.so).',
+    '<strong>📚 Embedded 65,000+ Word Dictionary</strong> - Full-vocabulary offline dictionary (dict_pinyin.dat) with fast syllable splitting and N-gram matrix search.',
+    '<strong>🧩 Lightweight & Modular</strong> - Dynamic DexClassLoader loading keeps LeanType core bloat-free with under 2 MB footprint.',
+    '<strong>🔒 100% Offline & Private</strong> - Zero network permissions, zero telemetry, and complete on-device processing.'
+  ],
+  'leantype-gif-plugin': [
+    '<strong>🎬 Multi-Category Rich Media</strong> - Search and browse across GIFs, Stickers, Memes, and Animated Emojis.',
+    '<strong>🔄 Multi-Provider Support</strong> - Seamless support for GIPHY, KLIPY, and offline Local Media with 1-tap provider switching.',
+    '<strong>📁 100% Offline Local Media</strong> - Import and browse your own GIF, WebP, PNG files, and ZIP sticker packs with zero internet required.',
+    '<strong>🛡️ Secure API Key Vault</strong> - API keys encrypted at rest with hardware-backed Android Keystore keys and never shared outside the plugin process.',
+    '<strong>⚡ Zero-Memory Overhead</strong> - Direct ParcelFileDescriptor streaming ensures smooth, lag-free typing.'
   ],
   'adaptive-brightness-linux': [
     '<strong>📈 Interactive Spline Curve</strong> - Draggable spline nodes to adjust 24-hour target levels in real time.',
