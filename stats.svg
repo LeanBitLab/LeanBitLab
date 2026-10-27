@@ -30,7 +30,7 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 0L10.472 5.008L16 5.816L12 9.712L12.944 15.216L8 12.616L3.056 15.216L4 9.712L0 5.816L5.528 5.008L8 0Z"/>
       <text x="24" y="13" class="stat-label">Total Stars:</text>
-      <text x="104" y="13" class="stat-value">1.7k</text>
+      <text x="104" y="13" class="stat-value">1.8k</text>
     </g>
     
     <!-- Public Repositories -->
@@ -47,14 +47,14 @@
     <g transform="translate(0, 0)">
       <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
       <text x="24" y="13" class="stat-label">Total Downloads:</text>
-      <text x="142" y="13" class="stat-value">159.9k</text>
+      <text x="142" y="13" class="stat-value">161.8k</text>
     </g>
 
     <!-- Total Commits -->
     <g transform="translate(0, 36)">
       <path class="accent" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
       <text x="24" y="13" class="stat-label">Total Commits:</text>
-      <text x="126" y="13" class="stat-value">6.2k+</text>
+      <text x="126" y="13" class="stat-value">6.3k+</text>
     </g>
   </g>
 </svg>
