@@ -266,6 +266,16 @@ async function fetchGithubStats() {
         if (downloadsEl) {
           animateStat(downloadsEl, data.downloads);
         }
+
+        const versionEl = document.getElementById(`version-${domId}`);
+        if (versionEl && data.version) {
+          versionEl.textContent = data.version;
+        }
+
+        const downloadBtn = document.getElementById(`download-${domId}`);
+        if (downloadBtn && data.release_url) {
+          downloadBtn.href = data.release_url;
+        }
       }
     }
   } catch (error) {

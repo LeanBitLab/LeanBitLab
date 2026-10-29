@@ -77,6 +77,43 @@
   --theme-toggle-border: rgba(255, 255, 255, 0.12);
   --theme-toggle-hover-bg: rgba(255, 255, 255, 0.12);
   --logo-bit-color: #8a68db;
+
+  --card-btn-bg: rgba(255, 255, 255, 0.04);
+  --card-btn-border: rgba(255, 255, 255, 0.12);
+  --card-btn-color: var(--text-secondary);
+  --card-btn-hover-bg: rgba(255, 255, 255, 0.12);
+  --card-btn-hover-border: rgba(255, 255, 255, 0.35);
+  --card-btn-hover-color: #ffffff;
+
+  --card-link-color: var(--text-primary);
+  --card-link-hover-color: #a78bfa;
+
+  --card-badge-bg: rgba(255, 255, 255, 0.06);
+  --card-badge-border: rgba(255, 255, 255, 0.15);
+  --card-badge-color: #d4d4d4;
+
+  --download-btn-bg: rgba(124, 77, 255, 0.15);
+  --download-btn-border: rgba(124, 77, 255, 0.4);
+  --download-btn-color: #c4b5fd;
+  --download-btn-hover-bg: #7c4dff;
+  --download-btn-hover-border: #7c4dff;
+  --download-btn-hover-color: #ffffff;
+  --download-btn-shadow: 0 4px 16px rgba(124, 77, 255, 0.35);
+
+  --stat-version-color: #a78bfa;
+
+  --overlay-btn-bg: rgba(255, 255, 255, 0.08);
+  --overlay-btn-border: rgba(255, 255, 255, 0.12);
+  --overlay-btn-color: var(--text-primary);
+  --overlay-btn-hover-bg: rgba(255, 255, 255, 0.2);
+  --overlay-btn-hover-border: #ffffff;
+  --overlay-btn-hover-color: #ffffff;
+
+  --dot-bg: rgba(255, 255, 255, 0.25);
+  --dot-active-bg: #ffffff;
+
+  --features-link-color: #c4b5fd;
+  --features-link-hover-color: #ffffff;
 }
 
 /* Adaptive Light Theme - Automatic System Preference */
@@ -155,6 +192,43 @@
     --theme-toggle-border: rgba(0, 0, 0, 0.1);
     --theme-toggle-hover-bg: rgba(0, 0, 0, 0.08);
     --logo-bit-color: #7c4dff;
+
+    --card-btn-bg: rgba(0, 0, 0, 0.04);
+    --card-btn-border: rgba(0, 0, 0, 0.12);
+    --card-btn-color: #4b5563;
+    --card-btn-hover-bg: rgba(0, 0, 0, 0.08);
+    --card-btn-hover-border: rgba(0, 0, 0, 0.25);
+    --card-btn-hover-color: #111827;
+
+    --card-link-color: #111827;
+    --card-link-hover-color: #6d28d9;
+
+    --card-badge-bg: rgba(124, 77, 255, 0.08);
+    --card-badge-border: rgba(124, 77, 255, 0.25);
+    --card-badge-color: #6d28d9;
+
+    --download-btn-bg: rgba(124, 77, 255, 0.1);
+    --download-btn-border: rgba(124, 77, 255, 0.35);
+    --download-btn-color: #6d28d9;
+    --download-btn-hover-bg: #7c4dff;
+    --download-btn-hover-border: #7c4dff;
+    --download-btn-hover-color: #ffffff;
+    --download-btn-shadow: 0 4px 14px rgba(124, 77, 255, 0.25);
+
+    --stat-version-color: #6d28d9;
+
+    --overlay-btn-bg: rgba(0, 0, 0, 0.05);
+    --overlay-btn-border: rgba(0, 0, 0, 0.12);
+    --overlay-btn-color: #111827;
+    --overlay-btn-hover-bg: rgba(0, 0, 0, 0.1);
+    --overlay-btn-hover-border: rgba(0, 0, 0, 0.3);
+    --overlay-btn-hover-color: #111827;
+
+    --dot-bg: rgba(0, 0, 0, 0.2);
+    --dot-active-bg: #7c4dff;
+
+    --features-link-color: #6d28d9;
+    --features-link-hover-color: #4338ca;
   }
 }
 
@@ -233,6 +307,43 @@
   --theme-toggle-border: rgba(0, 0, 0, 0.1);
   --theme-toggle-hover-bg: rgba(0, 0, 0, 0.08);
   --logo-bit-color: #7c4dff;
+
+  --card-btn-bg: rgba(0, 0, 0, 0.04);
+  --card-btn-border: rgba(0, 0, 0, 0.12);
+  --card-btn-color: #4b5563;
+  --card-btn-hover-bg: rgba(0, 0, 0, 0.08);
+  --card-btn-hover-border: rgba(0, 0, 0, 0.25);
+  --card-btn-hover-color: #111827;
+
+  --card-link-color: #111827;
+  --card-link-hover-color: #6d28d9;
+
+  --card-badge-bg: rgba(124, 77, 255, 0.08);
+  --card-badge-border: rgba(124, 77, 255, 0.25);
+  --card-badge-color: #6d28d9;
+
+  --download-btn-bg: rgba(124, 77, 255, 0.1);
+  --download-btn-border: rgba(124, 77, 255, 0.35);
+  --download-btn-color: #6d28d9;
+  --download-btn-hover-bg: #7c4dff;
+  --download-btn-hover-border: #7c4dff;
+  --download-btn-hover-color: #ffffff;
+  --download-btn-shadow: 0 4px 14px rgba(124, 77, 255, 0.25);
+
+  --stat-version-color: #6d28d9;
+
+  --overlay-btn-bg: rgba(0, 0, 0, 0.05);
+  --overlay-btn-border: rgba(0, 0, 0, 0.12);
+  --overlay-btn-color: #111827;
+  --overlay-btn-hover-bg: rgba(0, 0, 0, 0.1);
+  --overlay-btn-hover-border: rgba(0, 0, 0, 0.3);
+  --overlay-btn-hover-color: #111827;
+
+  --dot-bg: rgba(0, 0, 0, 0.2);
+  --dot-active-bg: #7c4dff;
+
+  --features-link-color: #6d28d9;
+  --features-link-hover-color: #4338ca;
 }
 
 /* Explicit Dark Theme Selection */
@@ -310,6 +421,43 @@
   --theme-toggle-border: rgba(255, 255, 255, 0.12);
   --theme-toggle-hover-bg: rgba(255, 255, 255, 0.12);
   --logo-bit-color: #8a68db;
+
+  --card-btn-bg: rgba(255, 255, 255, 0.04);
+  --card-btn-border: rgba(255, 255, 255, 0.12);
+  --card-btn-color: var(--text-secondary);
+  --card-btn-hover-bg: rgba(255, 255, 255, 0.12);
+  --card-btn-hover-border: rgba(255, 255, 255, 0.35);
+  --card-btn-hover-color: #ffffff;
+
+  --card-link-color: var(--text-primary);
+  --card-link-hover-color: #a78bfa;
+
+  --card-badge-bg: rgba(255, 255, 255, 0.06);
+  --card-badge-border: rgba(255, 255, 255, 0.15);
+  --card-badge-color: #d4d4d4;
+
+  --download-btn-bg: rgba(124, 77, 255, 0.15);
+  --download-btn-border: rgba(124, 77, 255, 0.4);
+  --download-btn-color: #c4b5fd;
+  --download-btn-hover-bg: #7c4dff;
+  --download-btn-hover-border: #7c4dff;
+  --download-btn-hover-color: #ffffff;
+  --download-btn-shadow: 0 4px 16px rgba(124, 77, 255, 0.35);
+
+  --stat-version-color: #a78bfa;
+
+  --overlay-btn-bg: rgba(255, 255, 255, 0.08);
+  --overlay-btn-border: rgba(255, 255, 255, 0.12);
+  --overlay-btn-color: var(--text-primary);
+  --overlay-btn-hover-bg: rgba(255, 255, 255, 0.2);
+  --overlay-btn-hover-border: #ffffff;
+  --overlay-btn-hover-color: #ffffff;
+
+  --dot-bg: rgba(255, 255, 255, 0.25);
+  --dot-active-bg: #ffffff;
+
+  --features-link-color: #c4b5fd;
+  --features-link-hover-color: #ffffff;
 }
 
 * {
@@ -812,7 +960,7 @@ nav {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 .project-card {
@@ -884,10 +1032,11 @@ nav {
 }
 .project-stats {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   margin-bottom: 24px;
   border-top: 1px solid var(--border-color);
   padding-top: 16px;
+  flex-wrap: wrap;
 }
 .stat-item {
   display: flex;
@@ -904,16 +1053,34 @@ nav {
   font-weight: 700;
   color: var(--text-primary);
 }
+.stat-val-version {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--stat-version-color);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
 .card-link {
   font-family: var(--font-title);
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--card-link-color);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition: var(--transition-smooth);
 }
-.card-link:hover {
-  color: var(--text-secondary);
+.card-link:hover,
+.card-link:focus,
+.card-link:focus-visible {
+  color: var(--card-link-hover-color);
+  transform: translateX(2px);
+}
+.card-link:focus-visible {
+  outline: 2px solid #7c4dff;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* --- In Development Cards --- */
@@ -924,13 +1091,15 @@ nav {
   position: absolute;
   top: 24px;
   right: 24px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #d4d4d4;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--card-badge-bg);
+  color: var(--card-badge-color);
+  border: 1px solid var(--card-badge-border);
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 /* --- Philosophy Section --- */
 .philosophy-section {
@@ -1466,8 +1635,8 @@ footer {
 /* --- Hover Effects --- */
 .media-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
+  border-color: var(--border-hover);
+  box-shadow: var(--card-hover-shadow);
 }
 .media-card:hover .media-thumbnail {
   transform: scale(1.05);
@@ -1810,11 +1979,13 @@ footer {
   }
   .card-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     width: 100%;
   }
-  .card-buttons button {
-    flex: 1;
+  .card-buttons button,
+  .card-buttons .btn-download {
+    flex: 1 1 auto;
     min-height: 40px;
     display: flex;
     align-items: center;
@@ -1905,7 +2076,7 @@ footer {
   transform: translateY(0) !important;
 }
 
-/* --- Card Actions & Screenshots Preview --- */
+/* --- Card Actions & Action Buttons --- */
 .card-actions {
   display: flex;
   justify-content: space-between;
@@ -1913,10 +2084,61 @@ footer {
   margin-top: auto;
   gap: 12px;
 }
-.btn-screenshot {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-secondary);
+
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--download-btn-bg);
+  border: 1px solid var(--download-btn-border);
+  color: var(--download-btn-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-download .btn-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.btn-download:hover,
+.btn-download:focus,
+.btn-download:focus-visible {
+  background: var(--download-btn-hover-bg);
+  border-color: var(--download-btn-hover-border);
+  color: var(--download-btn-hover-color);
+  box-shadow: var(--download-btn-shadow);
+  transform: translateY(-1px);
+}
+
+.btn-download:focus-visible {
+  outline: 2px solid #7c4dff;
+  outline-offset: 2px;
+}
+
+.btn-screenshot,
+.btn-features {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-btn-bg);
+  border: 1px solid var(--card-btn-border);
+  color: var(--card-btn-color);
   padding: 6px 14px;
   border-radius: 20px;
   font-family: var(--font-title);
@@ -1925,10 +2147,23 @@ footer {
   cursor: pointer;
   transition: var(--transition-smooth);
 }
-.btn-screenshot:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #ffffff;
+
+.btn-screenshot:hover,
+.btn-features:hover,
+.btn-screenshot:focus,
+.btn-features:focus,
+.btn-screenshot:focus-visible,
+.btn-features:focus-visible {
+  background: var(--card-btn-hover-bg);
+  border-color: var(--card-btn-hover-border);
+  color: var(--card-btn-hover-color);
+  transform: translateY(-1px);
+}
+
+.btn-screenshot:focus-visible,
+.btn-features:focus-visible {
+  outline: 2px solid #7c4dff;
+  outline-offset: 2px;
 }
 
 /* Inline Screenshot Preview Overlay */
@@ -1977,9 +2212,9 @@ footer {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
+  background: var(--overlay-btn-bg);
+  border: 1px solid var(--overlay-btn-border);
+  color: var(--overlay-btn-color);
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -1992,18 +2227,20 @@ footer {
   z-index: 12;
   transition: var(--transition-smooth);
 }
-.screenshot-close-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #ffffff;
-  color: #ffffff;
+.screenshot-close-btn:hover,
+.screenshot-close-btn:focus,
+.screenshot-close-btn:focus-visible {
+  background: var(--overlay-btn-hover-bg);
+  border-color: var(--overlay-btn-hover-border);
+  color: var(--overlay-btn-hover-color);
 }
 .screenshot-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
+  background: var(--overlay-btn-bg);
+  border: 1px solid var(--overlay-btn-border);
+  color: var(--overlay-btn-color);
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -2015,11 +2252,13 @@ footer {
   font-size: 20px;
   transition: var(--transition-smooth);
 }
-.screenshot-nav-btn:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+.screenshot-nav-btn:hover,
+.screenshot-nav-btn:focus,
+.screenshot-nav-btn:focus-visible {
+  background: var(--overlay-btn-hover-bg);
+  color: var(--overlay-btn-hover-color);
+  border-color: var(--overlay-btn-hover-border);
+  box-shadow: 0 0 12px rgba(124, 77, 255, 0.25);
 }
 .screenshot-nav-prev {
   left: 4px;
@@ -2036,11 +2275,11 @@ footer {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--dot-bg);
   transition: var(--transition-smooth);
 }
 .screenshot-indicator-dot.active {
-  background: #ffffff;
+  background: var(--dot-active-bg);
   transform: scale(1.3);
 }
 
@@ -2049,8 +2288,8 @@ footer {
   position: absolute;
   width: 32px;
   height: 32px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #ffffff;
+  border: 3px solid var(--border-color);
+  border-top-color: #7c4dff;
   border-radius: 50%;
   animation: spin-loader 0.8s linear infinite;
   z-index: 9;
@@ -2064,9 +2303,9 @@ footer {
   position: absolute;
   top: 16px;
   right: 52px; /* Placed next to the close button */
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
+  background: var(--overlay-btn-bg);
+  border: 1px solid var(--overlay-btn-border);
+  color: var(--overlay-btn-color);
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -2078,10 +2317,12 @@ footer {
   z-index: 12;
   transition: var(--transition-smooth);
 }
-.screenshot-expand-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #ffffff;
-  color: #ffffff;
+.screenshot-expand-btn:hover,
+.screenshot-expand-btn:focus,
+.screenshot-expand-btn:focus-visible {
+  background: var(--overlay-btn-hover-bg);
+  border-color: var(--overlay-btn-hover-border);
+  color: var(--overlay-btn-hover-color);
 }
 
 /* Fullscreen Lightbox Modal */
@@ -2178,29 +2419,6 @@ footer {
   right: 24px;
 }
 
-/* --- Card Action Buttons Layout --- */
-.card-buttons {
-  display: flex;
-  gap: 8px;
-}
-.btn-features {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 12px;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-.btn-features:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #ffffff;
-}
-
 /* Inline Features Preview Overlay */
 .features-preview-overlay {
   position: absolute;
@@ -2268,11 +2486,13 @@ footer {
   color: var(--text-primary);
 }
 .features-list li a {
-  color: #ffffff;
+  color: var(--features-link-color);
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
-.features-list li a:hover {
-  color: #d4d4d4;
+.features-list li a:hover,
+.features-list li a:focus {
+  color: var(--features-link-hover-color);
 }
 
 /* Scroll Buttons for Card Overlay */
@@ -2280,9 +2500,9 @@ footer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
+  background: var(--overlay-btn-bg);
+  border: 1px solid var(--overlay-btn-border);
+  color: var(--overlay-btn-color);
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -2294,11 +2514,13 @@ footer {
   font-size: 10px;
   transition: var(--transition-smooth);
 }
-.features-scroll-btn:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+.features-scroll-btn:hover,
+.features-scroll-btn:focus,
+.features-scroll-btn:focus-visible {
+  background: var(--overlay-btn-hover-bg);
+  color: var(--overlay-btn-hover-color);
+  border-color: var(--overlay-btn-hover-border);
+  box-shadow: 0 0 8px rgba(124, 77, 255, 0.25);
 }
 .features-scroll-up {
   top: 8px; /* Safe padding spacing */
@@ -2375,18 +2597,20 @@ footer {
   font-size: 15px;
   line-height: 1.55;
   color: var(--text-secondary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 12px;
 }
 .features-lightbox-list li strong {
   color: var(--text-primary);
 }
 .features-lightbox-list li a {
-  color: #ffffff;
+  color: var(--features-link-color);
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
-.features-lightbox-list li a:hover {
-  color: #d4d4d4;
+.features-lightbox-list li a:hover,
+.features-lightbox-list li a:focus {
+  color: var(--features-link-hover-color);
 }
 
 /* Lightbox Scroll Buttons (Floating at top-center and bottom-center) */
@@ -2394,9 +2618,9 @@ footer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
+  background: var(--overlay-btn-bg);
+  border: 1px solid var(--overlay-btn-border);
+  color: var(--overlay-btn-color);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -2408,11 +2632,13 @@ footer {
   font-size: 16px;
   transition: var(--transition-smooth);
 }
-.features-lightbox-scroll:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.3);
+.features-lightbox-scroll:hover,
+.features-lightbox-scroll:focus,
+.features-lightbox-scroll:focus-visible {
+  background: #7c4dff;
+  color: #ffffff;
+  border-color: #7c4dff;
+  box-shadow: 0 0 16px rgba(124, 77, 255, 0.4);
 }
 .features-lightbox-scroll-up {
   top: 8%; /* Safe viewport heights */
@@ -2424,9 +2650,9 @@ footer {
   position: absolute;
   top: 24px;
   right: 24px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
+  background: var(--overlay-btn-bg);
+  border: 1px solid var(--overlay-btn-border);
+  color: var(--overlay-btn-color);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -2439,8 +2665,10 @@ footer {
   z-index: 2012;
   transition: var(--transition-smooth);
 }
-.features-lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #ffffff;
-  color: #ffffff;
+.features-lightbox-close:hover,
+.features-lightbox-close:focus,
+.features-lightbox-close:focus-visible {
+  background: var(--overlay-btn-hover-bg);
+  border-color: var(--overlay-btn-hover-border);
+  color: var(--overlay-btn-hover-color);
 }

@@ -4,3 +4,8 @@ Pdoc/
 gemini.md
 .geminiignore
 .antigravityignore
+
+# Python
+__pycache__/
+*.py[cod]
+

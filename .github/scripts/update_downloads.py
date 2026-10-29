@@ -79,6 +79,19 @@ def get_repo_commits(full_name):
         print(f"Error fetching commits for {full_name}: {e}")
         return 0
 
+def get_repo_latest_release(full_name):
+    token = os.getenv("GITHUB_TOKEN")
+    try:
+        url = f"https://api.github.com/repos/{full_name}/releases/latest"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        if token:
+            req.add_header("Authorization", f"token {token}")
+        with urllib.request.urlopen(req) as response:
+            rel = json.loads(response.read().decode())
+            return rel.get("tag_name"), rel.get("html_url")
+    except Exception as e:
+        return None, None
+
 def format_number(num):
     if num >= 1000:
         return f"{num / 1000:.1f}k"
@@ -599,6 +612,18 @@ def main():
         print("No repositories found.")
         return
 
+    json_path = "stats.json"
+    if not os.path.exists(json_path) and os.path.exists("../../stats.json"):
+        json_path = "../../stats.json"
+
+    existing_stats = {}
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                existing_stats = json.load(f)
+        except Exception:
+            existing_stats = {}
+
     total_downloads = 0
     total_stars = 0
     total_commits = 0
@@ -611,18 +636,30 @@ def main():
         stars = r["stars"]
         downloads = get_repo_downloads(full_name)
         commits = get_repo_commits(full_name)
+        version, release_url = get_repo_latest_release(full_name)
         
+        existing_repo = existing_stats.get(name.lower(), {})
+        if downloads == 0 and existing_repo.get("downloads", 0) > 0:
+            downloads = existing_repo["downloads"]
+        if not version and existing_repo.get("version"):
+            version = existing_repo["version"]
+            release_url = existing_repo.get("release_url")
+        if commits == 0 and existing_repo.get("commits", 0) > 0:
+            commits = existing_repo.get("commits", 0)
+
         repo_data[name.lower()] = {
             "name": name,
             "owner": owner,
             "stars": stars,
             "downloads": downloads,
-            "commits": commits
+            "commits": commits,
+            "version": version,
+            "release_url": release_url
         }
         total_downloads += downloads
         total_stars += stars
         total_commits += commits
-        print(f"Repo {full_name}: {stars} stars, {downloads} downloads, {commits} commits")
+        print(f"Repo {full_name}: {stars} stars, {downloads} downloads, {commits} commits, version {version}")
         
     print(f"Total stars: {total_stars}")
     print(f"Total downloads: {total_downloads}")
@@ -643,7 +680,9 @@ def main():
             "owner": data["owner"],
             "stars": data["stars"],
             "downloads": data["downloads"],
-            "downloads_formatted": format_number(data["downloads"])
+            "downloads_formatted": format_number(data["downloads"]),
+            "version": data["version"],
+            "release_url": data["release_url"]
         }
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(stats_export, f, indent=2)
@@ -696,6 +735,19 @@ def main():
     content, downloads_count = re.subn(downloads_pattern, replace_downloads, content)
     print(f"Repo Download badges updated: {downloads_count}")
     
+    # Update Version badges in the table
+    def replace_version(match):
+        repo_name = match.group(2)
+        data = repo_data.get(repo_name.lower())
+        if data and data.get("version"):
+            ver_clean = data["version"].replace("-", "--")
+            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/releases/latest"><img src="https://img.shields.io/badge/Version-{ver_clean}-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>'
+        return match.group(0)
+        
+    version_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest"><img src="https://img\.shields\.io/badge/Version-([^-\s?]+)-7C4DFF[^"]*" alt="Version"></a>'
+    content, version_count = re.subn(version_pattern, replace_version, content)
+    print(f"Repo Version badges updated: {version_count}")
+    
     # Update Sponsors in README & site sponsor-data.js
     sponsors_token = os.getenv("SPONSORS_TOKEN") or os.getenv("GITHUB_TOKEN")
     user_data = get_github_sponsors(sponsors_token)
@@ -716,7 +768,7 @@ def main():
         if os.path.exists(local_sponsors_json):
             sync_local_sponsors_json(local_sponsors_json, user_data)
 
-    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or readme_sponsors_updated:
+    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or version_count > 0 or readme_sponsors_updated:
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(content)
         print("README.md updated successfully!")
