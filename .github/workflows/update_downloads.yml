@@ -37,7 +37,7 @@ jobs:
             git commit -m "auto: update README badges, stats card & site stats"
             git push
             if [ -n "$SYNC_PAT" ]; then
-              git remote add target "https://x-access-token:${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git" || true
-              git push target main --force
+              git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git" || true
+              git -c http.extraheader="" push target main --force
             fi
           fi
