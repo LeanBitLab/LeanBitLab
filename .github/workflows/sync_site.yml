@@ -8,6 +8,7 @@ on:
 
 jobs:
   sync:
+    if: github.repository == 'LeanBitLab/LeanBitLab'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,5 +21,10 @@ jobs:
         env:
           SYNC_PAT: ${{ secrets.SYNC_PAT }}
         run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git checkout -b deploy
+          git rm -rf .github
+          git commit -m "deploy: sync from LeanBitLab"
           git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git"
-          git -c http.extraheader="" push target main --force
+          git -c http.extraheader="" push target deploy:main --force

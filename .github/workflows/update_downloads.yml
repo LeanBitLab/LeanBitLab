@@ -7,6 +7,7 @@ on:
 
 jobs:
   update-badge:
+    if: github.repository == 'LeanBitLab/LeanBitLab'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -37,7 +38,10 @@ jobs:
             git commit -m "auto: update README badges, stats card & site stats"
             git push
             if [ -n "$SYNC_PAT" ]; then
+              git checkout -b deploy
+              git rm -rf .github
+              git commit -m "deploy: update stats from LeanBitLab"
               git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git" || true
-              git -c http.extraheader="" push target main --force
+              git -c http.extraheader="" push target deploy:main --force
             fi
           fi
