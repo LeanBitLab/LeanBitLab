@@ -27,8 +27,17 @@ jobs:
         run: python .github/scripts/update_downloads.py
 
       - name: Commit and push if changed
+        env:
+          SYNC_PAT: ${{ secrets.SYNC_PAT }}
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add README.md stats.svg stats.json index.html website.svg sponsor.svg sponsor-data.js
-          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: update README badges, stats card & site stats" && git push)
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "auto: update README badges, stats card & site stats"
+            git push
+            if [ -n "$SYNC_PAT" ]; then
+              git remote add target "https://x-access-token:${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git" || true
+              git push target main --force
+            fi
+          fi

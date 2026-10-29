@@ -1,0 +1,23 @@
+name: Sync to leanbitlab.github.io
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to leanbitlab.github.io
+        env:
+          SYNC_PAT: ${{ secrets.SYNC_PAT }}
+        run: |
+          git remote add target "https://x-access-token:${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git"
+          git push target main --force
