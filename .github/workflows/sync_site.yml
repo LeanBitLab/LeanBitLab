@@ -23,9 +23,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git checkout -b deploy
+          git checkout -B deploy
           git rm -rf .github
           git commit -m "deploy: sync from LeanBitLab"
           git config --local --unset-all "http.https://github.com/.extraheader" || true
-          git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git"
+          git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git" 2>/dev/null || git remote set-url target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git"
           git -c http.https://github.com/.extraheader="" push target deploy:main --force
