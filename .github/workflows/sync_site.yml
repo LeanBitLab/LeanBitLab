@@ -26,5 +26,6 @@ jobs:
           git checkout -b deploy
           git rm -rf .github
           git commit -m "deploy: sync from LeanBitLab"
+          git config --local --unset-all "http.https://github.com/.extraheader" || true
           git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git"
-          git -c http.extraheader="" push target deploy:main --force
+          git -c http.https://github.com/.extraheader="" push target deploy:main --force
