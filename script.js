@@ -10,6 +10,7 @@ const repoMap = {
   'leantype-soundpacks': 'leantype-soundpacks',
   'leantype-translation-plugin': 'leantype-translation-plugin',
   'leantype-voice-plugin': 'leantype-voice-plugin',
+  'leantype-whisper-models': 'leantype-whisper-models',
   'ltvlauncher': 'ltvlauncher',
   'lwidget': 'lwidget',
   'rdtube': 'rdtube'
@@ -64,6 +65,10 @@ const readmeConfig = {
   'leantype-voice-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Voice-Plugin/master/README.md',
     header: "## Architecture"
+  },
+  'leantype-whisper-models': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/leantype-whisper-models/main/README.md',
+    header: "## Why build the models here"
   },
   'leantype-ocr-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-OCR-Plugin/main/README.md',
@@ -157,6 +162,12 @@ const fallbackFeatures = {
     '<strong>⚡ AIDL IPC Interface</strong> - Standardized IVoiceEngine contract with real-time audio streaming.',
     '<strong>📦 Async Model Management</strong> - Non-blocking background model imports and on-demand unloading.',
     '<strong>🔒 100% Private</strong> - Zero network permissions required; all voice processing stays strictly on-device.'
+  ],
+  'leantype-whisper-models': [
+    '<strong>🗣️ 6 Official Models</strong> - Tiny, Base and Small Whisper, in English-only and 99-language multilingual versions, quantized to Q5_1.',
+    '<strong>🔍 Verifiable Provenance</strong> - Pinned whisper.cpp, OpenAI Whisper and Hugging Face revisions recorded for every model.',
+    '<strong>✅ Quality Gates</strong> - Word error rate and silence tests on every build, plus a recorded on-device benchmark before release.',
+    '<strong>🔐 Integrity Checked</strong> - SHA-256 checksums and exact sizes in the catalog that LeanType verifies on download.'
   ],
   'leantype-ocr-plugin': [
     '<strong>🔒 100% Offline & Private</strong> - Zero network permissions; all vision and ML Kit neural models run strictly on-device.',

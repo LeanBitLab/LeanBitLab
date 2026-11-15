@@ -114,6 +114,15 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       </td>
     </tr>
     <tr>
+      <td><b><a href="https://github.com/LeanBitLab/leantype-whisper-models">🗣️ Whisper Models</a></b></td>
+      <td>Official Whisper speech-to-text models for LeanType voice typing (tiny, base, small; English and multilingual), Q5_1 quantized with verified SHA-256 checksums and on-device benchmarks</td>
+      <td>
+        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
+        <a href="https://github.com/LeanBitLab/leantype-whisper-models/stargazers"><img src="https://img.shields.io/badge/Stars-1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Downloads-36-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
+    <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin">🤖 Offline AI Plugin</a></b></td>
       <td>100% on-device neural proofreading and local LLM plugin for LeanType powered by llama.cpp and local GGUF models</td>
       <td>
