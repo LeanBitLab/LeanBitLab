@@ -86,20 +86,6 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
         <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-818-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
-    <tr>
-      <td><b>📝 LeanBook</b></td>
-      <td>Notes, Tasks, Reminders, Bills &amp; Shopping list</td>
-      <td>
-        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>📞 Minimal Dialer</b></td>
-      <td>Clean, bloat-free phone dialer</td>
-      <td>
-        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
-      </td>
-    </tr>
   </tbody>
 </table>
 
@@ -220,6 +206,37 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
         <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest"><img src="https://img.shields.io/badge/Version-v2.0.0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
         <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers"><img src="https://img.shields.io/badge/Stars-14-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
         <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest"><img src="https://img.shields.io/badge/Downloads-13-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+---
+
+## 🚧 In Development
+
+<table>
+  <thead>
+    <tr>
+      <th width="28%" align="left">Project</th>
+      <th width="42%" align="left">Description</th>
+      <th width="30%" align="left">Stats &amp; Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>📝 LeanBook</b></td>
+      <td>Notes, Tasks, Reminders, Bills &amp; Shopping list</td>
+      <td>
+        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
+      </td>
+    </tr>
+    <tr>
+      <td><b>📞 Minimal Dialer</b></td>
+      <td>Clean, bloat-free phone dialer</td>
+      <td>
+        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
       </td>
     </tr>
   </tbody>
