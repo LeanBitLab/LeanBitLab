@@ -189,6 +189,7 @@ const fallbackFeatures = {
   ],
   'leantype-cjk-plugin': [
     '<strong>🀄 In-Process CJK Engine</strong> - Real-time Chinese Pinyin input powered by the Google Pinyin C++ engine (libjni_pinyin.so).',
+    '<strong>🇯🇵 Japanese Input</strong> - Romaji to kana to kanji conversion with candidate suggestions, backed by an offline SKK-based dictionary.',
     '<strong>📚 Embedded 65,000+ Word Dictionary</strong> - Full-vocabulary offline dictionary (dict_pinyin.dat) with fast syllable splitting and N-gram matrix search.',
     '<strong>🧩 Lightweight & Modular</strong> - Dynamic DexClassLoader loading keeps LeanType core bloat-free with under 2 MB footprint.',
     '<strong>🔒 100% Offline & Private</strong> - Zero network permissions, zero telemetry, and complete on-device processing.'
@@ -197,6 +198,7 @@ const fallbackFeatures = {
     '<strong>🎬 Multi-Category Rich Media</strong> - Search and browse across GIFs, Stickers, Memes, and Animated Emojis.',
     '<strong>🔄 Multi-Provider Support</strong> - Seamless support for GIPHY, KLIPY, and offline Local Media with 1-tap provider switching.',
     '<strong>📁 100% Offline Local Media</strong> - Import and browse your own GIF, WebP, PNG files, and ZIP sticker packs with zero internet required.',
+    '<strong>🗂️ Categories & Packs</strong> - Organize imported media into categories and named packs, rename titles and group files right inside the plugin.',
     '<strong>🛡️ Secure API Key Vault</strong> - API keys encrypted at rest with hardware-backed Android Keystore keys and never shared outside the plugin process.',
     '<strong>⚡ Zero-Memory Overhead</strong> - Direct ParcelFileDescriptor streaming ensures smooth, lag-free typing.'
   ],

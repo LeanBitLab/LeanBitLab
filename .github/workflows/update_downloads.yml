@@ -39,7 +39,7 @@ jobs:
             git push
             if [ -n "$SYNC_PAT" ]; then
               git checkout -B deploy
-              git rm -rf .github
+              git rm -rf .github/workflows .github/scripts
               git commit -m "deploy: update stats from LeanBitLab"
               git config --local --unset-all "http.https://github.com/.extraheader" || true
               git remote add target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git" 2>/dev/null || git remote set-url target "https://${SYNC_PAT}@github.com/LeanBitLab/leanbitlab.github.io.git"

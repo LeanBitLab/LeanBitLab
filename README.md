@@ -9,7 +9,7 @@
 **Crafting bloat-free, efficient Android and Linux experiences.**
 
 <p align="center">
-  <a href="https://leanbitlab.github.io/LeanBitLab/">
+  <a href="https://leanbitlab.github.io/">
     <img alt="Official Website" src="./website.svg?v=1" height="38">
   </a>
   &nbsp;&nbsp;
@@ -39,7 +39,7 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
 
 ---
 
-## 📱 Android Projects
+## 📱 Android Apps
 
 <table>
   <thead>
@@ -86,6 +86,38 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
         <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-818-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
+    <tr>
+      <td><b>📝 LeanBook</b></td>
+      <td>Notes, Tasks, Reminders, Bills &amp; Shopping list</td>
+      <td>
+        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
+      </td>
+    </tr>
+    <tr>
+      <td><b>📞 Minimal Dialer</b></td>
+      <td>Clean, bloat-free phone dialer</td>
+      <td>
+        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 🔌 LeanType Plugins
+
+Optional add-ons that keep the LeanType core lean. Install only the ones you need.
+
+<table>
+  <thead>
+    <tr>
+      <th width="28%" align="left">Project</th>
+      <th width="42%" align="left">Description</th>
+      <th width="30%" align="left">Stats &amp; Status</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin">✍️ Handwriting Plugin</a></b></td>
       <td>On-device handwriting recognition layout plugin for LeanType supporting 300+ languages via Google ML Kit</td>
@@ -141,8 +173,8 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       </td>
     </tr>
     <tr>
-      <td><b><a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin">🇨🇳 CJK Plugin</a></b></td>
-      <td>Standalone CJK (Chinese Pinyin) companion plugin for LeanType powered by Google Pinyin C++ engine</td>
+      <td><b><a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin">🀄 CJK Plugin</a></b></td>
+      <td>Standalone Chinese (Pinyin) and Japanese (romaji to kana to kanji) input companion plugin for LeanType, fully offline</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
         <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-3-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
@@ -163,20 +195,6 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td>Curated zero-latency mechanical &amp; acoustic audio sound packs repository and custom pack creator guide for LeanType</td>
       <td>
         <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/stargazers"><img src="https://img.shields.io/badge/Stars-7-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>📝 LeanBook</b></td>
-      <td>Notes, Tasks, Reminders, Bills &amp; Shopping list</td>
-      <td>
-        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
-      </td>
-    </tr>
-    <tr>
-      <td><b>📞 Minimal Dialer</b></td>
-      <td>Clean, bloat-free phone dialer</td>
-      <td>
-        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
       </td>
     </tr>
   </tbody>
