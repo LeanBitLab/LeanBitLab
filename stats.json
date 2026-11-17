@@ -29,53 +29,53 @@
   "leantype": {
     "name": "LeanType",
     "owner": "LeanBitLab",
-    "stars": 1205,
-    "downloads": 115440,
-    "downloads_formatted": "115.4k",
-    "version": "v4.3.3",
-    "release_url": "https://github.com/LeanBitLab/LeanType/releases/tag/v4.3.3"
+    "stars": 1207,
+    "downloads": 117480,
+    "downloads_formatted": "117.5k",
+    "version": "v4.3.4",
+    "release_url": "https://github.com/LeanBitLab/LeanType/releases/tag/v4.3.4"
   },
   "leantype-cjk-plugin": {
     "name": "LeanType-CJK-Plugin",
     "owner": "LeanBitLab",
     "stars": 3,
-    "downloads": 633,
-    "downloads_formatted": "633",
+    "downloads": 668,
+    "downloads_formatted": "668",
     "version": "v1.0.2",
     "release_url": "https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/tag/v1.0.2"
   },
   "leantype-gif-plugin": {
     "name": "LeanType-Gif-Plugin",
     "owner": "LeanBitLab",
-    "stars": 19,
-    "downloads": 1368,
-    "downloads_formatted": "1.4k",
-    "version": "v1.0.4",
-    "release_url": "https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/tag/v1.0.4"
+    "stars": 21,
+    "downloads": 1514,
+    "downloads_formatted": "1.5k",
+    "version": "v1.0.5",
+    "release_url": "https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/tag/v1.0.5"
   },
   "leantype-handwriting-plugin": {
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 22,
-    "downloads": 5647,
-    "downloads_formatted": "5.6k",
-    "version": "v1.0.7",
-    "release_url": "https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/tag/v1.0.7"
+    "downloads": 5734,
+    "downloads_formatted": "5.7k",
+    "version": "v1.0.8",
+    "release_url": "https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/tag/v1.0.8"
   },
   "leantype-ocr-plugin": {
     "name": "LeanType-OCR-Plugin",
     "owner": "LeanBitLab",
     "stars": 18,
-    "downloads": 4427,
-    "downloads_formatted": "4.4k",
+    "downloads": 4488,
+    "downloads_formatted": "4.5k",
     "version": "v1.0.1",
     "release_url": "https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/tag/v1.0.1"
   },
   "leantype-offline-ai-plugin": {
     "name": "LeanType-Offline-AI-Plugin",
     "owner": "LeanBitLab",
-    "stars": 21,
-    "downloads": 2275,
+    "stars": 22,
+    "downloads": 2304,
     "downloads_formatted": "2.3k",
     "version": "v1.0.1",
     "release_url": "https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/releases/tag/v1.0.1"
@@ -92,27 +92,27 @@
   "leantype-translation-plugin": {
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
-    "stars": 17,
-    "downloads": 8519,
-    "downloads_formatted": "8.5k",
+    "stars": 18,
+    "downloads": 8625,
+    "downloads_formatted": "8.6k",
     "version": "v1.0.7",
     "release_url": "https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/tag/v1.0.7"
   },
   "leantype-voice-plugin": {
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
-    "stars": 36,
-    "downloads": 5709,
-    "downloads_formatted": "5.7k",
+    "stars": 37,
+    "downloads": 5805,
+    "downloads_formatted": "5.8k",
     "version": "v1.0.4",
     "release_url": "https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/tag/v1.0.4"
   },
   "leantype-whisper-models": {
     "name": "leantype-whisper-models",
     "owner": "LeanBitLab",
-    "stars": 1,
-    "downloads": 94,
-    "downloads_formatted": "94",
+    "stars": 2,
+    "downloads": 173,
+    "downloads_formatted": "173",
     "version": "v1.0.0",
     "release_url": "https://github.com/LeanBitLab/leantype-whisper-models/releases/tag/v1.0.0"
   },
@@ -120,8 +120,8 @@
     "name": "Lwidget",
     "owner": "LeanBitLab",
     "stars": 72,
-    "downloads": 2240,
-    "downloads_formatted": "2.2k",
+    "downloads": 2256,
+    "downloads_formatted": "2.3k",
     "version": "v2.9",
     "release_url": "https://github.com/LeanBitLab/Lwidget/releases/tag/v2.9"
   },
@@ -129,17 +129,17 @@
     "name": "RdTube",
     "owner": "LeanBitLab",
     "stars": 44,
-    "downloads": 818,
-    "downloads_formatted": "818",
+    "downloads": 828,
+    "downloads_formatted": "828",
     "version": "v1.0.7",
     "release_url": "https://github.com/LeanBitLab/RdTube/releases/tag/v1.0.7"
   },
   "ltvlauncher": {
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
-    "stars": 478,
-    "downloads": 48950,
-    "downloads_formatted": "49.0k",
+    "stars": 479,
+    "downloads": 49406,
+    "downloads_formatted": "49.4k",
     "version": "v2026.10.27",
     "release_url": "https://github.com/leanbitlab-org/LtvLauncher/releases/tag/v2026.10.27"
   },
