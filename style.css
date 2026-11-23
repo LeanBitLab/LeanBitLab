@@ -476,7 +476,7 @@ body.menu-open {
 /* --- Container Utility --- */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -502,7 +502,7 @@ header.scrolled {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }
