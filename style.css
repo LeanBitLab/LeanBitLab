@@ -666,7 +666,7 @@ nav {
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: 30px;
   font-family: var(--font-title);
   font-weight: 600;
   font-size: 15px;
@@ -842,7 +842,7 @@ nav {
   border: 1px solid var(--tab-btn-border);
   color: var(--text-secondary);
   padding: 8px 18px;
-  border-radius: 8px;
+  border-radius: 20px;
   font-family: var(--font-title);
   font-weight: 600;
   cursor: pointer;
@@ -957,7 +957,7 @@ nav {
   padding: 0 10px;
   white-space: nowrap;
   min-height: 36px;
-  border-radius: 8px;
+  border-radius: 999px;
   font-family: var(--font-title);
   font-size: 13px;
   font-weight: 600;
@@ -1902,7 +1902,7 @@ footer {
   min-height: 36px;
   padding: 0 10px;
   white-space: nowrap;
-  border-radius: 8px;
+  border-radius: 999px;
   font-family: var(--font-title);
   font-weight: 600;
   font-size: 13px;
