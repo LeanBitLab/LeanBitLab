@@ -179,6 +179,38 @@ def mask_private_name(name: str) -> str:
     return f"{clean[0]}****{clean[-1]}"
 
 
+# Lowest dollar amount of each sub-tier (fallback total for sponsors missing from the private ledger).
+TIER_FLOOR = {
+    "Diamond": 250, "Gold II": 100, "Gold I": 50, "Silver II": 25, "Silver I": 10,
+    "Bronze": 5, "Supporter II": 2, "Supporter I": 1,
+}
+LEDGER_PATH = os.getenv("SPONSOR_LEDGER_PATH", "sponsor-ledger/ledger.json")
+
+
+def round_amount(amount: float) -> int:
+    """Coarse rounding so the public bubble size does not reveal exact dollars (step grows with the amount)."""
+    step = 2 if amount < 10 else 5 if amount < 50 else 25 if amount < 250 else 50
+    return max(step, int(round(amount / step)) * step)
+
+
+def public_ratio(amount: float, divisor: float) -> float:
+    """Public bubble size share from a coarsely rounded amount (exact amounts stay in the private ledger)."""
+    return round(round_amount(amount) / divisor, 4)
+
+
+def load_ledger(path: str):
+    """Private running totals {key: {"total": dollars, "counted": "YYYY-MM"}}, or None when unavailable."""
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else None
+    except Exception as e:
+        print(f"Notice: Could not read sponsor ledger: {e}")
+        return None
+
+
 def get_tier_info(amount: float) -> dict:
     """Computes tier and subTier based on dollar amount."""
     if amount >= 250:
@@ -241,7 +273,8 @@ def get_opencollective_backers(slug: str):
         url = None if is_guest or not profile.startswith("https://opencollective.com/") else profile
 
         total = m["totalAmountDonated"]
-        all_time.append({"name": name, "url": url, **get_tier_info(total), "ratio": round(total / 1000.0, 4)})
+        info = get_tier_info(total)
+        all_time.append({"name": name, "url": url, **info, "ratio": public_ratio(total, 1000.0)})
 
         last = m.get("lastTransactionAmount") or 0
         try:
@@ -251,7 +284,8 @@ def get_opencollective_backers(slug: str):
         except Exception:
             continue
         if last > 0 and (now - last_at).days < 30:
-            this_month.append({"name": name, "url": url, **get_tier_info(last), "ratio": round(last / 700.0, 4)})
+            info = get_tier_info(last)
+            this_month.append({"name": name, "url": url, **info, "ratio": public_ratio(last, 700.0)})
 
     for lst in (all_time, this_month):
         lst.sort(key=lambda s: (-s["ratio"], s["name"].lower()))
@@ -461,7 +495,7 @@ def months_between(earlier: str, later: str) -> int:
     return (ly - ey) * 12 + (lm - em)
 
 
-def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
+def update_sponsor_data_js(sponsor_data_path: str, user_data: dict, ledger_path: str = LEDGER_PATH) -> bool:
     """Directly updates sponsor-data.js: keeps historical in allTime and actively prunes cancelled from thisMonth."""
     if not user_data or not os.path.exists(sponsor_data_path):
         return False
@@ -502,15 +536,26 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                     s["github"] = None
                     changed = True
 
-        # 1b. All Time is a running total in dollars (`total`) plus the last month counted (`counted`).
-        # Entries from before totals existed are seeded from their displayed value (ratio * 1000),
-        # assuming the current month is already included.
+        # 1b. Real dollar amounts never go into the public file. All Time keeps a running total per sponsor
+        # (`total`) and the last month counted (`counted`) in a private ledger; the public file only gets
+        # name, tier and a coarsely rounded bubble size. Without a ledger, All Time is left as it is.
         month_now = current_month()
+        ledger = load_ledger(ledger_path)
+        if ledger is None:
+            print("Notice: sponsor ledger not found; All Time totals are not updated.")
+        ledger_before = json.dumps(ledger, sort_keys=True)
         before_all_time = json.dumps(all_time, sort_keys=True)
-        for s in all_time:
-            if "total" not in s:
-                s["total"] = round((s.get("ratio") or 0) * 1000)
-                s["counted"] = month_now
+
+        def ledger_key(entry):
+            return (entry.get("github") or entry.get("name") or "").lower()
+
+        if ledger is not None:
+            for s in all_time:
+                known = ledger.get(ledger_key(s))
+                if known:
+                    s["total"], s["counted"] = known["total"], known["counted"]
+                else:
+                    s["total"], s["counted"] = TIER_FLOOR.get(s.get("subTier"), 1), month_now
 
         # 2. Existing sponsor keys in all_time
         existing_keys = set()
@@ -542,7 +587,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
             tier_obj = n.get("tier") or {}
             amount = tier_obj.get("monthlyPriceInDollars") or 5
             tier_info = get_tier_info(amount)
-            all_time_ratio = round(amount / 1000.0, 4)
+            all_time_ratio = public_ratio(amount, 1000.0)
 
             display_name = login if is_pub else masked
             github_handle = login if is_pub else None
@@ -562,7 +607,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
         # 3b. Recurring sponsors add their current monthly price once per calendar month (a downgrade only
         # affects later months; cancelled sponsors simply stop growing). One-time sponsors never repeat.
         by_key = {}
-        for s in all_time:
+        for s in (all_time if ledger is not None else []):
             if s.get("github"):
                 by_key[s["github"].lower()] = s
             if s.get("name"):
@@ -580,13 +625,25 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                 entry["total"] += (tier_obj.get("monthlyPriceInDollars") or 5) * owed
                 entry["counted"] = month_now
 
-        # Bubble size and tier follow the running total
-        for s in all_time:
-            info = get_tier_info(s["total"])
-            s["tier"], s["subTier"] = info["tier"], info["subTier"]
-            s["ratio"] = round(s["total"] / 1000.0, 4)
-        if json.dumps(all_time, sort_keys=True) != before_all_time:
+        # Tier and bubble size follow the running total (size uses the coarsely rounded total)
+        if ledger is not None:
+            for s in all_time:
+                info = get_tier_info(s["total"])
+                s["tier"], s["subTier"] = info["tier"], info["subTier"]
+                s["ratio"] = public_ratio(s["total"], 1000.0)
+        public_all_time = [
+            {k: v for k, v in s.items() if k not in ("total", "counted")} for s in all_time
+        ]
+        if json.dumps(public_all_time, sort_keys=True) != before_all_time:
             changed = True
+        if ledger is not None:
+            new_ledger = {ledger_key(s): {"total": s["total"], "counted": s["counted"]} for s in all_time}
+            if json.dumps(new_ledger, sort_keys=True) != ledger_before:
+                os.makedirs(os.path.dirname(ledger_path) or ".", exist_ok=True)
+                with open(ledger_path, "w", encoding="utf-8") as f:
+                    json.dump(new_ledger, f, indent=2, sort_keys=True)
+                    f.write("\n")
+                print("Sponsor ledger updated.")
 
         # 4. Dynamically rebuild thisMonth strictly from activeSponsors (pruning cancelled sponsors)
         new_this_month = []
@@ -608,7 +665,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
             tier_obj = n.get("tier") or {}
             amount = tier_obj.get("monthlyPriceInDollars") or 5
             tier_info = get_tier_info(amount)
-            month_ratio = round(amount / 700.0, 4)
+            month_ratio = public_ratio(amount, 700.0)
 
             display_name = login if is_pub else masked
             github_handle = login if is_pub else None
@@ -628,7 +685,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                     new_this_month.append(s)
 
         # Sort both lists descending by ratio
-        all_time.sort(key=lambda s: s.get("ratio", 0), reverse=True)
+        public_all_time.sort(key=lambda s: s.get("ratio", 0), reverse=True)
         new_this_month.sort(key=lambda s: s.get("ratio", 0), reverse=True)
 
         if new_this_month != original_this_month:
@@ -642,7 +699,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
         output = f"""// Auto-generated by .github/scripts/update_downloads.py - do not edit manually
 // Generated: {now_iso}
 const sponsorData = {{
-  allTime: {json.dumps(all_time, indent=4)},
+  allTime: {json.dumps(public_all_time, indent=4)},
   thisMonth: {json.dumps(new_this_month, indent=4)}
 }};
 """

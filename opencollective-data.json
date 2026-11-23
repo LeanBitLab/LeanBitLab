@@ -110,35 +110,35 @@
       "url": null,
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.005
+      "ratio": 0.004
     },
     {
       "name": "Guest",
       "url": null,
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.005
+      "ratio": 0.004
     },
     {
       "name": "James",
       "url": null,
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.005
+      "ratio": 0.004
     },
     {
       "name": "John",
       "url": "https://opencollective.com/john-a4ec42ce",
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.005
+      "ratio": 0.004
     },
     {
       "name": "Steven",
       "url": null,
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.005
+      "ratio": 0.004
     }
   ],
   "thisMonth": [
@@ -175,14 +175,14 @@
       "url": null,
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.0071
+      "ratio": 0.0057
     },
     {
       "name": "James",
       "url": null,
       "tier": "bronze",
       "subTier": "Bronze",
-      "ratio": 0.0071
+      "ratio": 0.0057
     }
   ]
 }
