@@ -30,7 +30,7 @@
     "name": "LeanType",
     "owner": "LeanBitLab",
     "stars": 1228,
-    "downloads": 126285,
+    "downloads": 126308,
     "downloads_formatted": "126.3k",
     "version": "v4.3.6",
     "release_url": "https://github.com/LeanBitLab/LeanType/releases/tag/v4.3.6"
@@ -39,8 +39,8 @@
     "name": "LeanType-CJK-Plugin",
     "owner": "LeanBitLab",
     "stars": 2,
-    "downloads": 838,
-    "downloads_formatted": "838",
+    "downloads": 839,
+    "downloads_formatted": "839",
     "version": "v1.0.2",
     "release_url": "https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/tag/v1.0.2"
   },
@@ -57,7 +57,7 @@
     "name": "Leantype-Handwriting-Plugin",
     "owner": "LeanBitLab",
     "stars": 22,
-    "downloads": 6241,
+    "downloads": 6242,
     "downloads_formatted": "6.2k",
     "version": "v1.0.8",
     "release_url": "https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/tag/v1.0.8"
@@ -102,7 +102,7 @@
     "name": "Leantype-Translation-Plugin",
     "owner": "LeanBitLab",
     "stars": 18,
-    "downloads": 9210,
+    "downloads": 9211,
     "downloads_formatted": "9.2k",
     "version": "v1.0.7",
     "release_url": "https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/tag/v1.0.7"
@@ -111,7 +111,7 @@
     "name": "LeanType-Voice-Plugin",
     "owner": "LeanBitLab",
     "stars": 40,
-    "downloads": 6160,
+    "downloads": 6164,
     "downloads_formatted": "6.2k",
     "version": "v1.0.4",
     "release_url": "https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/tag/v1.0.4"
@@ -120,8 +120,8 @@
     "name": "leantype-whisper-models",
     "owner": "LeanBitLab",
     "stars": 2,
-    "downloads": 711,
-    "downloads_formatted": "711",
+    "downloads": 717,
+    "downloads_formatted": "717",
     "version": "v1.0.0",
     "release_url": "https://github.com/LeanBitLab/leantype-whisper-models/releases/tag/v1.0.0"
   },
@@ -147,7 +147,7 @@
     "name": "LtvLauncher",
     "owner": "leanbitlab-org",
     "stars": 485,
-    "downloads": 54690,
+    "downloads": 54706,
     "downloads_formatted": "54.7k",
     "version": "v2026.11.23",
     "release_url": "https://github.com/leanbitlab-org/LtvLauncher/releases/tag/v2026.11.23"
