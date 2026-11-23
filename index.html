@@ -6,6 +6,18 @@
   <meta name="description" content="LeanBitLab - Crafting bloat-free, efficient, privacy-focused open source experiences for Android and Linux.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.youtube.com https://*.ytimg.com https://*.makeuseofimages.com https://github-stats-extended.vercel.app https://raw.githubusercontent.com; connect-src 'self' https://api.github.com https://raw.githubusercontent.com;">
   <title>LeanBitLab | Build Lean. Build Right.</title>
+  <link rel="canonical" href="https://leanbitlab.github.io/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LeanBitLab">
+  <meta property="og:title" content="LeanBitLab | Build Lean. Build Right.">
+  <meta property="og:description" content="Bloat-free, efficient, privacy-focused open source apps for Android and Linux.">
+  <meta property="og:url" content="https://leanbitlab.github.io/">
+  <meta property="og:image" content="https://leanbitlab.github.io/leanbitlabbanner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeanBitLab | Build Lean. Build Right.">
+  <meta name="twitter:description" content="Bloat-free, efficient, privacy-focused open source apps for Android and Linux.">
+  <meta name="twitter:image" content="https://leanbitlab.github.io/leanbitlabbanner.png">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,10 +32,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Background Gradients -->
-  <div class="glow-bg glow-1"></div>
-  <div class="glow-bg glow-2"></div>
 
   <!-- Header / Navigation -->
   <header>
@@ -96,10 +104,7 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <div class="badge-pill">
-        <span>Open Source • Privacy Focused • Bloat Free</span>
-      </div>
-      <h1>Build lean. <br><span class="text-gradient">Build right.</span></h1>
+      <h1>Build lean. <br><span class="hero-accent">Build right.</span></h1>
       <p class="hero-sub">
         Everything you need. Nothing you don't. We craft high-performance, resource-respecting software that respects your device and your privacy across Android and Linux.
       </p>
@@ -131,15 +136,15 @@
         <p>Resource-respecting applications built for power and simplicity.</p>
         <div class="filter-tabs">
           <button class="tab-btn active" data-filter="all">All</button>
-          <button class="tab-btn" data-filter="android">Android</button>
+          <button class="tab-btn" data-filter="app">Apps</button>
+          <button class="tab-btn" data-filter="plugin">LeanType plugins</button>
           <button class="tab-btn" data-filter="linux">Linux</button>
         </div>
       </div>
 
       <div class="projects-grid">
         <!-- LeanType -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="app">
           <div class="card-content">
             <span class="project-type">Android</span>
             <h3>LeanType</h3>
@@ -159,8 +164,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/LeanType/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -177,8 +182,7 @@
         </div>
 
         <!-- LTvLauncher -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="app">
           <div class="card-content">
             <span class="project-type">Android</span>
             <h3>LTvLauncher</h3>
@@ -198,8 +202,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/leanbitlab-org/LtvLauncher" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/leanbitlab-org/LtvLauncher" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-ltvlauncher" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -216,8 +220,7 @@
         </div>
 
         <!-- Lwidget -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="app">
           <div class="card-content">
             <span class="project-type">Android</span>
             <h3>Lwidget</h3>
@@ -237,8 +240,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/Lwidget" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/Lwidget/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-lwidget" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -255,8 +258,7 @@
         </div>
 
         <!-- RdTube -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="app">
           <div class="card-content">
             <span class="project-type">Android</span>
             <h3>RdTube</h3>
@@ -276,8 +278,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/RdTube" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/RdTube" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/RdTube/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-rdtube" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -294,10 +296,9 @@
         </div>
 
         <!-- Handwriting Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Handwriting Plugin</h3>
             <p>Layout extension enabling handwriting recognition inputs inside the LeanType keyboard.</p>
             <div class="project-stats" id="stats-leantype-handwriting-plugin">
@@ -315,8 +316,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-handwriting-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -332,10 +333,9 @@
         </div>
 
         <!-- Translation Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Translation Plugin</h3>
             <p>Layout extension enabling Google Translate inputs directly inside the LeanType keyboard.</p>
             <div class="project-stats" id="stats-leantype-translation-plugin">
@@ -353,8 +353,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-translation-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -370,10 +370,9 @@
         </div>
 
         <!-- Voice Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Voice Plugin</h3>
             <p>Offline speech-to-text voice input plugin for LeanType keyboard powered by whisper.cpp.</p>
             <div class="project-stats" id="stats-leantype-voice-plugin">
@@ -391,8 +390,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-voice-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -408,10 +407,9 @@
         </div>
 
         <!-- Whisper Models -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Whisper Models</h3>
             <p>Official Whisper speech-to-text models for LeanType voice typing, quantized with verified checksums and device benchmarks.</p>
             <div class="project-stats" id="stats-leantype-whisper-models">
@@ -429,8 +427,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/leantype-whisper-models" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/leantype-whisper-models" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-whisper-models" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -446,10 +444,9 @@
         </div>
 
         <!-- Offline AI Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Offline AI Plugin</h3>
             <p>Dynamic plugin for LeanType providing 100% on-device neural proofreading and local LLMs powered by llama.cpp.</p>
             <div class="project-stats" id="stats-leantype-offline-ai-plugin">
@@ -467,8 +464,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-offline-ai-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -484,10 +481,9 @@
         </div>
 
         <!-- OCR Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>OCR Plugin</h3>
             <p>Offline on-device Optical Character Recognition (OCR) layout plugin for LeanType keyboard.</p>
             <div class="project-stats" id="stats-leantype-ocr-plugin">
@@ -505,8 +501,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-ocr-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -522,10 +518,9 @@
         </div>
 
         <!-- CJK Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>CJK Plugin</h3>
             <p>Standalone Chinese (Pinyin) and Japanese (romaji to kana to kanji) input companion plugin for LeanType, fully offline.</p>
             <div class="project-stats" id="stats-leantype-cjk-plugin">
@@ -543,8 +538,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-cjk-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -560,10 +555,9 @@
         </div>
 
         <!-- GIF Plugin -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>GIF Plugin</h3>
             <p>Rich media, GIF, sticker, and meme search companion plugin for LeanType supporting GIPHY, KLIPY, and local media.</p>
             <div class="project-stats" id="stats-leantype-gif-plugin">
@@ -581,8 +575,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-leantype-gif-plugin" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -598,10 +592,9 @@
         </div>
 
         <!-- Sound Packs -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Sound Packs</h3>
             <p>Official audio sound packs repository and custom keyboard sound pack creator guide for LeanType.</p>
             <div class="project-stats" id="stats-leantype-soundpacks">
@@ -611,8 +604,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-SoundPacks" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-SoundPacks" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <button class="btn-features" data-repo="leantype-soundpacks">Features</button>
               </div>
             </div>
@@ -620,10 +613,9 @@
         </div>
 
         <!-- Language Packs -->
-        <div class="project-card" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card" data-category="plugin">
           <div class="card-content">
-            <span class="project-type">Android</span>
+            <span class="project-type">LeanType plugin</span>
             <h3>Language Packs</h3>
             <p>Downloadable app UI translations for the English-only (lite) LeanType builds, loaded in the app on Android 11+.</p>
             <div class="project-stats" id="stats-leantype-language-packs">
@@ -633,8 +625,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/LeanType-Language-Packs" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/LeanType-Language-Packs" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <button class="btn-features" data-repo="leantype-language-packs">Features</button>
               </div>
             </div>
@@ -643,7 +635,6 @@
 
         <!-- Adaptive Brightness Linux -->
         <div class="project-card" data-category="linux">
-          <div class="card-glow"></div>
           <div class="card-content">
             <span class="project-type">Linux</span>
             <h3>Adaptive Brightness</h3>
@@ -663,8 +654,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" rel="noopener noreferrer" class="card-link">View Repository &rarr;</a>
               <div class="card-buttons">
+              <a href="https://github.com/LeanBitLab/adaptive-brightness-linux" target="_blank" rel="noopener noreferrer" class="card-link">View Repository</a>
                 <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-download" id="download-adaptive-brightness-linux" title="Download latest release">
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -681,26 +672,24 @@
         </div>
 
         <!-- LeanBook -->
-        <div class="project-card in-development" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card in-development" data-category="app">
           <div class="card-content">
             <div class="card-badge">In Development</div>
             <span class="project-type">Android</span>
             <h3>LeanBook</h3>
             <p>Unified lightweight bookkeeper for managing personal notes, tasks, bill reminders, and lists.</p>
-            <a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress &rarr;</a>
+            <div class="card-actions"><div class="card-buttons"><a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress</a></div></div>
           </div>
         </div>
 
         <!-- Minimal Dialer -->
-        <div class="project-card in-development" data-category="android">
-          <div class="card-glow"></div>
+        <div class="project-card in-development" data-category="app">
           <div class="card-content">
             <div class="card-badge">In Development</div>
             <span class="project-type">Android</span>
             <h3>Minimal Dialer</h3>
             <p>Stripped-down, high-speed dialer utility focused entirely on calls and search with no bloat.</p>
-            <a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress &rarr;</a>
+            <div class="card-actions"><div class="card-buttons"><a href="https://github.com/LeanBitLab" target="_blank" rel="noopener noreferrer" class="card-link">Follow Progress</a></div></div>
           </div>
         </div>
       </div>
@@ -717,7 +706,6 @@
       <div class="media-grid">
         <!-- HowToMen Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/qqScar10Oxc?t=436" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/qqScar10Oxc/mqdefault.jpg" alt="HowToMen Review" class="media-thumbnail">
@@ -739,7 +727,6 @@
 
         <!-- MakeUseOf Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://www.makeuseof.com/free-offline-first-android-keyboard-gives-privacy-gboard-never-offer/" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://static0.makeuseofimages.com/wordpress/wp-content/uploads/wm/2026/04/leantype-on-android.png?q=70&amp;fit=crop&amp;w=1200&amp;h=628&amp;dpr=1" alt="MakeUseOf Review" class="media-thumbnail">
@@ -761,7 +748,6 @@
 
         <!-- Silver Android Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/h9ig3Ff3vgE?t=337" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/h9ig3Ff3vgE/mqdefault.jpg" alt="Silver Android Review" class="media-thumbnail">
@@ -783,7 +769,6 @@
 
         <!-- TechReviewBD Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/lH8_n9W4t2s?t=160" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/lH8_n9W4t2s/mqdefault.jpg" alt="TechReviewBD Review" class="media-thumbnail">
@@ -805,7 +790,6 @@
 
         <!-- Apps Lovers Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/jciphONXvis?t=287" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/jciphONXvis/mqdefault.jpg" alt="عشاق التطبيقات Review" class="media-thumbnail">
@@ -827,7 +811,6 @@
 
         <!-- Enoch Boateng Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/WQBRlP1HOXY?t=2" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/WQBRlP1HOXY/mqdefault.jpg" alt="Enoch Boateng Review" class="media-thumbnail">
@@ -849,7 +832,6 @@
 
         <!-- Anurag - The Geek Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/IU6IpRZp1zg?t=24" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/IU6IpRZp1zg/mqdefault.jpg" alt="Anurag - The Geek Review" class="media-thumbnail">
@@ -871,7 +853,6 @@
 
         <!-- AppFlix Review Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/i3xL2CzkK5k?t=118" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/i3xL2CzkK5k/mqdefault.jpg" alt="AppFlix Review" class="media-thumbnail">
@@ -893,7 +874,6 @@
 
         <!-- Supreme Guru Tech Card -->
         <div class="media-card">
-          <div class="card-glow"></div>
           <a href="https://youtu.be/Dc9-82IfVec?t=118" target="_blank" rel="noopener noreferrer" class="media-link">
             <div class="thumbnail-wrapper">
               <img src="https://img.youtube.com/vi/Dc9-82IfVec/mqdefault.jpg" alt="Supreme Guru Tech Review" class="media-thumbnail">
@@ -922,6 +902,7 @@
       <div class="section-header">
         <h2>Our Philosophy</h2>
         <p>Software should serve the user, not exhaust the hardware.</p>
+        <p class="section-tags">Open Source • Privacy Focused • Bloat Free</p>
       </div>
       <div class="philosophy-grid">
         <div class="phil-card">
@@ -955,7 +936,16 @@
         <button class="sponsor-toggle-btn active" data-view="allTime">All Time</button>
         <button class="sponsor-toggle-btn" data-view="thisMonth">This Month</button>
       </div>
-      <div id="sponsors-bubbles" class="sponsors-bubbles"></div>
+      <div class="sponsors-groups">
+      <div class="sponsors-group">
+        <h3 class="sponsors-group-title">GitHub Sponsors <span class="sponsors-count" id="sponsors-count"></span></h3>
+        <div id="sponsors-bubbles" class="sponsors-bubbles"></div>
+      </div>
+      <div class="sponsors-group" id="oc-group" hidden>
+        <h3 class="sponsors-group-title">Open Collective <span class="sponsors-count" id="oc-count"></span></h3>
+        <div id="oc-bubbles" class="sponsors-bubbles"></div>
+      </div>
+      </div>
 
       <div class="sponsors-cta">
         <p>Because all our apps are completely free with no paywalls or ads, your support is what keeps the lab running.</p>

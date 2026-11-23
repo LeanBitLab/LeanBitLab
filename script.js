@@ -335,27 +335,6 @@ function filterProjects(category) {
   });
 }
 
-// Initialize cursor spotlight effect
-function initSpotlightEffect() {
-  const cards = document.querySelectorAll('.project-card, .media-card');
-  cards.forEach(card => {
-    let tick = false;
-    card.addEventListener('mousemove', (e) => {
-      if (!tick) {
-        window.requestAnimationFrame(() => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', `${x}px`);
-          card.style.setProperty('--mouse-y', `${y}px`);
-          tick = false;
-        });
-        tick = true;
-      }
-    }, { passive: true });
-  });
-}
-
 // Fixed header scrolled styles toggler
 function initHeaderScroll() {
   const header = document.querySelector('header');
@@ -714,13 +693,56 @@ function shuffleArray(arr) {
   return a;
 }
 
-// Render sponsor bubbles packed inside a pill like balls resting at the bottom of a container
-function renderSponsors(view) {
-  const container = document.getElementById('sponsors-bubbles');
-  if (!container || typeof sponsorData === 'undefined') return;
+// Sponsor pill sizing helpers
+const SPONSOR_GAP = 4;
+const SPONSOR_PACKING = 0.46; // fraction of the pill area allocated to the balls
+const SPONSOR_FILL_LIMIT = 0.62; // the balls (with gaps) may cover at most this much of the pill
 
-  const data = sponsorData[view];
+function stadiumArea(w, h) {
+  return (w - h) * h + Math.PI * Math.pow(h / 2, 2);
+}
+
+// Radius per sponsor from its contribution share; scale < 1 also lowers the minimum radius
+function sponsorRadii(list, w, h, isMobile, scale) {
+  const area = stadiumArea(w, h);
+  const minR = Math.max(5, (isMobile ? 9 : 13) * scale);
+  const maxR = h / 2 - 12;
+  return list.map(sponsor => {
+    const rVal = sponsor.ratio || 0.001;
+    const effectiveRatio = Math.pow(rVal / 0.50, 0.85) * 0.50;
+    const rawR = Math.sqrt((effectiveRatio * area * SPONSOR_PACKING) / Math.PI) * scale;
+    return Math.max(minR, Math.min(maxR, rawR));
+  });
+}
+
+function usedFraction(radii, area) {
+  return radii.reduce((sum, r) => sum + Math.PI * Math.pow(r + SPONSOR_GAP / 2, 2), 0) / area;
+}
+
+// Smallest pill height in which the bubbles fit at full size. The stadium shape needs height <= width,
+// so the pill tops out as a circle; beyond that the bubbles shrink instead.
+function fitSponsorHeight(list, w, baseHeight, isMobile) {
+  const maxHeight = Math.max(baseHeight, Math.min(baseHeight * 3, w));
+  for (let h = baseHeight; h < maxHeight; h += 40) {
+    if (usedFraction(sponsorRadii(list, w, h, isMobile, 1), stadiumArea(w, h)) <= SPONSOR_FILL_LIMIT) return h;
+  }
+  return maxHeight;
+}
+
+// Render sponsor bubbles packed inside a pill like balls resting at the bottom of a container
+function renderSponsors(view, containerId = 'sponsors-bubbles', source = (typeof sponsorData === 'undefined' ? null : sponsorData), countId = 'sponsors-count') {
+  const container = document.getElementById(containerId);
+  if (!container || !source) return;
+
+  const data = source[view];
+  const countEl = document.getElementById(countId);
+  if (countEl) {
+    const n = data ? data.length : 0;
+    countEl.textContent = `${n} ${n === 1 ? 'supporter' : 'supporters'}`;
+  }
   if (!data || data.length === 0) {
+    container.style.width = '';
+    container.style.height = '';
     container.innerHTML = '<p style="color: var(--text-secondary); font-size: 14px;">No sponsors this month yet.</p>';
     return;
   }
@@ -730,44 +752,42 @@ function renderSponsors(view) {
   const isMobile = window.innerWidth < 768;
   const GAP = 4;
 
-  // Calculate total funded ratio in the current view
-  const totalRatio = data.reduce((sum, s) => sum + (s.ratio || 0), 0);
-  const fillFactor = Math.min(1.0, Math.max(0.15, totalRatio));
+  // Fixed-size pill: the same look for every view and both groups. Bubble sizes carry the amounts.
+  const ocGroup = document.getElementById('oc-group');
+  const sideBySide = !isMobile && window.innerWidth >= 1100 && ocGroup && !ocGroup.hidden;
+  const columnWidth = Math.floor(container.parentElement.clientWidth) || 280;
+  const pillWidth = sideBySide ? columnWidth : Math.min(840, columnWidth);
 
-  // Dynamic Pill dimensions: container scales dynamically with the total funded amount
-  const availableWidth = Math.max(280, window.innerWidth - 32);
-  let pillWidth, pillHeight;
-
-  if (isMobile) {
-    pillWidth = Math.min(availableWidth, Math.round(300 + fillFactor * 80));
-    pillHeight = Math.round(190 + fillFactor * 50);
-  } else {
-    pillWidth = Math.round(580 + fillFactor * 260);
-    pillHeight = Math.round(230 + fillFactor * 80);
+  // When there are many supporters the pill grows taller (both pills together when side by side),
+  // and as a last resort the bubbles shrink, so every supporter always stays inside the container.
+  const baseHeight = isMobile ? 230 : 300;
+  const lists = [data];
+  if (sideBySide) {
+    const other = source === sponsorData ? openCollectiveData : (typeof sponsorData === 'undefined' ? null : sponsorData);
+    if (other && other[view] && other[view].length) lists.push(other[view]);
   }
+  const pillHeight = Math.max(...lists.map(list => fitSponsorHeight(list, pillWidth, baseHeight, isMobile)));
   const pillR = pillHeight / 2;
 
   container.style.width = pillWidth + 'px';
   container.style.maxWidth = '100%';
   container.style.height = pillHeight + 'px';
 
-  // Exact area of stadium pill container: (W - H)*H + PI*(H/2)^2
-  const pillArea = (pillWidth - pillHeight) * pillHeight + Math.PI * Math.pow(pillR, 2);
-  const PACKING_FACTOR = 0.46; // Fraction of container area allocated for packed balls
+  const pillArea = stadiumArea(pillWidth, pillHeight);
+  const shuffled = shuffleArray(data);
+  let scale = 1;
+  let radii = sponsorRadii(shuffled, pillWidth, pillHeight, isMobile, scale);
+  const used = usedFraction(radii, pillArea);
+  if (used > SPONSOR_FILL_LIMIT) {
+    scale = Math.sqrt(SPONSOR_FILL_LIMIT / used);
+    radii = sponsorRadii(shuffled, pillWidth, pillHeight, isMobile, scale);
+  }
 
-  // Circle sizes are directly dependent upon the container area and each sponsor's contribution share
-  const totalCount = data.length;
-  const circles = shuffleArray(data).map((sponsor, i) => {
-    const rVal = sponsor.ratio || 0.001;
-    const effectiveRatio = Math.pow(rVal / 0.50, 0.85) * 0.50;
-    const circleArea = effectiveRatio * pillArea * PACKING_FACTOR;
-    const rawR = Math.sqrt(circleArea / Math.PI);
-    
-    const minR = isMobile ? 9 : 13;
-    const maxR = pillR - 12;
-    const radius = Math.max(minR, Math.min(maxR, rawR));
+  const totalCount = shuffled.length;
+  const circles = shuffled.map((sponsor, i) => {
+    const radius = radii[i];
 
-    // Distribute initial X evenly across dynamic pill width
+    // Distribute initial X evenly across the pill width
     const margin = radius + 10;
     const x = margin + (i / Math.max(1, totalCount - 1)) * (pillWidth - 2 * margin);
     const y = radius + 10 + Math.random() * (pillHeight * 0.25);
@@ -903,7 +923,8 @@ function renderSponsors(view) {
     const offsetX = -Math.round((hoverWidth - baseWidth) / 2);
     const offsetY = -Math.round((hoverWidth - baseWidth) / 2);
 
-    const isLink = !!c.sponsor.github;
+    const href = c.sponsor.url || (c.sponsor.github ? `https://github.com/${c.sponsor.github}` : null);
+    const isLink = !!href;
     const el = document.createElement(isLink ? 'a' : 'div');
     el.className = `sponsor-bubble tier-${c.sponsor.tier} subtier-${subTierClass} ${isMultiWord ? 'multi-word' : 'single-word'}`;
     el.title = `${name} (${c.sponsor.subTier || c.sponsor.tier})`;
@@ -916,7 +937,7 @@ function renderSponsors(view) {
     el.style.top = `${y}px`;
 
     if (isLink) {
-      el.href = `https://github.com/${c.sponsor.github}`;
+      el.href = href;
       el.target = '_blank';
       el.rel = 'noopener noreferrer';
     }
@@ -930,15 +951,45 @@ function renderSponsors(view) {
   });
 }
 
+// Open Collective backers come from their own file (opencollective-data.json), kept fresh by the daily stats workflow
+let openCollectiveData = null;
+
+function currentSponsorView() {
+  const active = document.querySelector('.sponsor-toggle-btn.active');
+  return active ? active.getAttribute('data-view') : 'allTime';
+}
+
+function renderOpenCollective(view) {
+  const group = document.getElementById('oc-group');
+  if (!group || !openCollectiveData) return;
+  const wasHidden = group.hidden;
+  group.hidden = false;
+  if (wasHidden) renderSponsors(view); // the GitHub pill narrows once it shares the row
+  renderSponsors(view, 'oc-bubbles', openCollectiveData, 'oc-count');
+}
+
+async function loadOpenCollective() {
+  try {
+    const res = await fetch('opencollective-data.json', { cache: 'no-cache' });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data || !Array.isArray(data.allTime)) return;
+    openCollectiveData = data;
+    renderOpenCollective(currentSponsorView());
+  } catch (e) {
+    // The group stays hidden when the file is missing or invalid
+  }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
-  initSpotlightEffect();
   initHeaderScroll();
   initScrollRevealFallback();
 
   // Render sponsor bubbles
   renderSponsors('allTime');
+  loadOpenCollective();
 
   // Sponsor view toggle
   const toggleBtns = document.querySelectorAll('.sponsor-toggle-btn');
@@ -947,6 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderSponsors(btn.getAttribute('data-view'));
+      renderOpenCollective(btn.getAttribute('data-view'));
     });
   });
   
@@ -1185,6 +1237,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeToggle = document.querySelector('.sponsor-toggle-btn.active');
       const view = activeToggle ? activeToggle.getAttribute('data-view') : 'allTime';
       renderSponsors(view);
+      renderOpenCollective(view);
       onScrollSpy();
     }, 150);
   });
