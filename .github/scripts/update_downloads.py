@@ -1,8 +1,11 @@
 import os
+import sys
 import re
 import json
 import urllib.request
 import datetime
+
+from badges import safe_name, write_repo_badges
 
 def get_repos_info():
     urls = [
@@ -97,75 +100,64 @@ def format_number(num):
         return f"{num / 1000:.1f}k"
     return str(num)
 
+STATS_PALETTE = {
+    "light": {"bg": "#ffffff", "border": "#d0d7de", "title": "#1f2328", "muted": "#6e7781", "value": "#1f2328"},
+    "dark": {"bg": "#0d1117", "border": "#30363d", "title": "#f0f6fc", "muted": "#8b949e", "value": "#f0f6fc"},
+}
+
+
 def generate_stats_card(total_stars, total_downloads, repo_count, total_commits, output_path="stats.svg"):
+    """Writes stats-light.svg and stats-dark.svg next to output_path (GitHub picks one per viewer theme)."""
     stars_fmt = format_number(total_stars)
     downloads_fmt = format_number(total_downloads)
     commits_fmt = f"{format_number(total_commits)}+" if total_commits > 0 else "2.2k+"
-    
-    svg = f'''<svg width="495" height="160" viewBox="0 0 495 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .bg {{ fill: #ffffff; stroke: #e1e4e8; stroke-width: 1px; rx: 10px; }}
-    .header {{ font: 600 18px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: #7C4DFF; }}
-    .stat-label {{ font: 400 14px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: #57606a; }}
-    .stat-value {{ font: 600 14px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: #1f2328; }}
-    .accent {{ fill: #7C4DFF; }}
+    base, ext = os.path.splitext(output_path)
 
-    @media (prefers-color-scheme: dark) {{
-      .bg {{ fill: #0d0f17; stroke: #2a2a3c; }}
-      .stat-label {{ fill: #9e9e9e; }}
-      .stat-value {{ fill: #ffffff; }}
-      .header {{ fill: #7C4DFF; }}
-      .accent {{ fill: #7C4DFF; }}
-    }}
-  </style>
+    for theme, c in STATS_PALETTE.items():
+        style = f"""<style>
+    .bg {{ fill: {c['bg']}; stroke: {c['border']}; stroke-width: 1px; }}
+    .title {{ font: 600 14px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: {c['title']}; }}
+    .sub {{ font: 400 12px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: {c['muted']}; }}
+    .value {{ font: 700 28px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: {c['value']}; }}
+    .label {{ font: 400 12px 'Segoe UI', Ubuntu, Roboto, sans-serif; fill: {c['muted']}; }}
+    .rule {{ stroke: {c['border']}; stroke-width: 1px; }}
+    .accent {{ fill: {c['title']}; }}
+  </style>"""
+        svg = f'''<svg width="495" height="160" viewBox="0 0 495 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+{style}
 
-  <rect class="bg" width="494" height="159" x="0.5" y="0.5" rx="10"/>
-  
-  <!-- Centered Title -->
-  <g transform="translate(247.5, 35)">
-    <path class="accent" transform="translate(-130, -13)" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"/>
-    <text x="10" y="0" text-anchor="middle" class="header">LeanBitLab's GitHub Stats</text>
+  <rect class="bg" width="494" height="159" x="0.5" y="0.5" rx="14"/>
+
+  <!-- Header -->
+  <g transform="translate(28, 24)">
+    <path class="accent" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"/>
+    <text x="24" y="13" class="title">LeanBitLab</text>
+    <text x="112" y="13" class="sub">GitHub stats across all repos</text>
   </g>
+  <line class="rule" x1="28" y1="58" x2="466" y2="58"/>
 
-  <!-- Stat Items (2-Column Grid) -->
-  <!-- Column 1 (Left) -->
-  <g transform="translate(35, 75)">
-    <!-- Total Stars -->
-    <g transform="translate(0, 0)">
-      <path class="accent" d="M8 0L10.472 5.008L16 5.816L12 9.712L12.944 15.216L8 12.616L3.056 15.216L4 9.712L0 5.816L5.528 5.008L8 0Z"/>
-      <text x="24" y="13" class="stat-label">Total Stars:</text>
-      <text x="104" y="13" class="stat-value">{stars_fmt}</text>
-    </g>
-    
-    <!-- Public Repositories -->
-    <g transform="translate(0, 36)">
-      <path class="accent" d="M4 1.75C4 .783 4.783 0 5.75 0h4.5c.967 0 1.75.783 1.75 1.75v1.5c0 .967-.783 1.75-1.75 1.75h-4.5A1.75 1.75 0 0 1 4 3.25zm1.75-.25a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h4.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25zM1.75 6C.783 6 0 6.783 0 7.75v6.5C0 15.217.783 16 1.75 16h12.5A1.75 1.75 0 0 0 16 14.25v-6.5A1.75 1.75 0 0 0 14.25 6zM1.5 7.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v6.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25z"/>
-      <text x="24" y="13" class="stat-label">Public Repos:</text>
-      <text x="116" y="13" class="stat-value">{repo_count}</text>
-    </g>
+  <!-- Stats row -->
+  <g transform="translate(28, 100)">
+    <text x="0" y="0" class="value">{stars_fmt}</text>
+    <text x="0" y="24" class="label">Total Stars</text>
   </g>
-
-  <!-- Column 2 (Right) -->
-  <g transform="translate(255, 75)">
-    <!-- Total Downloads -->
-    <g transform="translate(0, 0)">
-      <path class="accent" d="M8 12L3 7H6V0H10V7H13L8 12ZM0 14H16V16H0V14Z"/>
-      <text x="24" y="13" class="stat-label">Total Downloads:</text>
-      <text x="142" y="13" class="stat-value">{downloads_fmt}</text>
-    </g>
-
-    <!-- Total Commits -->
-    <g transform="translate(0, 36)">
-      <path class="accent" d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5h-3.32zM8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-      <text x="24" y="13" class="stat-label">Total Commits:</text>
-      <text x="126" y="13" class="stat-value">{commits_fmt}</text>
-    </g>
+  <g transform="translate(145, 100)">
+    <text x="0" y="0" class="value">{downloads_fmt}</text>
+    <text x="0" y="24" class="label">Total Downloads</text>
+  </g>
+  <g transform="translate(278, 100)">
+    <text x="0" y="0" class="value">{repo_count}</text>
+    <text x="0" y="24" class="label">Public Repos</text>
+  </g>
+  <g transform="translate(378, 100)">
+    <text x="0" y="0" class="value">{commits_fmt}</text>
+    <text x="0" y="24" class="label">Total Commits</text>
   </g>
 </svg>'''
+        with open(f"{base}-{theme}{ext}", "w", encoding="utf-8") as f:
+            f.write(svg)
+    print(f"Generated {base}-light{ext} and {base}-dark{ext} successfully!")
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(svg)
-    print(f"Generated {output_path} successfully!")
 
 def mask_private_name(name: str) -> str:
     """Masks private sponsor name showing first and last letter (e.g. a****c)."""
@@ -880,59 +872,23 @@ def main():
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
         
-    # Update Total Downloads badge
-    total_formatted = format_number(total_downloads)
-    total_pattern = r'Total%20Downloads-[^-\s)]+-7C4DFF'
-    total_replacement = f'Total%20Downloads-{total_formatted}-7C4DFF'
-    content, total_count = re.subn(total_pattern, total_replacement, content)
-    print(f"Total Downloads badge updated: {total_count > 0}")
+    # Regenerate the local SVG stats badge of every repo the README references (no shields.io)
+    badges_dir = os.path.join(os.path.dirname(os.path.abspath(readme_path)), "badges")
+    os.makedirs(badges_dir, exist_ok=True)
+    badges_count = 0
+    for data in repo_data.values():
+        fname = safe_name(data["name"])
+        if f"./badges/{fname}-light.svg" not in content:
+            continue
+        write_repo_badges(
+            badges_dir, fname,
+            data.get("version") or None,
+            format_number(data["stars"]),
+            format_number(data["downloads"]) if data["downloads"] > 0 else None,
+        )
+        badges_count += 1
+    print(f"Repo badges generated: {badges_count}")
 
-    # Update Total Stars badge if present
-    total_stars_formatted = format_number(total_stars)
-    total_stars_pattern = r'Total%20Stars-[^-\s)]+-7C4DFF'
-    total_stars_replacement = f'Total%20Stars-{total_stars_formatted}-7C4DFF'
-    content, total_stars_count = re.subn(total_stars_pattern, total_stars_replacement, content)
-    print(f"Total Stars badge updated: {total_stars_count > 0}")
-    
-    # Update Stars badges in the table
-    def replace_stars(match):
-        repo_name = match.group(2)
-        data = repo_data.get(repo_name.lower())
-        if data:
-            stars_formatted = format_number(data["stars"])
-            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/stargazers"><img src="https://img.shields.io/badge/Stars-{stars_formatted}-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>'
-        return match.group(0)
-        
-    stars_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/stargazers"><img src="https://img\.shields\.io/badge/Stars-([^-\s?]+)-7C4DFF[^"]*" alt="Stars"></a>'
-    content, stars_count = re.subn(stars_pattern, replace_stars, content)
-    print(f"Repo Star badges updated: {stars_count}")
-    
-    # Update Downloads badges in the table
-    def replace_downloads(match):
-        repo_name = match.group(2)
-        data = repo_data.get(repo_name.lower())
-        if data:
-            downloads_formatted = format_number(data["downloads"])
-            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/releases/latest"><img src="https://img.shields.io/badge/Downloads-{downloads_formatted}-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>'
-        return match.group(0)
-        
-    downloads_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest"><img src="https://img\.shields\.io/badge/Downloads-([^-\s?]+)-7C4DFF[^"]*" alt="Downloads"></a>'
-    content, downloads_count = re.subn(downloads_pattern, replace_downloads, content)
-    print(f"Repo Download badges updated: {downloads_count}")
-    
-    # Update Version badges in the table
-    def replace_version(match):
-        repo_name = match.group(2)
-        data = repo_data.get(repo_name.lower())
-        if data and data.get("version"):
-            ver_clean = data["version"].replace("-", "--")
-            return f'<a href="https://github.com/{data["owner"]}/{data["name"]}/releases/latest"><img src="https://img.shields.io/badge/Version-{ver_clean}-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>'
-        return match.group(0)
-        
-    version_pattern = r'<a href="https://github\.com/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/releases/latest"><img src="https://img\.shields\.io/badge/Version-([^-\s?]+)-7C4DFF[^"]*" alt="Version"></a>'
-    content, version_count = re.subn(version_pattern, replace_version, content)
-    print(f"Repo Version badges updated: {version_count}")
-    
     # Update Sponsors in README & site sponsor-data.js
     sponsors_token = os.getenv("SPONSORS_TOKEN") or os.getenv("GITHUB_TOKEN")
     user_data = get_github_sponsors(sponsors_token)
@@ -958,12 +914,12 @@ def main():
         oc_path = "../../" + OC_JSON_PATH
     update_opencollective_json(oc_path)
 
-    if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or version_count > 0 or readme_sponsors_updated:
+    if readme_sponsors_updated:
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(content)
         print("README.md updated successfully!")
     else:
-        print("No badges or sponsors updated in README.md")
+        print("No sponsor changes in README.md")
 
 if __name__ == "__main__":
     main()

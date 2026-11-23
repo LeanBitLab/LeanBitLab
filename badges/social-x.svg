@@ -1,0 +1,15 @@
+<svg width="77" height="36" viewBox="0 0 77 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #1f2328; }
+    .fg { fill: #ffffff; }
+    .rule { stroke: #ffffff; stroke-opacity: 0.25; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #f0f6fc; }
+      .fg { fill: #1f2328; }
+      .rule { stroke: #1f2328; stroke-opacity: 0.25; }
+    }
+  </style>
+  <rect fill="#14171A" width="77" height="36" rx="9"/>
+  <path fill="#ffffff" transform="translate(22.2 10.0) scale(0.6667)" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  <text fill="#ffffff" x="47.2" y="22.7" font-size="13" font-weight="600" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">X</text>
+</svg>

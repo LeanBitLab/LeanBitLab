@@ -1,0 +1,14 @@
+<svg width="192" height="40" viewBox="0 0 192 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #1f2328; }
+    .fg { fill: #ffffff; }
+    .rule { fill: #ffffff; }
+    .lb { fill: #1f2328; }
+    .vb { fill: #424a53; }
+    .tx { fill: #ffffff; }
+    .rule { stroke: #ffffff; stroke-opacity: 0.25; }
+  </style>
+  <rect class="bg" width="192" height="40" rx="10"/>
+  <path class="fg" transform="translate(22.2 11.0) scale(1.1250)" d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm5.9 7.2h-2.8a11.8 11.8 0 0 0-1.1-4A6.4 6.4 0 0 1 13.9 7.2zM8 1.6c.8 1.3 1.3 3.2 1.5 5.6h-3C6.7 4.8 7.2 2.9 8 1.6zM2.1 7.2A6.4 6.4 0 0 1 6 3.2a11.8 11.8 0 0 0-1.1 4zm0 1.6h2.8c.2 1.5.5 2.8 1.1 4a6.4 6.4 0 0 1-3.9-4zm4.4 0h3c-.2 2.4-.7 4.3-1.5 5.6-.8-1.3-1.3-3.2-1.5-5.6zm3.5 4c.6-1.2.9-2.5 1.1-4h2.8a6.4 6.4 0 0 1-3.9 4z"/>
+  <text class="fg" x="49.2" y="24.7" font-size="13" font-weight="600" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">Official Website</text>
+</svg>
