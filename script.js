@@ -8,6 +8,7 @@ const repoMap = {
   'leantype-ocr-plugin': 'leantype-ocr-plugin',
   'leantype-offline-ai-plugin': 'leantype-offline-ai-plugin',
   'leantype-soundpacks': 'leantype-soundpacks',
+  'leantype-language-packs': 'leantype-language-packs',
   'leantype-translation-plugin': 'leantype-translation-plugin',
   'leantype-voice-plugin': 'leantype-voice-plugin',
   'leantype-whisper-models': 'leantype-whisper-models',
@@ -81,6 +82,10 @@ const readmeConfig = {
   'leantype-soundpacks': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-SoundPacks/main/README.md',
     header: "## 🎵 Available Official Packs"
+  },
+  'leantype-language-packs': {
+    url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-Language-Packs/main/README.md',
+    header: "## 📥 Getting a Language Pack"
   },
   'leantype-cjk-plugin': {
     url: 'https://raw.githubusercontent.com/LeanBitLab/LeanType-CJK-Plugin/master/README.md',
@@ -186,6 +191,11 @@ const fallbackFeatures = {
     '<strong>🎵 Official Sound Packs</strong> - High quality keyboard sound packs including Deep Thock, Crisp Click, Typewriter, Creamy Linear, 8-Bit Chiptune, and more.',
     '<strong>🛠️ Custom Pack Creator</strong> - Simple JSON-based format to create, customize, and import your own audio sound packs.',
     '<strong>🎛️ Dynamic Audio Engine</strong> - Full support for random pitch variation, per-key audio mapping, and volume tuning.'
+  ],
+  'leantype-language-packs': [
+    '<strong>🌐 App UI Translations</strong> - Download your language in the app instead of shipping every translation in the APK.',
+    '<strong>📦 Matched To Your Build</strong> - Each pack is built from the exact English-only (lite) release, tagged by version and resource checksum.',
+    '<strong>📲 Android 11+</strong> - Loaded at runtime; also importable from a file in the offline flavor.'
   ],
   'leantype-cjk-plugin': [
     '<strong>🀄 In-Process CJK Engine</strong> - Real-time Chinese Pinyin input powered by the Google Pinyin C++ engine (libjni_pinyin.so).',

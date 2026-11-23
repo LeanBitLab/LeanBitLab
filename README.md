@@ -183,6 +183,14 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
         <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/stargazers"><img src="https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
       </td>
     </tr>
+    <tr>
+      <td><b><a href="https://github.com/LeanBitLab/LeanType-Language-Packs">🌐 Language Packs</a></b></td>
+      <td>Downloadable app UI translations for the English-only (lite) LeanType builds, built from each release and loaded in the app (Android 11+)</td>
+      <td>
+        <a href="https://github.com/LeanBitLab/LeanType-Language-Packs/stargazers"><img src="https://img.shields.io/badge/Stars-0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Language-Packs/releases/latest"><img src="https://img.shields.io/badge/Downloads-0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+      </td>
+    </tr>
   </tbody>
 </table>
 
