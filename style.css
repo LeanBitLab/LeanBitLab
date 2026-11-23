@@ -854,10 +854,9 @@ nav {
   border-color: var(--border-hover);
 }
 .tab-btn.active {
-  background: var(--btn-primary-bg);
-  color: var(--btn-primary-color);
-  border-color: var(--btn-primary-bg);
-  box-shadow: var(--btn-primary-shadow);
+  background: var(--card-btn-hover-bg);
+  color: var(--text-primary);
+  border-color: var(--card-btn-hover-border);
 }
 
 .projects-grid {
@@ -953,7 +952,7 @@ nav {
   justify-content: center;
   background: transparent;
   border: 1px solid var(--card-btn-border);
-  color: var(--text-primary);
+  color: var(--text-secondary);
   padding: 0 10px;
   white-space: nowrap;
   min-height: 36px;
@@ -967,8 +966,9 @@ nav {
 }
 .card-link:hover,
 .card-link:focus-visible {
-  background: var(--card-btn-hover-bg);
+  background: var(--card-btn-bg);
   border-color: var(--card-btn-hover-border);
+  color: var(--text-primary);
 }
 .card-link:focus-visible {
   outline: 2px solid var(--text-primary);
@@ -1912,14 +1912,14 @@ footer {
 }
 .btn-download {
   order: -1;
-  background: var(--btn-primary-bg);
-  border: 1px solid var(--btn-primary-bg);
-  color: var(--btn-primary-color);
+  background: var(--card-btn-hover-bg);
+  border: 1px solid var(--card-btn-border);
+  color: var(--text-primary);
 }
 .btn-download:hover,
 .btn-download:focus-visible {
-  background: var(--btn-primary-hover-bg);
-  border-color: var(--btn-primary-hover-bg);
+  background: var(--card-btn-hover-bg);
+  border-color: var(--card-btn-hover-border);
 }
 .btn-download .btn-icon {
   width: 14px;
@@ -1930,14 +1930,15 @@ footer {
 .btn-features {
   background: transparent;
   border: 1px solid var(--card-btn-border);
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 .btn-screenshot:hover,
 .btn-features:hover,
 .btn-screenshot:focus-visible,
 .btn-features:focus-visible {
-  background: var(--card-btn-hover-bg);
+  background: var(--card-btn-bg);
   border-color: var(--card-btn-hover-border);
+  color: var(--text-primary);
 }
 .btn-download:focus-visible,
 .btn-screenshot:focus-visible,
