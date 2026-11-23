@@ -42,9 +42,6 @@
   --btn-secondary-hover-bg: #1a1a1a;
   --btn-secondary-hover-border: rgba(255, 255, 255, 0.35);
 
-  --badge-pill-bg: rgba(255, 255, 255, 0.03);
-  --badge-pill-border: rgba(255, 255, 255, 0.1);
-  --badge-pill-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
   --hero-watermark-opacity: 0.12;
   --hero-watermark-filter: none;
@@ -83,22 +80,13 @@
   --card-btn-hover-border: rgba(255, 255, 255, 0.35);
   --card-btn-hover-color: #ffffff;
 
-  --card-link-color: var(--text-primary);
-  --card-link-hover-color: #a78bfa;
 
   --card-badge-bg: rgba(255, 255, 255, 0.06);
   --card-badge-border: rgba(255, 255, 255, 0.15);
   --card-badge-color: #d4d4d4;
 
-  --download-btn-bg: rgba(124, 77, 255, 0.15);
-  --download-btn-border: rgba(124, 77, 255, 0.4);
-  --download-btn-color: #c4b5fd;
-  --download-btn-hover-bg: #7c4dff;
-  --download-btn-hover-border: #7c4dff;
-  --download-btn-hover-color: #ffffff;
-  --download-btn-shadow: 0 4px 16px rgba(124, 77, 255, 0.35);
 
-  --stat-version-color: #a78bfa;
+  --stat-version-color: var(--text-primary);
 
   --overlay-btn-bg: rgba(255, 255, 255, 0.08);
   --overlay-btn-border: rgba(255, 255, 255, 0.12);
@@ -155,9 +143,6 @@
     --btn-secondary-hover-bg: #f4f4f5;
     --btn-secondary-hover-border: rgba(0, 0, 0, 0.3);
 
-    --badge-pill-bg: rgba(0, 0, 0, 0.03);
-    --badge-pill-border: rgba(0, 0, 0, 0.08);
-    --badge-pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
     --hero-watermark-opacity: 0.06;
     --hero-watermark-filter: invert(1);
@@ -196,22 +181,13 @@
     --card-btn-hover-border: rgba(0, 0, 0, 0.25);
     --card-btn-hover-color: #111827;
 
-    --card-link-color: #111827;
-    --card-link-hover-color: #6d28d9;
 
-    --card-badge-bg: rgba(124, 77, 255, 0.08);
-    --card-badge-border: rgba(124, 77, 255, 0.25);
-    --card-badge-color: #6d28d9;
+    --card-badge-bg: rgba(0, 0, 0, 0.05);
+    --card-badge-border: rgba(0, 0, 0, 0.15);
+    --card-badge-color: #374151;
 
-    --download-btn-bg: rgba(124, 77, 255, 0.1);
-    --download-btn-border: rgba(124, 77, 255, 0.35);
-    --download-btn-color: #6d28d9;
-    --download-btn-hover-bg: #7c4dff;
-    --download-btn-hover-border: #7c4dff;
-    --download-btn-hover-color: #ffffff;
-    --download-btn-shadow: 0 4px 14px rgba(124, 77, 255, 0.25);
 
-    --stat-version-color: #6d28d9;
+    --stat-version-color: var(--text-primary);
 
     --overlay-btn-bg: rgba(0, 0, 0, 0.05);
     --overlay-btn-border: rgba(0, 0, 0, 0.12);
@@ -268,9 +244,6 @@
   --btn-secondary-hover-bg: #f4f4f5;
   --btn-secondary-hover-border: rgba(0, 0, 0, 0.3);
 
-  --badge-pill-bg: rgba(0, 0, 0, 0.03);
-  --badge-pill-border: rgba(0, 0, 0, 0.08);
-  --badge-pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
   --hero-watermark-opacity: 0.06;
   --hero-watermark-filter: invert(1);
@@ -309,22 +282,13 @@
   --card-btn-hover-border: rgba(0, 0, 0, 0.25);
   --card-btn-hover-color: #111827;
 
-  --card-link-color: #111827;
-  --card-link-hover-color: #6d28d9;
 
-  --card-badge-bg: rgba(124, 77, 255, 0.08);
-  --card-badge-border: rgba(124, 77, 255, 0.25);
-  --card-badge-color: #6d28d9;
+  --card-badge-bg: rgba(0, 0, 0, 0.05);
+  --card-badge-border: rgba(0, 0, 0, 0.15);
+  --card-badge-color: #374151;
 
-  --download-btn-bg: rgba(124, 77, 255, 0.1);
-  --download-btn-border: rgba(124, 77, 255, 0.35);
-  --download-btn-color: #6d28d9;
-  --download-btn-hover-bg: #7c4dff;
-  --download-btn-hover-border: #7c4dff;
-  --download-btn-hover-color: #ffffff;
-  --download-btn-shadow: 0 4px 14px rgba(124, 77, 255, 0.25);
 
-  --stat-version-color: #6d28d9;
+  --stat-version-color: var(--text-primary);
 
   --overlay-btn-bg: rgba(0, 0, 0, 0.05);
   --overlay-btn-border: rgba(0, 0, 0, 0.12);
@@ -380,9 +344,6 @@
   --btn-secondary-hover-bg: #1a1a1a;
   --btn-secondary-hover-border: rgba(255, 255, 255, 0.35);
 
-  --badge-pill-bg: rgba(255, 255, 255, 0.03);
-  --badge-pill-border: rgba(255, 255, 255, 0.1);
-  --badge-pill-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
   --hero-watermark-opacity: 0.12;
   --hero-watermark-filter: none;
@@ -421,22 +382,13 @@
   --card-btn-hover-border: rgba(255, 255, 255, 0.35);
   --card-btn-hover-color: #ffffff;
 
-  --card-link-color: var(--text-primary);
-  --card-link-hover-color: #a78bfa;
 
   --card-badge-bg: rgba(255, 255, 255, 0.06);
   --card-badge-border: rgba(255, 255, 255, 0.15);
   --card-badge-color: #d4d4d4;
 
-  --download-btn-bg: rgba(124, 77, 255, 0.15);
-  --download-btn-border: rgba(124, 77, 255, 0.4);
-  --download-btn-color: #c4b5fd;
-  --download-btn-hover-bg: #7c4dff;
-  --download-btn-hover-border: #7c4dff;
-  --download-btn-hover-color: #ffffff;
-  --download-btn-shadow: 0 4px 16px rgba(124, 77, 255, 0.35);
 
-  --stat-version-color: #a78bfa;
+  --stat-version-color: var(--text-primary);
 
   --overlay-btn-bg: rgba(255, 255, 255, 0.08);
   --overlay-btn-border: rgba(255, 255, 255, 0.12);
@@ -714,7 +666,7 @@ nav {
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  border-radius: 30px;
+  border-radius: 8px;
   font-family: var(--font-title);
   font-weight: 600;
   font-size: 15px;
@@ -816,28 +768,13 @@ nav {
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0) 90%);
   transition: opacity 0.3s ease;
 }
-.badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--badge-pill-bg);
-  border: 1px solid var(--badge-pill-border);
-  padding: 6px 18px;
-  border-radius: 30px;
+.section-tags {
+  margin-top: 14px;
   font-family: var(--font-title);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.6px;
-  margin-bottom: 28px;
   color: var(--text-secondary);
-  box-shadow: var(--badge-pill-shadow);
-  animation: fadeIn 0.8s ease-out;
-  transition: var(--transition-smooth);
-}
-.badge-pill:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  background: var(--nav-link-hover-bg);
 }
 .hero-section h1 {
   font-family: var(--font-title);
@@ -905,7 +842,7 @@ nav {
   border: 1px solid var(--tab-btn-border);
   color: var(--text-secondary);
   padding: 8px 18px;
-  border-radius: 20px;
+  border-radius: 8px;
   font-family: var(--font-title);
   font-weight: 600;
   cursor: pointer;
@@ -1011,26 +948,31 @@ nav {
   letter-spacing: -0.2px;
 }
 .card-link {
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--card-link-color);
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--card-btn-border);
+  color: var(--text-primary);
+  padding: 0 10px;
+  white-space: nowrap;
+  min-height: 36px;
+  border-radius: 8px;
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
   transition: var(--transition-smooth);
 }
 .card-link:hover,
-.card-link:focus,
 .card-link:focus-visible {
-  color: var(--card-link-hover-color);
-  transform: translateX(2px);
+  background: var(--card-btn-hover-bg);
+  border-color: var(--card-btn-hover-border);
 }
 .card-link:focus-visible {
-  outline: 2px solid #7c4dff;
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
 }
 
 /* --- In Development Cards --- */
@@ -1200,83 +1142,26 @@ nav {
   line-height: 1.15;
 }
 .sponsor-bubble:hover .sponsor-bubble-name {
-  color: #ffffff;
   font-size: 13px !important;
   overflow: visible;
   text-overflow: clip;
 }
 
-/* --- High Contrast Tier Color Palettes (Polished Metallics & High Contrast) --- */
-.sponsor-bubble.tier-diamond {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.38) 0%, rgba(55, 40, 0, 0.98) 100%);
-  border-color: #FFD700;
-  box-shadow: 0 0 28px rgba(255, 215, 0, 0.45), inset 0 0 18px rgba(255, 215, 0, 0.22);
+/* --- Sponsor tiers: flat tint plus a coloured border, readable in both themes --- */
+.sponsor-bubble[class*="tier-"] {
+  background: color-mix(in srgb, var(--tier-color) 14%, var(--sponsor-bubble-bg));
+  border-color: var(--tier-color);
 }
-.sponsor-bubble.tier-diamond .sponsor-bubble-name {
-  color: #FFFDE7;
-  font-weight: 800;
-  letter-spacing: 0.2px;
+.sponsor-bubble:hover {
+  background: color-mix(in srgb, var(--tier-color, var(--text-secondary)) 24%, var(--sponsor-bubble-bg));
 }
-.sponsor-bubble.tier-diamond:hover {
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.75), inset 0 0 25px rgba(255, 215, 0, 0.35);
-  border-color: #FFFFFF;
-}
-
-.sponsor-bubble.tier-gold {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.28) 0%, rgba(35, 28, 0, 0.95) 100%);
-  border-color: #FFD700;
-  box-shadow: 0 0 22px rgba(255, 215, 0, 0.35), inset 0 0 14px rgba(255, 215, 0, 0.15);
-}
-.sponsor-bubble.tier-gold .sponsor-bubble-name {
-  color: #FFF9C4;
-  font-weight: 700;
-}
-.sponsor-bubble.tier-gold:hover {
-  box-shadow: 0 0 32px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(255, 215, 0, 0.25);
-  border-color: #FFF59D;
-}
-
-.sponsor-bubble.tier-silver {
-  background: linear-gradient(135deg, rgba(226, 232, 240, 0.24) 0%, rgba(20, 24, 30, 0.95) 100%);
-  border-color: #E2E8F0;
-  box-shadow: 0 0 18px rgba(226, 232, 240, 0.25), inset 0 0 10px rgba(226, 232, 240, 0.1);
-}
-.sponsor-bubble.tier-silver .sponsor-bubble-name {
-  color: #F8FAFC;
-  font-weight: 600;
-}
-.sponsor-bubble.tier-silver:hover {
-  box-shadow: 0 0 26px rgba(226, 232, 240, 0.45), inset 0 0 14px rgba(226, 232, 240, 0.18);
-  border-color: #FFFFFF;
-}
-
-.sponsor-bubble.tier-bronze {
-  background: linear-gradient(135deg, rgba(217, 119, 6, 0.28) 0%, rgba(40, 18, 5, 0.95) 100%);
-  border-color: #D97706;
-  box-shadow: 0 0 16px rgba(217, 119, 6, 0.28), inset 0 0 10px rgba(217, 119, 6, 0.12);
-}
-.sponsor-bubble.tier-bronze .sponsor-bubble-name {
-  color: #FFEDD5;
-  font-weight: 600;
-}
-.sponsor-bubble.tier-bronze:hover {
-  box-shadow: 0 0 24px rgba(217, 119, 6, 0.5), inset 0 0 14px rgba(217, 119, 6, 0.2);
-  border-color: #FDBA74;
-}
-
-.sponsor-bubble.tier-supporter {
-  background: linear-gradient(135deg, rgba(138, 104, 219, 0.2) 0%, rgba(20, 15, 30, 0.95) 100%);
-  border-color: #8A68DB;
-  box-shadow: 0 0 14px rgba(138, 104, 219, 0.2), inset 0 0 8px rgba(138, 104, 219, 0.08);
-}
-.sponsor-bubble.tier-supporter .sponsor-bubble-name {
-  color: #EDE9FE;
-  font-weight: 500;
-}
-.sponsor-bubble.tier-supporter:hover {
-  box-shadow: 0 0 22px rgba(138, 104, 219, 0.45), inset 0 0 12px rgba(138, 104, 219, 0.18);
-  border-color: #A78BFA;
-}
+.sponsor-bubble.tier-diamond { --tier-color: #c9a227; }
+.sponsor-bubble.tier-gold { --tier-color: #c9a227; }
+.sponsor-bubble.tier-silver { --tier-color: #8b95a5; }
+.sponsor-bubble.tier-bronze { --tier-color: #b8691c; }
+.sponsor-bubble.tier-supporter { --tier-color: var(--text-secondary); }
+.sponsor-bubble.tier-diamond .sponsor-bubble-name { font-weight: 800; }
+.sponsor-bubble.tier-gold .sponsor-bubble-name { font-weight: 700; }
 
 /* --- Float Animation --- */
 @keyframes sponsor-float {
@@ -1885,11 +1770,6 @@ footer {
   .hero-section {
     padding: 110px 0 45px;
   }
-  .badge-pill {
-    font-size: 12px;
-    padding: 6px 12px;
-    margin-bottom: 20px;
-  }
   .hero-sponsor-group {
     gap: 8px;
   }
@@ -1912,29 +1792,6 @@ footer {
   }
   .project-card {
     padding: 24px 20px;
-  }
-  .card-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-  .card-link {
-    text-align: center;
-    padding: 4px 0;
-  }
-  .card-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    width: 100%;
-  }
-  .card-buttons button,
-  .card-buttons .btn-download {
-    flex: 1 1 auto;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .phil-card {
     padding: 24px;
@@ -2023,91 +1880,69 @@ footer {
 
 /* --- Card Actions & Action Buttons --- */
 .card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: auto;
-  gap: 12px;
 }
 
 .card-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
+}
+.card-buttons > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
-.btn-download {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: var(--download-btn-bg);
-  border: 1px solid var(--download-btn-border);
-  color: var(--download-btn-color);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.btn-download .btn-icon {
-  width: 13px;
-  height: 13px;
-  flex-shrink: 0;
-}
-
-.btn-download:hover,
-.btn-download:focus,
-.btn-download:focus-visible {
-  background: var(--download-btn-hover-bg);
-  border-color: var(--download-btn-hover-border);
-  color: var(--download-btn-hover-color);
-  box-shadow: var(--download-btn-shadow);
-  transform: translateY(-1px);
-}
-
-.btn-download:focus-visible {
-  outline: 2px solid #7c4dff;
-  outline-offset: 2px;
-}
-
+.btn-download,
 .btn-screenshot,
 .btn-features {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--card-btn-bg);
-  border: 1px solid var(--card-btn-border);
-  color: var(--card-btn-color);
-  padding: 6px 14px;
-  border-radius: 20px;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+  white-space: nowrap;
+  border-radius: 8px;
   font-family: var(--font-title);
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
+  text-decoration: none;
   cursor: pointer;
   transition: var(--transition-smooth);
 }
-
+.btn-download {
+  order: -1;
+  background: var(--btn-primary-bg);
+  border: 1px solid var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+}
+.btn-download:hover,
+.btn-download:focus-visible {
+  background: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-bg);
+}
+.btn-download .btn-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.btn-screenshot,
+.btn-features {
+  background: transparent;
+  border: 1px solid var(--card-btn-border);
+  color: var(--text-primary);
+}
 .btn-screenshot:hover,
 .btn-features:hover,
-.btn-screenshot:focus,
-.btn-features:focus,
 .btn-screenshot:focus-visible,
 .btn-features:focus-visible {
   background: var(--card-btn-hover-bg);
   border-color: var(--card-btn-hover-border);
-  color: var(--card-btn-hover-color);
-  transform: translateY(-1px);
 }
-
+.btn-download:focus-visible,
 .btn-screenshot:focus-visible,
 .btn-features:focus-visible {
-  outline: 2px solid #7c4dff;
+  outline: 2px solid var(--text-primary);
   outline-offset: 2px;
 }
 
