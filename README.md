@@ -137,7 +137,7 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
       <td>
         <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
         <a href="https://github.com/LeanBitLab/leantype-whisper-models/stargazers"><img src="https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Downloads-708-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Downloads-710-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
       </td>
     </tr>
     <tr>
