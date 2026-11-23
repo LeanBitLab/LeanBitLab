@@ -335,27 +335,6 @@ function filterProjects(category) {
   });
 }
 
-// Initialize cursor spotlight effect
-function initSpotlightEffect() {
-  const cards = document.querySelectorAll('.project-card, .media-card');
-  cards.forEach(card => {
-    let tick = false;
-    card.addEventListener('mousemove', (e) => {
-      if (!tick) {
-        window.requestAnimationFrame(() => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', `${x}px`);
-          card.style.setProperty('--mouse-y', `${y}px`);
-          tick = false;
-        });
-        tick = true;
-      }
-    }, { passive: true });
-  });
-}
-
 // Fixed header scrolled styles toggler
 function initHeaderScroll() {
   const header = document.querySelector('header');
@@ -933,7 +912,6 @@ function renderSponsors(view) {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   fetchGithubStats();
-  initSpotlightEffect();
   initHeaderScroll();
   initScrollRevealFallback();
 

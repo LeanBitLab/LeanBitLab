@@ -7,7 +7,6 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --border-hover: rgba(255, 255, 255, 0.28);
   --accent: #ffffff;
-  --accent-glow: rgba(255, 255, 255, 0.08);
   --text-primary: #ededed;
   --text-secondary: #a1a1a1;
   --text-muted: #666666;
@@ -16,8 +15,8 @@
   --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Semantic Theme Tokens (Default Dark) */
-  --header-bg: rgba(0, 0, 0, 0.8);
-  --header-scrolled-bg: rgba(0, 0, 0, 0.92);
+  --header-bg: rgba(0, 0, 0, 0.96);
+  --header-scrolled-bg: rgba(0, 0, 0, 0.98);
   --header-border: rgba(255, 255, 255, 0.08);
   --header-scrolled-border: rgba(255, 255, 255, 0.14);
   --header-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
@@ -47,7 +46,6 @@
   --badge-pill-border: rgba(255, 255, 255, 0.1);
   --badge-pill-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
-  --text-gradient: linear-gradient(180deg, #ffffff 20%, #999999 100%);
   --hero-watermark-opacity: 0.12;
   --hero-watermark-filter: none;
 
@@ -126,12 +124,11 @@
     --border-color: rgba(0, 0, 0, 0.08);
     --border-hover: rgba(0, 0, 0, 0.22);
     --accent: #111827;
-    --accent-glow: rgba(0, 0, 0, 0.04);
     --text-primary: #111827;
     --text-secondary: #4b5563;
     --text-muted: #6b7280;
 
-    --header-bg: rgba(248, 249, 250, 0.85);
+    --header-bg: rgba(248, 249, 250, 0.97);
     --header-scrolled-bg: rgba(255, 255, 255, 0.95);
     --header-border: rgba(0, 0, 0, 0.06);
     --header-scrolled-border: rgba(0, 0, 0, 0.1);
@@ -162,7 +159,6 @@
     --badge-pill-border: rgba(0, 0, 0, 0.08);
     --badge-pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
-    --text-gradient: linear-gradient(180deg, #111827 20%, #4b5563 100%);
     --hero-watermark-opacity: 0.06;
     --hero-watermark-filter: invert(1);
 
@@ -241,12 +237,11 @@
   --border-color: rgba(0, 0, 0, 0.08);
   --border-hover: rgba(0, 0, 0, 0.22);
   --accent: #111827;
-  --accent-glow: rgba(0, 0, 0, 0.04);
   --text-primary: #111827;
   --text-secondary: #4b5563;
   --text-muted: #6b7280;
 
-  --header-bg: rgba(248, 249, 250, 0.85);
+  --header-bg: rgba(248, 249, 250, 0.97);
   --header-scrolled-bg: rgba(255, 255, 255, 0.95);
   --header-border: rgba(0, 0, 0, 0.06);
   --header-scrolled-border: rgba(0, 0, 0, 0.1);
@@ -277,7 +272,6 @@
   --badge-pill-border: rgba(0, 0, 0, 0.08);
   --badge-pill-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
-  --text-gradient: linear-gradient(180deg, #111827 20%, #4b5563 100%);
   --hero-watermark-opacity: 0.06;
   --hero-watermark-filter: invert(1);
 
@@ -355,13 +349,12 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --border-hover: rgba(255, 255, 255, 0.28);
   --accent: #ffffff;
-  --accent-glow: rgba(255, 255, 255, 0.08);
   --text-primary: #ededed;
   --text-secondary: #a1a1a1;
   --text-muted: #666666;
 
-  --header-bg: rgba(0, 0, 0, 0.8);
-  --header-scrolled-bg: rgba(0, 0, 0, 0.92);
+  --header-bg: rgba(0, 0, 0, 0.96);
+  --header-scrolled-bg: rgba(0, 0, 0, 0.98);
   --header-border: rgba(255, 255, 255, 0.08);
   --header-scrolled-border: rgba(255, 255, 255, 0.14);
   --header-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
@@ -391,7 +384,6 @@
   --badge-pill-border: rgba(255, 255, 255, 0.1);
   --badge-pill-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
-  --text-gradient: linear-gradient(180deg, #ffffff 20%, #999999 100%);
   --hero-watermark-opacity: 0.12;
   --hero-watermark-filter: none;
 
@@ -514,25 +506,6 @@ body.menu-open {
   touch-action: none;
 }
 
-/* --- Ambient Glow Backgrounds --- */
-.glow-bg {
-  position: absolute;
-  pointer-events: none;
-  z-index: -10;
-}
-.glow-1 {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1200px;
-  height: 500px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-}
-.glow-2 {
-  display: none;
-}
-
 /* --- Custom Scrollbar --- */
 ::-webkit-scrollbar {
   width: 8px;
@@ -564,15 +537,11 @@ header {
   width: 100%;
   z-index: 100;
   background: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--header-border);
   transition: var(--transition-smooth);
 }
 header.scrolled {
   background: var(--header-scrolled-bg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--header-scrolled-border);
   box-shadow: var(--header-shadow);
 }
@@ -853,8 +822,6 @@ nav {
   gap: 8px;
   background: var(--badge-pill-bg);
   border: 1px solid var(--badge-pill-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   padding: 6px 18px;
   border-radius: 30px;
   font-family: var(--font-title);
@@ -883,10 +850,8 @@ nav {
   animation: slideUp 0.8s ease-out;
   transition: color 0.3s ease;
 }
-.text-gradient {
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-accent {
+  color: var(--text-secondary);
 }
 .hero-sub {
   font-size: clamp(16px, 2.5vw, 19px);
@@ -984,21 +949,6 @@ nav {
   transform: translateY(-5px);
   border-color: var(--border-hover);
   box-shadow: var(--card-hover-shadow);
-}
-.card-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--accent-glow) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-.project-card:hover .card-glow, .media-card:hover .card-glow {
-  opacity: 1;
 }
 .card-content {
   padding: 30px;
@@ -1575,7 +1525,6 @@ footer {
   bottom: 8px;
   right: 8px;
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
   color: var(--text-primary);
   padding: 3px 6px;
   border-radius: 4px;
@@ -1730,8 +1679,6 @@ footer {
     height: calc(100vh - 60px);
     height: calc(100dvh - 60px);
     background: var(--mobile-nav-bg);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
     border-left: 1px solid var(--border-color);
     flex-direction: column;
     justify-content: center;
@@ -1781,8 +1728,6 @@ footer {
     border-radius: 16px;
     border: 1px solid var(--border-color);
     background: var(--nav-dock-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     width: 100%;
     text-align: left;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2174,8 +2119,6 @@ footer {
   width: 100%;
   height: 100%;
   background: var(--preview-overlay-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -2335,8 +2278,6 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   z-index: 2000;
   display: flex;
   justify-content: center;
@@ -2427,8 +2368,6 @@ footer {
   width: 100%;
   height: 100%;
   background: var(--preview-overlay-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -2537,8 +2476,6 @@ footer {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   z-index: 2000;
   display: flex;
   flex-direction: column;
