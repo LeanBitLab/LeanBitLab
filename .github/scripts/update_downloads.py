@@ -179,7 +179,7 @@ def mask_private_name(name: str) -> str:
     return f"{clean[0]}****{clean[-1]}"
 
 
-# Lowest dollar amount of each sub-tier. Public data sizes bubbles from this floor, never from real amounts.
+# Lowest dollar amount of each sub-tier (fallback total for sponsors missing from the private ledger).
 TIER_FLOOR = {
     "Diamond": 250, "Gold II": 100, "Gold I": 50, "Silver II": 25, "Silver I": 10,
     "Bronze": 5, "Supporter II": 2, "Supporter I": 1,
@@ -187,9 +187,15 @@ TIER_FLOOR = {
 LEDGER_PATH = os.getenv("SPONSOR_LEDGER_PATH", "sponsor-ledger/ledger.json")
 
 
-def public_ratio(sub_tier: str, divisor: float) -> float:
-    """Bubble size share derived from the sub-tier only (the real amounts stay in the private ledger)."""
-    return round(TIER_FLOOR.get(sub_tier, 1) / divisor, 4)
+def round_amount(amount: float) -> int:
+    """Coarse rounding so the public bubble size does not reveal exact dollars (step grows with the amount)."""
+    step = 2 if amount < 10 else 5 if amount < 50 else 25 if amount < 250 else 50
+    return max(step, int(round(amount / step)) * step)
+
+
+def public_ratio(amount: float, divisor: float) -> float:
+    """Public bubble size share from a coarsely rounded amount (exact amounts stay in the private ledger)."""
+    return round(round_amount(amount) / divisor, 4)
 
 
 def load_ledger(path: str):
@@ -268,7 +274,7 @@ def get_opencollective_backers(slug: str):
 
         total = m["totalAmountDonated"]
         info = get_tier_info(total)
-        all_time.append({"name": name, "url": url, **info, "ratio": public_ratio(info["subTier"], 1000.0)})
+        all_time.append({"name": name, "url": url, **info, "ratio": public_ratio(total, 1000.0)})
 
         last = m.get("lastTransactionAmount") or 0
         try:
@@ -279,7 +285,7 @@ def get_opencollective_backers(slug: str):
             continue
         if last > 0 and (now - last_at).days < 30:
             info = get_tier_info(last)
-            this_month.append({"name": name, "url": url, **info, "ratio": public_ratio(info["subTier"], 700.0)})
+            this_month.append({"name": name, "url": url, **info, "ratio": public_ratio(last, 700.0)})
 
     for lst in (all_time, this_month):
         lst.sort(key=lambda s: (-s["ratio"], s["name"].lower()))
@@ -532,7 +538,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict, ledger_path:
 
         # 1b. Real dollar amounts never go into the public file. All Time keeps a running total per sponsor
         # (`total`) and the last month counted (`counted`) in a private ledger; the public file only gets
-        # name, tier and a size derived from the sub-tier. Without a ledger, All Time is left as it is.
+        # name, tier and a coarsely rounded bubble size. Without a ledger, All Time is left as it is.
         month_now = current_month()
         ledger = load_ledger(ledger_path)
         if ledger is None:
@@ -581,7 +587,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict, ledger_path:
             tier_obj = n.get("tier") or {}
             amount = tier_obj.get("monthlyPriceInDollars") or 5
             tier_info = get_tier_info(amount)
-            all_time_ratio = public_ratio(tier_info["subTier"], 1000.0)
+            all_time_ratio = public_ratio(amount, 1000.0)
 
             display_name = login if is_pub else masked
             github_handle = login if is_pub else None
@@ -619,12 +625,12 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict, ledger_path:
                 entry["total"] += (tier_obj.get("monthlyPriceInDollars") or 5) * owed
                 entry["counted"] = month_now
 
-        # Tier and bubble size follow the running total (size comes from the sub-tier floor, not the total)
+        # Tier and bubble size follow the running total (size uses the coarsely rounded total)
         if ledger is not None:
             for s in all_time:
                 info = get_tier_info(s["total"])
                 s["tier"], s["subTier"] = info["tier"], info["subTier"]
-                s["ratio"] = public_ratio(info["subTier"], 1000.0)
+                s["ratio"] = public_ratio(s["total"], 1000.0)
         public_all_time = [
             {k: v for k, v in s.items() if k not in ("total", "counted")} for s in all_time
         ]
@@ -659,7 +665,7 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict, ledger_path:
             tier_obj = n.get("tier") or {}
             amount = tier_obj.get("monthlyPriceInDollars") or 5
             tier_info = get_tier_info(amount)
-            month_ratio = public_ratio(tier_info["subTier"], 700.0)
+            month_ratio = public_ratio(amount, 700.0)
 
             display_name = login if is_pub else masked
             github_handle = login if is_pub else None
