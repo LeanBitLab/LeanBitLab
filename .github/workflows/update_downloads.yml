@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      LEDGER_TOKEN: ${{ secrets.LEDGER_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -21,11 +23,33 @@ jobs:
         with:
           python-version: '3.x'
 
+      # Real sponsor amounts live in a private repo, never in this public one. Without LEDGER_TOKEN the
+      # script skips All Time total updates.
+      - name: Check out private sponsor ledger
+        if: env.LEDGER_TOKEN != ''
+        uses: actions/checkout@v4
+        with:
+          repository: LeanBitLab/sponsor-ledger
+          token: ${{ secrets.LEDGER_TOKEN }}
+          path: sponsor-ledger
+
       - name: Run update script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SPONSORS_TOKEN: ${{ secrets.SPONSORS_TOKEN || secrets.GITHUB_TOKEN }}
         run: python .github/scripts/update_downloads.py
+
+      - name: Save sponsor ledger
+        if: env.LEDGER_TOKEN != ''
+        working-directory: sponsor-ledger
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add ledger.json
+          if ! git diff --staged --quiet; then
+            git commit -m "auto: update sponsor totals"
+            git push
+          fi
 
       - name: Commit and push if changed
         env:

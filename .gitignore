@@ -9,3 +9,6 @@ gemini.md
 __pycache__/
 *.py[cod]
 
+
+# Private sponsor amounts (checked out from a private repo in CI)
+sponsor-ledger/
