@@ -1,0 +1,5 @@
+<svg width="170" height="40" viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.75" y="0.75" width="168.5" height="38.5" rx="9.25" stroke="#f0f6fc" stroke-width="1.5"/>
+  <path fill="#DB61A2" transform="translate(40.0 12) scale(0.0312)" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
+  <text x="64" y="24.5" fill="#f0f6fc" font-size="13" font-weight="600" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">Sponsor Us</text>
+</svg>

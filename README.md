@@ -10,31 +10,44 @@
 
 <p align="center">
   <a href="https://leanbitlab.github.io/">
-    <img alt="Official Website" src="./website.svg?v=1" height="38">
+    <picture><source media="(prefers-color-scheme: dark)" srcset="./badges/website-dark.svg"><img src="./badges/website-light.svg" alt="Official Website" height="38"></picture>
   </a>
   &nbsp;&nbsp;
   <a href="https://github.com/LeanBitLab#%EF%B8%8F-support-us">
-    <img alt="Sponsor Us" src="./sponsor.svg?v=1" height="38">
+    <picture><source media="(prefers-color-scheme: dark)" srcset="./badges/sponsor-us-dark.svg"><img src="./badges/sponsor-us-light.svg" alt="Sponsor Us" height="38"></picture>
   </a>
 </p>
 
 <!-- GitHub Stats with combined stats from all repos -->
 <a href="https://github.com/LeanBitLab">
-  <img alt="LeanBitLab's GitHub Stats" src="./stats.svg?v=4">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./stats-dark.svg"><img src="./stats-light.svg" alt="LeanBitLab's GitHub Stats"></picture>
 </a>
+
+<p align="center">
+  <a href="#-android-apps">Apps</a> &nbsp;&middot;&nbsp;
+  <a href="#-leantype-plugins">Plugins</a> &nbsp;&middot;&nbsp;
+  <a href="#-other-projects">Other</a> &nbsp;&middot;&nbsp;
+  <a href="#%EF%B8%8F-support-us">Support</a> &nbsp;&middot;&nbsp;
+  <a href="#-get-in-touch">Community</a>
+</p>
 
 </div>
 
 ---
 
-## 🚀 What We Build
+## 💡 Why LeanBitLab
 
-We create open-source applications focused on **efficiency**, **privacy**, and **user experience**. We specialize in building bloat-free, high-performance software that respects device resources and delivers a premium user experience across Android and Linux environments.
+Open-source Android and Linux software that respects your device and your data.
+
+- **Free forever**: no paywalls, "pro" tiers, subscriptions or in-app purchases.
+- **Private by design**: no telemetry, tracking or background drain.
+- **Lean**: small, fast, and focused on doing one job well.
+- **Community sustained**: independent, funded only by voluntary sponsorships.
 
 <br/>
 
 <p align="center">
-  <img src="./banner.png" alt="LeanBitLab Banner" width="100%">
+  <img src="./banner.png" alt="LeanType, LtvLauncher, Lwidget and RdTube" width="100%">
 </p>
 
 ---
@@ -54,36 +67,28 @@ We create open-source applications focused on **efficiency**, **privacy**, and *
       <td><b><a href="https://github.com/LeanBitLab/LeanType">⌨️ LeanType</a></b></td>
       <td>Privacy-first Android keyboard with multi-provider AI proofreading, offline voice typing, OCR, and deep customization</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Version-v4.3.6-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/LeanType/stargazers"><img src="https://img.shields.io/badge/Stars-1.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><img src="https://img.shields.io/badge/Downloads-126.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-dark.svg"><img src="./badges/leantype-light.svg" alt="LeanType stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/leanbitlab-org/LtvLauncher">📺 LTvLauncher</a></b></td>
-      <td>Fast, ad-free Android TV launcher with remote-friendly D-pad navigation, custom categories, widgets, and OLED screensaver</td>
+      <td>Fast, ad-free Android TV launcher with D-pad navigation, custom categories, widgets and OLED screensaver</td>
       <td>
-        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Version-v2026.11.23-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/leanbitlab-org/LtvLauncher/stargazers"><img src="https://img.shields.io/badge/Stars-485-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><img src="https://img.shields.io/badge/Downloads-54.6k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/leanbitlab-org/LtvLauncher/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/ltvlauncher-dark.svg"><img src="./badges/ltvlauncher-light.svg" alt="LtvLauncher stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Lwidget">📊 Lwidget</a></b></td>
-      <td>Offline Material You Android widget displaying system stats, step counter, calendar, tasks, and weather with zero network permissions</td>
+      <td>Offline Material You widget for system stats, steps, calendar, tasks and weather, with no network permission</td>
       <td>
-        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Version-v3.1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/Lwidget/stargazers"><img src="https://img.shields.io/badge/Stars-75-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><img src="https://img.shields.io/badge/Downloads-2.5k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Lwidget/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/lwidget-dark.svg"><img src="./badges/lwidget-light.svg" alt="Lwidget stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/RdTube">🎬 RdTube</a></b></td>
-      <td>Private, high-performance Reddit video client featuring a Shorts-style feed, pure OLED theme, hardware acceleration, and zero tracking</td>
+      <td>Private Reddit video client with a Shorts-style feed, pure OLED theme and zero tracking</td>
       <td>
-        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/RdTube/stargazers"><img src="https://img.shields.io/badge/Stars-46-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><img src="https://img.shields.io/badge/Downloads-920-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/RdTube/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/rdtube-dark.svg"><img src="./badges/rdtube-light.svg" alt="RdTube stats"></picture></a>
       </td>
     </tr>
   </tbody>
@@ -108,87 +113,70 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin">✍️ Handwriting Plugin</a></b></td>
       <td>On-device handwriting recognition layout plugin for LeanType supporting 300+ languages via Google ML Kit</td>
       <td>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-22-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-6.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Handwriting-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-handwriting-plugin-dark.svg"><img src="./badges/leantype-handwriting-plugin-light.svg" alt="Leantype-Handwriting-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin">🌐 Translation Plugin</a></b></td>
       <td>100% on-device offline translation plugin for LeanType supporting 59+ languages powered by ML Kit</td>
       <td>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.7-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-18-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-9.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/Leantype-Translation-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-translation-plugin-dark.svg"><img src="./badges/leantype-translation-plugin-light.svg" alt="Leantype-Translation-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin">🎙️ Voice Plugin</a></b></td>
       <td>Fast, offline on-device speech-to-text voice typing plugin for LeanType powered by whisper.cpp and ARM NEON</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.4-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-40-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-6.2k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Voice-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-voice-plugin-dark.svg"><img src="./badges/leantype-voice-plugin-light.svg" alt="LeanType-Voice-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/leantype-whisper-models">🗣️ Whisper Models</a></b></td>
-      <td>Official Whisper speech-to-text models for LeanType voice typing (tiny, base, small; English and multilingual), Q5_1 quantized with verified SHA-256 checksums and on-device benchmarks</td>
+      <td>Official Q5_1 Whisper models (tiny, base, small) for LeanType voice typing, with verified SHA-256 checksums</td>
       <td>
-        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/leantype-whisper-models/stargazers"><img src="https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><img src="https://img.shields.io/badge/Downloads-710-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/leantype-whisper-models/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-whisper-models-dark.svg"><img src="./badges/leantype-whisper-models-light.svg" alt="leantype-whisper-models stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin">🤖 Offline AI Plugin</a></b></td>
       <td>100% on-device neural proofreading and local LLM plugin for LeanType powered by llama.cpp and local GGUF models</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-21-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-2.5k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Offline-AI-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-offline-ai-plugin-dark.svg"><img src="./badges/leantype-offline-ai-plugin-light.svg" alt="LeanType-Offline-AI-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin">🔍 OCR Plugin</a></b></td>
       <td>Offline on-device Optical Character Recognition (OCR) plugin for LeanType supporting Latin, CJK, and Devanagari scripts</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-18-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-4.9k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-OCR-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-ocr-plugin-dark.svg"><img src="./badges/leantype-ocr-plugin-light.svg" alt="LeanType-OCR-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin">🀄 CJK Plugin</a></b></td>
       <td>Standalone Chinese (Pinyin) and Japanese (romaji to kana to kanji) input companion plugin for LeanType, fully offline</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-2-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-836-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-CJK-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-cjk-plugin-dark.svg"><img src="./badges/leantype-cjk-plugin-light.svg" alt="LeanType-CJK-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin">🎞️ GIF Plugin</a></b></td>
-      <td>Standalone rich media, GIF, sticker, and meme search plugin for LeanType supporting GIPHY, KLIPY, and local media</td>
+      <td>GIF, sticker and meme search for LeanType (GIPHY, KLIPY and local media)</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/latest"><img src="https://img.shields.io/badge/Version-v1.0.8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/stargazers"><img src="https://img.shields.io/badge/Stars-25-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/latest"><img src="https://img.shields.io/badge/Downloads-2.1k-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Gif-Plugin/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-gif-plugin-dark.svg"><img src="./badges/leantype-gif-plugin-light.svg" alt="LeanType-Gif-Plugin stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-SoundPacks">🔊 Sound Packs</a></b></td>
-      <td>Curated zero-latency mechanical &amp; acoustic audio sound packs repository and custom pack creator guide for LeanType</td>
+      <td>Curated low-latency keyboard sound packs and a custom pack creator guide for LeanType</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/stargazers"><img src="https://img.shields.io/badge/Stars-8-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-SoundPacks/"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-soundpacks-dark.svg"><img src="./badges/leantype-soundpacks-light.svg" alt="LeanType-SoundPacks stats"></picture></a>
       </td>
     </tr>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/LeanType-Language-Packs">🌐 Language Packs</a></b></td>
-      <td>Downloadable app UI translations for the English-only (lite) LeanType builds, built from each release and loaded in the app (Android 11+)</td>
+      <td>Downloadable UI translations for the English-only (lite) LeanType builds (Android 11+)</td>
       <td>
-        <a href="https://github.com/LeanBitLab/LeanType-Language-Packs/stargazers"><img src="https://img.shields.io/badge/Stars-1-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/LeanType-Language-Packs/releases/latest"><img src="https://img.shields.io/badge/Downloads-11-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/LeanType-Language-Packs/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/leantype-language-packs-dark.svg"><img src="./badges/leantype-language-packs-light.svg" alt="LeanType-Language-Packs stats"></picture></a>
       </td>
     </tr>
   </tbody>
@@ -209,11 +197,9 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
   <tbody>
     <tr>
       <td><b><a href="https://github.com/LeanBitLab/adaptive-brightness-linux">💡 Adaptive Brightness Linux</a></b></td>
-      <td>Intelligent Rust auto-brightness daemon &amp; TUI for Linux featuring ALS sensor curves, DDC/CI monitor control, and adaptive learning</td>
+      <td>Rust auto-brightness daemon and TUI for Linux: ALS curves, DDC/CI monitor control, adaptive learning</td>
       <td>
-        <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest"><img src="https://img.shields.io/badge/Version-v2.0.0-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Version"></a>
-        <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/stargazers"><img src="https://img.shields.io/badge/Stars-14-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Stars"></a>
-        <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest"><img src="https://img.shields.io/badge/Downloads-18-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="Downloads"></a>
+        <a href="https://github.com/LeanBitLab/adaptive-brightness-linux/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/adaptive-brightness-linux-dark.svg"><img src="./badges/adaptive-brightness-linux-light.svg" alt="adaptive-brightness-linux stats"></picture></a>
       </td>
     </tr>
   </tbody>
@@ -237,14 +223,14 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
       <td><b>📝 LeanBook</b></td>
       <td>Notes, Tasks, Reminders, Bills &amp; Shopping list</td>
       <td>
-        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
+        <picture><source media="(prefers-color-scheme: dark)" srcset="./badges/status-in-development-dark.svg"><img src="./badges/status-in-development-light.svg" alt="In Development"></picture>
       </td>
     </tr>
     <tr>
       <td><b>📞 Minimal Dialer</b></td>
       <td>Clean, bloat-free phone dialer</td>
       <td>
-        <a href="https://github.com/LeanBitLab"><img src="https://img.shields.io/badge/Status-In_Development-7C4DFF?style=flat-square&amp;labelColor=161b22" alt="In Development"></a>
+        <picture><source media="(prefers-color-scheme: dark)" srcset="./badges/status-in-development-dark.svg"><img src="./badges/status-in-development-light.svg" alt="In Development"></picture>
       </td>
     </tr>
   </tbody>
@@ -252,24 +238,15 @@ Optional add-ons that keep the LeanType core lean. Install only the ones you nee
 
 ---
 
-## 💡 Philosophy
-
-> **"Everything you need. Nothing you don't."**
-
-We build software that is functional, efficient, and respects your resources, whether it's a simple utility or a complete productivity suite.
-
-- **100% Free Forever**: None of our apps have paywalls, locked "pro" features, subscriptions, or in-app purchases, and they never will. Everything we build is fully accessible and free for everyone.
-- **Zero Bloat & Privacy First**: No hidden telemetry, tracking, or background drain. Your device resources and personal data remain strictly yours.
-- **Community Sustained**: LeanBitLab is entirely independent and supported by voluntary community donations and sponsorships.
-
----
-
 ## ❤️ Support Us
 
 Because our apps are 100% free with no paywalls, premium tiers, or ads, your support is what helps us maintain our current projects and develop new bloat-free experiences.
 
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-LeanBitLab-D32F2F?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/LeanBitLab)
-[![Open Collective](https://img.shields.io/badge/Open_Collective-leanbitlab--org-2972F4?style=for-the-badge&logo=open-collective&logoColor=white)](https://opencollective.com/leanbitlab-org)
+<p>
+  <a href="https://github.com/sponsors/LeanBitLab"><img src="./badges/sponsor-github.svg" alt="GitHub Sponsors"></a>
+  &nbsp;
+  <a href="https://opencollective.com/leanbitlab-org"><img src="./badges/sponsor-opencollective.svg" alt="Open Collective"></a>
+</p>
 
 ### 💖 GitHub Sponsors
 
@@ -311,15 +288,17 @@ Thank you to our amazing sponsors!
 
 ## 📫 Get In Touch
 
-<div align="center">
-
-[![Discord](https://img.shields.io/badge/Discord-Join_Server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/2U22D3qFe) 
-[![Telegram](https://img.shields.io/badge/Telegram-Join_Channel-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/LeanBitLab) 
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@LeanBitLab) 
-[![Reddit](https://img.shields.io/badge/Reddit-r/LeanBitLab__-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/LeanBitLab_/) 
-[![X (Twitter)](https://img.shields.io/badge/-Follow_Us-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/LeanBitLab)
-
-</div>
+<p align="center">
+  <a href="https://discord.gg/2U22D3qFe"><img src="./badges/social-discord.svg" alt="Discord"></a>
+  &nbsp;
+  <a href="https://t.me/LeanBitLab"><img src="./badges/social-telegram.svg" alt="Telegram"></a>
+  &nbsp;
+  <a href="https://www.youtube.com/@LeanBitLab"><img src="./badges/social-youtube.svg" alt="YouTube"></a>
+  &nbsp;
+  <a href="https://www.reddit.com/r/LeanBitLab_/"><img src="./badges/social-reddit.svg" alt="Reddit"></a>
+  &nbsp;
+  <a href="https://x.com/LeanBitLab"><picture><source media="(prefers-color-scheme: dark)" srcset="./badges/social-x-dark.svg"><img src="./badges/social-x-light.svg" alt="X (Twitter)"></picture></a>
+</p>
 
 ---
 

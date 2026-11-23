@@ -1,0 +1,7 @@
+<svg width="239" height="46" viewBox="0 0 239 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="gSponsor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EA4C89"/><stop offset="1" stop-color="#BF3989"/></linearGradient></defs>
+  <rect width="239" height="46" rx="12" fill="url(#gSponsor)"/>
+  <rect x="0.5" y="0.5" width="238" height="45" rx="11.5" stroke="#ffffff" stroke-opacity="0.22"/>
+  <path fill="#ffffff" transform="translate(28.0 13.0) scale(0.0391)" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
+  <text x="58.0" y="28.4" fill="#ffffff" font-size="15" font-weight="700" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">Sponsor on GitHub</text>
+</svg>

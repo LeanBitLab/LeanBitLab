@@ -1,0 +1,7 @@
+<svg width="221" height="46" viewBox="0 0 221 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="gOc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C8DF6"/><stop offset="1" stop-color="#2972F4"/></linearGradient></defs>
+  <rect width="221" height="46" rx="12" fill="url(#gOc)"/>
+  <rect x="0.5" y="0.5" width="220" height="45" rx="11.5" stroke="#ffffff" stroke-opacity="0.22"/>
+  <path fill="#ffffff" transform="translate(28.0 13.0) scale(0.8333)" d="M12 1.5a10.5 10.5 0 1 0 8.9 16l-3.8-2.4A6 6 0 1 1 18 12h4.5A10.5 10.5 0 0 0 12 1.5z"/>
+  <text x="58.0" y="28.4" fill="#ffffff" font-size="15" font-weight="700" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">Open Collective</text>
+</svg>
