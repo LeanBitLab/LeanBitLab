@@ -198,6 +198,81 @@ def get_tier_info(amount: float) -> dict:
     return {"tier": "supporter", "subTier": "Supporter I"}
 
 
+OC_SLUG = "leanbitlab-org"
+OC_JSON_PATH = "opencollective-data.json"
+
+
+def get_opencollective_backers(slug: str):
+    """Fetches public Open Collective backers; returns (all_time, this_month) lists, or None on failure.
+
+    Only name, tier, ratio and an optional public profile URL are kept (the API also lists emails).
+    The members API repeats a backer once per tier, so records are deduplicated by profile URL.
+    """
+    try:
+        req = urllib.request.Request(
+            f"https://opencollective.com/{slug}/members/all.json",
+            headers={"User-Agent": "leanbitlab-site-stats"},
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            members = json.load(resp)
+    except Exception as e:
+        print(f"Notice: Could not fetch Open Collective members: {e}")
+        return None
+    if not isinstance(members, list):
+        return None
+
+    now = datetime.datetime.now(datetime.timezone.utc)
+    by_profile = {}
+    for m in members:
+        if m.get("role") != "BACKER" or m.get("type") != "USER":
+            continue
+        total = m.get("totalAmountDonated") or 0
+        profile = m.get("profile") or ""
+        if total <= 0 or not profile:
+            continue
+        prev = by_profile.get(profile)
+        if prev is None or (m.get("lastTransactionAt") or "") > (prev.get("lastTransactionAt") or ""):
+            by_profile[profile] = {**m, "totalAmountDonated": max(total, (prev or {}).get("totalAmountDonated") or 0)}
+
+    all_time, this_month = [], []
+    for profile, m in by_profile.items():
+        is_guest = "/guest-" in profile
+        name = (m.get("name") or "").strip() or "Guest"
+        url = None if is_guest or not profile.startswith("https://opencollective.com/") else profile
+
+        total = m["totalAmountDonated"]
+        all_time.append({"name": name, "url": url, **get_tier_info(total), "ratio": round(total / 1000.0, 4)})
+
+        last = m.get("lastTransactionAmount") or 0
+        try:
+            last_at = datetime.datetime.fromisoformat(m["lastTransactionAt"].replace("Z", "+00:00"))
+            if last_at.tzinfo is None:
+                last_at = last_at.replace(tzinfo=datetime.timezone.utc)
+        except Exception:
+            continue
+        if last > 0 and (now - last_at).days < 30:
+            this_month.append({"name": name, "url": url, **get_tier_info(last), "ratio": round(last / 700.0, 4)})
+
+    for lst in (all_time, this_month):
+        lst.sort(key=lambda s: (-s["ratio"], s["name"].lower()))
+    return all_time, this_month
+
+
+def update_opencollective_json(path: str) -> bool:
+    """Writes opencollective-data.json only when its content changed (no timestamp, so no daily noise)."""
+    result = get_opencollective_backers(OC_SLUG)
+    if result is None:
+        return False
+    text = json.dumps({"allTime": result[0], "thisMonth": result[1]}, indent=2, ensure_ascii=False) + "\n"
+    if os.path.exists(path) and open(path, encoding="utf-8").read() == text:
+        print("Open Collective data is already up to date.")
+        return False
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(f"Open Collective data updated: {len(result[0])} all time, {len(result[1])} this month.")
+    return True
+
+
 def get_github_sponsors(token: str):
     """Fetches public and private sponsors for LeanBitLab via GitHub GraphQL API."""
     if not token:
@@ -374,6 +449,18 @@ def update_sponsors_section(content: str, user_data: dict) -> tuple[str, bool]:
     return new_content, updated
 
 
+def current_month() -> str:
+    """Calendar month as YYYY-MM (a function so tests can patch it)."""
+    return datetime.date.today().strftime("%Y-%m")
+
+
+def months_between(earlier: str, later: str) -> int:
+    """Whole months from 'YYYY-MM' earlier to later (0 when equal)."""
+    ey, em = map(int, earlier.split("-"))
+    ly, lm = map(int, later.split("-"))
+    return (ly - ey) * 12 + (lm - em)
+
+
 def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
     """Directly updates sponsor-data.js: keeps historical in allTime and actively prunes cancelled from thisMonth."""
     if not user_data or not os.path.exists(sponsor_data_path):
@@ -415,6 +502,16 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                     s["github"] = None
                     changed = True
 
+        # 1b. All Time is a running total in dollars (`total`) plus the last month counted (`counted`).
+        # Entries from before totals existed are seeded from their displayed value (ratio * 1000),
+        # assuming the current month is already included.
+        month_now = current_month()
+        before_all_time = json.dumps(all_time, sort_keys=True)
+        for s in all_time:
+            if "total" not in s:
+                s["total"] = round((s.get("ratio") or 0) * 1000)
+                s["counted"] = month_now
+
         # 2. Existing sponsor keys in all_time
         existing_keys = set()
         for s in all_time:
@@ -455,9 +552,40 @@ def update_sponsor_data_js(sponsor_data_path: str, user_data: dict) -> bool:
                 "github": github_handle,
                 "tier": tier_info["tier"],
                 "subTier": tier_info["subTier"],
-                "ratio": all_time_ratio
+                "ratio": all_time_ratio,
+                "total": amount,
+                "counted": month_now
             })
             new_added += 1
+            changed = True
+
+        # 3b. Recurring sponsors add their current monthly price once per calendar month (a downgrade only
+        # affects later months; cancelled sponsors simply stop growing). One-time sponsors never repeat.
+        by_key = {}
+        for s in all_time:
+            if s.get("github"):
+                by_key[s["github"].lower()] = s
+            if s.get("name"):
+                by_key.setdefault(s["name"].lower(), s)
+        for n in active_nodes:
+            login = (n.get("sponsorEntity") or {}).get("login")
+            tier_obj = n.get("tier") or {}
+            if not login or tier_obj.get("isOneTime"):
+                continue
+            entry = by_key.get(login.lower()) or by_key.get(mask_private_name(login).lower())
+            if entry is None:
+                continue
+            owed = months_between(entry.get("counted") or month_now, month_now)
+            if owed > 0:
+                entry["total"] += (tier_obj.get("monthlyPriceInDollars") or 5) * owed
+                entry["counted"] = month_now
+
+        # Bubble size and tier follow the running total
+        for s in all_time:
+            info = get_tier_info(s["total"])
+            s["tier"], s["subTier"] = info["tier"], info["subTier"]
+            s["ratio"] = round(s["total"] / 1000.0, 4)
+        if json.dumps(all_time, sort_keys=True) != before_all_time:
             changed = True
 
         # 4. Dynamically rebuild thisMonth strictly from activeSponsors (pruning cancelled sponsors)
@@ -767,6 +895,11 @@ def main():
             local_sponsors_json = "../../Pdoc/sponsors/sponsors.json"
         if os.path.exists(local_sponsors_json):
             sync_local_sponsors_json(local_sponsors_json, user_data)
+
+    oc_path = OC_JSON_PATH
+    if not os.path.exists(oc_path) and os.path.exists("../../" + OC_JSON_PATH):
+        oc_path = "../../" + OC_JSON_PATH
+    update_opencollective_json(oc_path)
 
     if total_count > 0 or total_stars_count > 0 or stars_count > 0 or downloads_count > 0 or version_count > 0 or readme_sponsors_updated:
         with open(readme_path, "w", encoding="utf-8") as f:

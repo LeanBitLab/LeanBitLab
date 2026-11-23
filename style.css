@@ -1101,7 +1101,6 @@ nav {
   border-radius: 150px;
   box-shadow: var(--sponsor-container-shadow);
   overflow: hidden;
-  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .sponsor-bubble {
   position: absolute;
@@ -2457,4 +2456,38 @@ footer {
   background: var(--overlay-btn-hover-bg);
   border-color: var(--overlay-btn-hover-border);
   color: var(--overlay-btn-hover-color);
+}
+
+/* Sponsor groups (GitHub Sponsors / Open Collective) */
+.sponsors-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px 24px;
+  margin-top: 28px;
+}
+@media (min-width: 1100px) {
+  .sponsors-groups {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.sponsors-group {
+  min-width: 0;
+}
+.sponsors-group[hidden] {
+  display: none;
+}
+.sponsors-group-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.sponsors-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
 }

@@ -936,7 +936,16 @@
         <button class="sponsor-toggle-btn active" data-view="allTime">All Time</button>
         <button class="sponsor-toggle-btn" data-view="thisMonth">This Month</button>
       </div>
-      <div id="sponsors-bubbles" class="sponsors-bubbles"></div>
+      <div class="sponsors-groups">
+      <div class="sponsors-group">
+        <h3 class="sponsors-group-title">GitHub Sponsors <span class="sponsors-count" id="sponsors-count"></span></h3>
+        <div id="sponsors-bubbles" class="sponsors-bubbles"></div>
+      </div>
+      <div class="sponsors-group" id="oc-group" hidden>
+        <h3 class="sponsors-group-title">Open Collective <span class="sponsors-count" id="oc-count"></span></h3>
+        <div id="oc-bubbles" class="sponsors-bubbles"></div>
+      </div>
+      </div>
 
       <div class="sponsors-cta">
         <p>Because all our apps are completely free with no paywalls or ads, your support is what keeps the lab running.</p>

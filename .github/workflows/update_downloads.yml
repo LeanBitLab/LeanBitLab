@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.md stats.svg stats.json index.html website.svg sponsor.svg sponsor-data.js
+          git add README.md stats.svg stats.json index.html website.svg sponsor.svg sponsor-data.js opencollective-data.json
           if ! git diff --quiet || ! git diff --staged --quiet; then
             git commit -m "auto: update README badges, stats card & site stats"
             git push
