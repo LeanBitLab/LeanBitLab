@@ -45,7 +45,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add ledger.json
+          python3 ../.github/scripts/ledger_readme.py .
+          git add ledger.json README.md
           if ! git diff --staged --quiet; then
             git commit -m "auto: update sponsor totals"
             git push
