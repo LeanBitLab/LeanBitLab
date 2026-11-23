@@ -712,6 +712,19 @@ nav {
 .nav-cta {
   min-width: 130px;
 }
+.nav-btn.btn-primary {
+  background: var(--card-btn-hover-bg);
+  border-color: var(--card-btn-border);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+.nav-btn.btn-primary:hover,
+.nav-btn.btn-primary:focus-visible {
+  background: var(--card-btn-hover-bg);
+  border-color: var(--card-btn-hover-border);
+  color: var(--text-primary);
+  box-shadow: none;
+}
 .nav-mobile-only {
   display: none !important;
 }
@@ -1692,7 +1705,7 @@ footer {
   
   .nav-actions .btn:hover, .nav-actions .btn:active {
     transform: scale(1.02) translateY(-1px);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: none;
   }
   .nav-cta {
     display: none !important;
