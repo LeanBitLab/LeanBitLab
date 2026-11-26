@@ -13,7 +13,7 @@
   <rect class="vb" x="63" y="0" width="6" height="22"/>
   <rect class="lb" x="57" y="0" width="6" height="22"/>
   <text class="tx" x="31.5" y="15" text-anchor="middle" font-size="11" font-weight="600" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">Version</text>
-  <text class="tx" x="118.0" y="15" text-anchor="middle" font-size="11" font-weight="700" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">4.3.7-f9af9095</text>
+  <text class="tx" x="118.0" y="15" text-anchor="middle" font-size="11" font-weight="700" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">4.3.7-d46fb8e1</text>
   <rect class="lb" x="0" y="28" width="50" height="22" rx="3"/>
   <rect class="vb" x="50" y="28" width="23" height="22" rx="3"/>
   <rect class="vb" x="50" y="28" width="6" height="22"/>
@@ -25,5 +25,5 @@
   <rect class="vb" x="155" y="28" width="6" height="22"/>
   <rect class="lb" x="149" y="28" width="6" height="22"/>
   <text class="tx" x="117.0" y="43" text-anchor="middle" font-size="11" font-weight="600" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">Downloads</text>
-  <text class="tx" x="173.0" y="43" text-anchor="middle" font-size="11" font-weight="700" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">142</text>
+  <text class="tx" x="173.0" y="43" text-anchor="middle" font-size="11" font-weight="700" font-family="'Segoe UI', Ubuntu, Roboto, sans-serif">257</text>
 </svg>
