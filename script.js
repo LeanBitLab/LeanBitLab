@@ -109,27 +109,26 @@ const readmeConfig = {
 const fallbackFeatures = {
   'leantype': [
     '<strong>🤖 Multi-Provider AI</strong> - Proofread using Gemini, Groq, or OpenAI-compatible providers.',
-    '<strong>🛡️ Offline AI (GGUF)</strong> - Private, on-device translation using local GGUF models powered by llama.cpp.',
+    '<strong>🛡️ Offline AI (GGUF)</strong> - On-device proofreading and translation with local GGUF models (Offline build with the Offline AI plugin).',
     '<strong>🌐 AI Translation</strong> - Translate selected text directly using your chosen AI provider.',
     '<strong>🧠 Custom AI Keys</strong> - Assign custom prompts, personas, and themed capsules to 10 customizable keys.',
     '<strong>🧭 Text Editing Mode</strong> - Gboard-style panel with precise DPAD navigation and editing utilities.',
     '<strong>✍️ Handwriting Input</strong> - Support handwriting recognition canvas using dynamic plugin imports.',
-    '<strong>👆 Gesture Typing</strong> - Built-in gesture engine removing dependency on proprietary Google binaries.',
+    '<strong>👆 Gesture Typing</strong> - Swipe typing with a separately loaded gesture typing library.',
     '<strong>🖱️ Touchpad Mode</strong> - Swipe spacebar up to toggle touchpad with custom sensitivity controls.',
     '<strong>📝 Text Expander</strong> - Built-in expansion tool supporting custom shortcuts and template variables.',
     '<strong>🪟 Floating Keyboard</strong> - Detach the keyboard into a draggable window for seamless multitasking.',
     '<strong>⌨️ Dual Toolbar / Split Suggestions</strong> - Option to split suggestions and toolbar for easier access.',
-    '<strong>📥 Dynamic Downloader</strong> - Standard version dynamically downloads layout/emoji dictionaries on demand.',
+    '<strong>📥 Dynamic Downloader</strong> - The Standard version downloads dictionaries on demand.',
     '<strong>🔍 Clipboard Search & Undo</strong> - Search through clipboard history and undo accidental item deletions.',
     '<strong>📸 Screenshot Suggestion & Clipboard</strong> - Suggests recently taken screenshots for quick suggestion strip sharing.',
     '<strong>🔎 Emoji Search</strong> - Search for emojis by name.',
     '<strong>🚫 Blocked Words Blacklist</strong> - Prevent unwanted words from being suggested with regex pattern support.',
-    '<strong>✉️ Auto-Read OTP</strong> - Automatically reads OTP codes from SMS notifications for quick entry.',
     '<strong>💾 Selective Backup & Restore</strong> - Backup and restore settings and AI configurations selectively.',
     '<strong>⌨️ Direct Switch IME</strong> - Map custom keycode to any toolbar key to switch directly to another input method.',
-    '<strong>🎨 Custom Layouts</strong> - Save up to five custom layout profiles with persistent slot tracking.',
-    '<strong>🔒 Privacy Choices</strong> - Choose Standard, Offline (no network), or Offline Lite (minimalist) versions.',
-    '<strong>🎨 Modern UI</strong> - "Squircle" key backgrounds, refined icons, and polished aesthetics.',
+    '<strong>🎨 Custom Layouts</strong> - Add up to five custom secondary layouts, each with its own keycode.',
+    '<strong>🔒 Privacy Choices</strong> - Choose Standard or Offline (no internet permission), each also as a smaller English-only Lite build.',
+    '<strong>🎨 Modern UI</strong> - Customizable key styles, refined icons, and polished aesthetics.',
     '<strong>🕵️ Clear Incognito Mode</strong> - Distinct "Hat & Glasses" icon for clear visibility.',
     '<strong>🔄 Google Dictionary Import</strong> - Easily import your personal dictionary words.',
     '<strong>⚙️ Enhanced Customization</strong> - Force auto-capitalization toggle, reorganized settings, and more.'
@@ -159,7 +158,7 @@ const fallbackFeatures = {
     '<strong>DexClassLoader Engine</strong> - Core keyboard loads the handwriting APK dynamically only when imported by the user.'
   ],
   'leantype-translation-plugin': [
-    '<strong>🌐 Direct Integration</strong> - Translation plugin enabling Google Translate directly within the LeanType keyboard.',
+    '<strong>🌐 On-Device Translation</strong> - Google ML Kit translation inside the LeanType keyboard, with downloadable language models.',
     '<strong>Dynamic Plugin Loader</strong> - Core keyboard loads translation APK dynamically when enabled by the user.'
   ],
   'leantype-voice-plugin': [
@@ -201,7 +200,7 @@ const fallbackFeatures = {
     '<strong>🀄 In-Process CJK Engine</strong> - Real-time Chinese Pinyin input powered by the Google Pinyin C++ engine (libjni_pinyin.so).',
     '<strong>🇯🇵 Japanese Input</strong> - Romaji to kana to kanji conversion with candidate suggestions, backed by an offline SKK-based dictionary.',
     '<strong>📚 Embedded 65,000+ Word Dictionary</strong> - Full-vocabulary offline dictionary (dict_pinyin.dat) with fast syllable splitting and N-gram matrix search.',
-    '<strong>🧩 Lightweight & Modular</strong> - Dynamic DexClassLoader loading keeps LeanType core bloat-free with under 2 MB footprint.',
+    '<strong>🧩 Lightweight & Modular</strong> - Loaded with DexClassLoader only when used, keeping the LeanType core small (plugin APK about 3.5 MB).',
     '<strong>🔒 100% Offline & Private</strong> - Zero network permissions, zero telemetry, and complete on-device processing.'
   ],
   'leantype-gif-plugin': [
@@ -209,7 +208,7 @@ const fallbackFeatures = {
     '<strong>🔄 Multi-Provider Support</strong> - Seamless support for GIPHY, KLIPY, and offline Local Media with 1-tap provider switching.',
     '<strong>📁 100% Offline Local Media</strong> - Import and browse your own GIF, WebP, PNG files, and ZIP sticker packs with zero internet required.',
     '<strong>🗂️ Categories & Packs</strong> - Organize imported media into categories and named packs, rename titles and group files right inside the plugin.',
-    '<strong>🛡️ Secure API Key Vault</strong> - API keys encrypted at rest with hardware-backed Android Keystore keys and never shared outside the plugin process.',
+    '<strong>🛡️ Secure API Key Vault</strong> - The plugin encrypts your API keys at rest with Android Keystore keys.',
     '<strong>⚡ Zero-Memory Overhead</strong> - Direct ParcelFileDescriptor streaming ensures smooth, lag-free typing.'
   ],
   'adaptive-brightness-linux': [
